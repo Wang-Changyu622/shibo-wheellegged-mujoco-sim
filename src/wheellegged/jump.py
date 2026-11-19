@@ -68,10 +68,11 @@ class JumpSupervisor:
         self._transition(time, "recover", reason)
 
     def update(self, time: float, request: bool, ground_forces: Sequence[float],
-               *, ready: bool = True) -> JumpOutput:
+               *, ready: bool = True, push_ready: bool = True) -> JumpOutput:
         """Advance from current contact samples; repeated times add no dwell.
 
-        ``ready`` is a posture/rate/speed gate supplied by the controller. Ground
+        ``ready`` gates the request; ``push_ready`` independently verifies that
+        crouching has reached a safe, symmetric posture before propulsion. Ground
         forces are left/right wheel-world normal forces; obstacle side contacts
         count as contact, so this baseline only authorizes standing jumps from
         the controller's supported near-upright state, not arbitrary wall pushes.
@@ -101,12 +102,14 @@ class JumpSupervisor:
                 self.events.append(JumpEvent(time, "request_rejected", self.phase, reason))
 
         if self.phase == "crouch" and self._elapsed(time, self._phase_start, .8):
-            if support_confirmed:
+            if support_confirmed and push_ready:
                 self._push_start = time
                 self._air_since = None
                 self._transition(time, "push", "crouch_complete")
-            else:
+            elif not support_confirmed:
                 self._abort(time, "support_lost_before_push")
+            else:
+                self._abort(time, "posture_not_ready_before_push")
 
         if self.phase in ("push", "tuck", "flight"):
             if self._takeoff_confirmed_at is None and self._elapsed(time, self._air_since, .008):

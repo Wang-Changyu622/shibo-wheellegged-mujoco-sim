@@ -32,6 +32,7 @@ def render_video(result: dict, destination: Path, fps: int = 30) -> Path:
                     "move": "Forward and reverse / velocity tracking",
                     "step": "6 mm step / 18.5 mm wheel radius",
                     "bridge": "One-wheel bridge / 6 mm high, 25 mm wide",
+                    "legs": "Independent left/right height + standing jump",
                     "jump": ("Torque-limited jump / "
                              f"{model.actuator('L_servo').forcerange[1]:.3f} Nm hip limit")}
     preview_time = {"balance": .6, "move": 3., "step": 3.3, "bridge": 2.9}.get(scenario)

@@ -21,16 +21,21 @@ import numpy as np
 from .control import BalanceController, Command, balanced_data
 from .evaluate import SCENARIOS, scenario_command
 from .hardware import DEFAULT_PROFILE, actuator_profile
-from .model import TERRAINS, ground_forces, load_model
+from .model import (HIP_CONTROL_RANGE, NOMINAL_HIP, TERRAINS, ground_forces,
+                    leg_geometry, load_model)
 from .state import observe
 
 
 PHYSICS_TIMESTEP = 0.0005
 MANUAL_SPEED = 0.12
 MANUAL_YAW_RATE = 0.4
+MANUAL_HIP_RATE = 0.10
 MOVEMENT_KEYS = frozenset((glfw.KEY_W, glfw.KEY_S, glfw.KEY_A, glfw.KEY_D))
+HEIGHT_KEYS = frozenset((glfw.KEY_Q, glfw.KEY_Z, glfw.KEY_E, glfw.KEY_C, glfw.KEY_T, glfw.KEY_G))
 DEMO_KEYS = dict(zip("12345", ("balance", "move", "step", "bridge", "jump")))
 HELP = ("Hold W/S: forward/back | Hold A/D: turn | Release: stop target | X stop | J jump\n"
+        "Hold Q/Z: left leg up/down | E/C: right leg up/down | T/G: both | H: nominal\n"
+        "Release height keys: hold height | Jump: height editing locked\n"
         "1 balance | 2 forward/back | 3 step | 4 bridge | 5 jump\n"
         "M auto/manual | R reset | P/Space pause | F follow camera | Esc quit")
 
@@ -76,6 +81,7 @@ class _Session:
         self.step_count = 0
         self.reset_count = 0
         self.jump_request_count = 0
+        self.jump_feedback = "READY"
         self.notice = "Automatic demo" if automatic else "Manual control"
         self.history: deque[tuple[float, float, float, float, float]] = deque(maxlen=360)
         self.reset()
@@ -90,6 +96,7 @@ class _Session:
         self.last_command = self.command
         self.held_keys.clear()
         self.jump_request_count = 0
+        self.jump_feedback = "READY"
         self.step_count = 0
         self.history.clear()
         self.reset_count += 1
@@ -104,7 +111,35 @@ class _Session:
 
     def _stop(self) -> None:
         self.held_keys.clear()
+        if self.command.jump:
+            self.jump_feedback = "CANCELLED before execution"
         self.command = replace(self.command, velocity=0., yaw_rate=0., jump=False)
+
+    def _manual_takeover(self) -> None:
+        if self.automatic:
+            self.command = replace(self.last_command, jump=False)
+            self.automatic = False
+        self._movement_target()
+
+    def _height_editing_allowed(self) -> bool:
+        return (self.focused and not self.paused and not self.command.jump
+                and self.controller.phase == "balance")
+
+    def _adjust_height(self) -> None:
+        if self.automatic or not self._height_editing_allowed():
+            return
+        held = self.held_keys
+        common = int(glfw.KEY_G in held) - int(glfw.KEY_T in held)
+        directions = np.clip([
+            common + int(glfw.KEY_Z in held) - int(glfw.KEY_Q in held),
+            common + int(glfw.KEY_C in held) - int(glfw.KEY_E in held),
+        ], -1, 1)
+        if np.any(directions):
+            targets = np.clip(np.asarray(self.command.hip_targets)
+                              + directions * MANUAL_HIP_RATE * PHYSICS_TIMESTEP,
+                              *HIP_CONTROL_RANGE)
+            self.command = replace(self.command, left_hip_angle=float(targets[0]),
+                                   right_hip_angle=float(targets[1]))
 
     def handle_focus(self, focused: bool) -> None:
         was_focused = self.focused
@@ -149,26 +184,46 @@ class _Session:
                 self.notice = "Automatic demo restarted"
             else:
                 self.notice = "Manual control; speed and yaw targets zeroed"
+        elif key in HEIGHT_KEYS or char == "H":
+            if not self._height_editing_allowed():
+                self.held_keys.discard(key)
+                self.notice = "Height locked: resume/finish jump, then press again"
+                return None
+            self._manual_takeover()
+            if char == "H":
+                self.held_keys.difference_update(HEIGHT_KEYS)
+                self.command = replace(self.command, hip_angle=NOMINAL_HIP,
+                                       left_hip_angle=NOMINAL_HIP, right_hip_angle=NOMINAL_HIP)
+                self.notice = "Both leg requests set to nominal"
+            else:
+                self.notice = "Adjusting leg height; release to hold"
         elif char in ("W", "S", "A", "D", "X", "J"):
-            if self.automatic:
-                self.command = replace(self.last_command, jump=False)
-                self.automatic = False
-            self._movement_target()
+            self._manual_takeover()
             if char == "X":
                 self._stop()
             elif char == "J":
-                self.command = replace(self.command, jump=True)
+                self.held_keys.difference_update(MOVEMENT_KEYS | HEIGHT_KEYS)
+                self.command = replace(self.command, velocity=0., yaw_rate=0., jump=True)
+                self.jump_feedback = "REQUESTED"
             self.notice = ("Jump requested; readiness guards apply" if char == "J"
                            else "Hold WASD; release to stop target")
         return None
 
     def step(self) -> None:
+        self._adjust_height()
         command = (scenario_command(self.scenario, self.step_count * PHYSICS_TIMESTEP,
                                     PHYSICS_TIMESTEP)
                    if self.automatic else self.command)
         self.last_command = command
         self.jump_request_count += int(command.jump)
+        previous_events = len(self.controller.jump_supervisor.events)
         self.data.ctrl[:] = self.controller.update(command)
+        if command.jump:
+            for event in self.controller.jump_supervisor.events[previous_events:]:
+                if event.reason == "request_accepted":
+                    self.jump_feedback = "ACCEPTED"
+                elif event.event == "request_rejected":
+                    self.jump_feedback = "REJECTED: " + event.reason
         self.command = replace(self.command, jump=False)  # exactly one control-step pulse
         previous_time = float(self.data.time)
         mujoco.mj_step(self.model, self.data)
@@ -353,7 +408,7 @@ def _overlays(viewer, session: _Session, figures: tuple, realtime_ratio: float) 
     labels = ("Wheel-legged robot\nProfile\nMode / scene\nSim time / real-time\n"
               "Speed target / actual\nYaw target / actual\nPitch / roll\n"
               "Wheel contact L / R\nWheel Uq L / R\nWheel torque L / R\n"
-              "Hip target L / R\nHip torque L / R\nJump phase / outcome\nCamera\nKeys / focus\nStatus")
+              "Camera\nKeys / focus\nStatus")
     pair = lambda suffix, field: [float(getattr(data.actuator(f"{side}_{suffix}"), field)[0])
                                  for side in ("L", "R")]
     values = (f"{status} | 0.5 ms physics\n{session.profile}\n"
@@ -364,15 +419,27 @@ def _overlays(viewer, session: _Session, figures: tuple, realtime_ratio: float) 
               f"{force[0]:.3f} / {force[1]:.3f} N\n"
               + "{:+.3f} / {:+.3f} V\n".format(*pair("wheel_voltage", "ctrl"))
               + "{:+.4f} / {:+.4f} Nm\n".format(*pair("wheel_voltage", "force"))
-              + "{:+.3f} / {:+.3f} rad\n".format(*pair("servo", "ctrl"))
-              + "{:+.4f} / {:+.4f} Nm\n".format(*pair("servo", "force"))
-              + f"{session.controller.phase} / {session.controller.jump_supervisor.last_outcome}\n"
               + ("FOLLOW\n" if session.follow else "FREE\n")
-              + f"{''.join(chr(k) for k in sorted(session.held_keys & MOVEMENT_KEYS)) or '-'} / "
+              + f"{''.join(chr(k) for k in sorted(session.held_keys & (MOVEMENT_KEYS | HEIGHT_KEYS))) or '-'} / "
               + ("FOCUSED\n" if session.focused else "UNFOCUSED\n")
               + ("Demo complete; holding. R replays." if complete else session.notice))
+    hip_request = command.hip_targets
+    requested_height = [1000. * leg_geometry(q)["height"] for q in hip_request]
+    actual_height = [1000. * leg_geometry(float(q))["height"] for q in observation.hip]
+    leg_labels = ("Hip request L / R\nHip actual L / R\nServo target L / R\n"
+                  "Leg height req L / R\nLeg height actual L / R\nHip torque L / R\n"
+                  "Jump request\nJump phase\nJump outcome")
+    leg_values = ("{:+.3f} / {:+.3f} rad\n".format(*hip_request)
+                  + "{:+.3f} / {:+.3f} rad\n".format(*observation.hip)
+                  + "{:+.3f} / {:+.3f} rad\n".format(*pair("servo", "ctrl"))
+                  + "{:.1f} / {:.1f} mm\n".format(*requested_height)
+                  + "{:.1f} / {:.1f} mm\n".format(*actual_height)
+                  + "{:+.4f} / {:+.4f} Nm\n".format(*pair("servo", "force"))
+                  + f"{session.jump_feedback}\n{session.controller.phase}\n"
+                  + str(session.controller.jump_supervisor.last_outcome or "-"))
     viewer.set_texts([
         (mujoco.mjtFont.mjFONT_NORMAL, mujoco.mjtGridPos.mjGRID_TOPLEFT, labels, values),
+        (mujoco.mjtFont.mjFONT_NORMAL, mujoco.mjtGridPos.mjGRID_TOPRIGHT, leg_labels, leg_values),
         (mujoco.mjtFont.mjFONT_NORMAL, mujoco.mjtGridPos.mjGRID_BOTTOMLEFT,
          HELP + "\nLive simulation preview; use 'run' for measured acceptance.", ""),
     ])
@@ -389,7 +456,7 @@ def _overlays(viewer, session: _Session, figures: tuple, realtime_ratio: float) 
         extent = max(minimum_span, float(np.max(np.abs(samples[:, columns]))) * 1.2)
         figure.range[1] = (-extent, extent)
     viewport = viewer.viewport
-    if viewport is not None and viewport.width >= 1050 and viewport.height >= 650:
+    if viewport is not None and viewport.width >= 1250 and viewport.height >= 900:
         width, height = min(430, viewport.width // 3), min(250, viewport.height // 3)
         left = viewport.left + viewport.width - width - 12
         viewer.set_figures([
@@ -507,7 +574,9 @@ def run_viewer(terrain: str = "flat", profile: str = DEFAULT_PROFILE, *,
         "scene_visits": scene_visits, "received_keys": seen_keys,
         "received_key_events": key_events, "received_focus_events": focus_events,
         "final_simulation_time_s": float(session.data.time),
-        "final_command": {"velocity": final_command.velocity, "yaw_rate": final_command.yaw_rate},
+        "final_command": {"velocity": final_command.velocity, "yaw_rate": final_command.yaw_rate,
+                          "hip_targets": list(final_command.hip_targets)},
         "jump_phase": session.controller.phase, "jump_request_count": session.jump_request_count,
+        "jump_feedback": session.jump_feedback,
         "warning_counts": warning_counts.tolist(),
     }
