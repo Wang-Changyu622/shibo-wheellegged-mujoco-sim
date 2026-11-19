@@ -51,6 +51,16 @@ WHEELLEGGED_PYTHON=/path/to/ros-compatible/python bash scripts/setup.sh
 
 最终数值和已知失败边界见 [验证记录](docs/VALIDATION.md)。输入轨迹公开在 `evaluate.py`，所有成功标准独立于控制器的相位标签。视频回放已保存的物理状态，不参与控制或评分。
 
+## 效果图与下一阶段
+
+![真实轨迹的六项仿真效果](docs/media/simulation_overview.png)
+
+![6mm台阶实际通过过程](docs/media/step_sequence.png)
+
+通过台阶的回归测试只证明指定条件下的通过与回稳。新增[专项台阶诊断](docs/step_diagnostics.md)分别评价任务成功和运动质量；[代码审查](docs/code_review_next_stage.md)列出受阻参考管理、日志、控制时钟、地形与观测接口的优先改进。[现有代码框架](docs/code_architecture.md)列明真实模块、入口与数据流。
+
+后续能力目标是更高台阶与连续台阶，候选路线和验收条件见[实施计划](docs/learning_control_plan.md)，六个相关训练/部署项目的固定源码比较见[学习参考](docs/learning_references.md)。**学习工作目前搁置**；尚未搭建训练环境、训练或导出策略，连续台阶也仍属于待实现任务。
+
 ## 控制与模型
 
 - 156 个 CAD 可视零件、左右四杆闭环、浮动机身；轮半径 18.5 mm、轮距 87.3 mm。
