@@ -7,6 +7,7 @@ ROS callbacks never write robot positions or bypass the core controller.
 from __future__ import annotations
 
 from contextlib import ExitStack
+from dataclasses import replace
 import math
 from typing import Any
 
@@ -85,6 +86,7 @@ class SimulationNode(Node):
         ]
         self.create_subscription(Twist, "/cmd_vel", self._on_velocity, 10)
         self.create_subscription(Empty, "/jump", self._on_jump, 10)
+        self.create_subscription(JointState, "/leg_command", self._on_legs, 10)
         self._joint_pub = self.create_publisher(JointState, "/joint_states", qos_profile_sensor_data)
         self._imu_pub = self.create_publisher(Imu, "/imu", qos_profile_sensor_data)
         self._odom_pub = self.create_publisher(Odometry, "/odom", 10)
@@ -110,7 +112,7 @@ class SimulationNode(Node):
                 self._viewer.cam.elevation = -20
             self._viewer_timer = self.create_timer(
                 1.0 / 60.0, self._sync_viewer, clock=self._wall_clock)
-            self.get_logger().info("MuJoCo passive viewer ready; commands arrive via ROS /cmd_vel and /jump")
+            self.get_logger().info("MuJoCo passive viewer ready; ROS /cmd_vel, /leg_command and /jump")
         self.get_logger().info(
             f"MuJoCo {mujoco.__version__}: {params['terrain']}, profile={params['profile']}, "
             f"dt={self.model.opt.timestep:g}s, command timeout={self._timeout:g}s"
@@ -125,10 +127,11 @@ class SimulationNode(Node):
             self._viewer.cam.lookat[:] = [*self.data.body("chassis").xpos[:2], .045]
         self._viewer.set_texts([(
             mujoco.mjtFont.mjFONT_NORMAL, mujoco.mjtGridPos.mjGRID_TOPLEFT,
-            "ROS 2 input\nProfile\nSim time\nTarget speed / yaw",
-            f"/cmd_vel and /jump\n{self.get_parameter('profile').value}\n"
+            "ROS 2 input\nProfile\nSim time\nTarget speed / yaw\nHip target L / R",
+            f"/cmd_vel, /leg_command, /jump\n{self.get_parameter('profile').value}\n"
             f"{self.data.time:.2f} s\n{self.command.velocity:+.3f} m/s / "
-            f"{self.command.yaw_rate:+.3f} rad/s",
+            f"{self.command.yaw_rate:+.3f} rad/s\n"
+            f"{self.command.hip_targets[0]:+.3f} / {self.command.hip_targets[1]:+.3f} rad",
         )])
         self._viewer.sync(state_only=True)
 
@@ -144,11 +147,20 @@ class SimulationNode(Node):
         if not all(map(math.isfinite, (message.linear.x, message.angular.z))):
             self.get_logger().warning("Ignored non-finite /cmd_vel")
             return
-        self.command = Command(
-            velocity=message.linear.x, yaw_rate=message.angular.z,
-            hip_angle=self.command.hip_angle,
-        )
+        self.command = replace(self.command, velocity=message.linear.x, yaw_rate=message.angular.z)
         self._last_command_time = self.data.time
+
+    def _on_legs(self, message: JointState) -> None:
+        # Named pairs avoid an undocumented left/right array convention. Leg
+        # setpoints persist across velocity watchdog expiry and jump recovery.
+        if (len(message.name) != 2 or set(message.name) != {"L_hip", "R_hip"}
+                or len(message.position) != 2
+                or not all(map(math.isfinite, message.position))):
+            self.get_logger().warning("Ignored /leg_command: require finite L_hip and R_hip positions")
+            return
+        targets = dict(zip(message.name, message.position))
+        self.command = replace(self.command, left_hip_angle=targets["L_hip"],
+                               right_hip_angle=targets["R_hip"])
 
     def _on_jump(self, _: Empty) -> None:
         # A message requests one event; the core controller owns all jump phases.
@@ -157,11 +169,8 @@ class SimulationNode(Node):
     def _advance(self) -> None:
         for _ in range(self._steps):
             if self.data.time - self._last_command_time > self._timeout:
-                self.command = Command(hip_angle=self.command.hip_angle)
-            request = Command(
-                velocity=self.command.velocity, yaw_rate=self.command.yaw_rate,
-                hip_angle=self.command.hip_angle, jump=self._jump_pending,
-            )
+                self.command = replace(self.command, velocity=0., yaw_rate=0.)
+            request = replace(self.command, jump=self._jump_pending)
             self._jump_pending = False
             self.data.ctrl[:] = self.controller.update(request)
             mujoco.mj_step(self.model, self.data)
