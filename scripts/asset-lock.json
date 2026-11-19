@@ -1,0 +1,1544 @@
+{
+  "schema_version": 1,
+  "repository": "dycsrl/Micro-Wheeled_leg-Robot-Model",
+  "commit": "a330459b2d3e4567974bb6415abb51086fa5d683",
+  "license_note": "Upstream has source notices but no general LICENSE covering all derived CAD assets; downloaded assets are not redistributed by this project.",
+  "files": [
+    {
+      "source": "assets/mushibot.xml",
+      "destination": "mushibot.xml",
+      "size": 89834,
+      "sha256": "4affce3311987ad9d9ffc2ea0336aead48d0c9c3a7f8ee6ce730da5f6b519448"
+    },
+    {
+      "source": "assets/model-parameters.json",
+      "destination": "reference-parameters.json",
+      "size": 336,
+      "sha256": "9f85c43ae8c5828f7524cbe6ceb694cc52613134f191bae352a15710287e773b"
+    },
+    {
+      "source": "docs/cad-manifest.json",
+      "destination": "cad-manifest.json",
+      "size": 37235,
+      "sha256": "acfe156a53ed95132d42616e3034b779c64ed1e391f8f2ea59e9c23647e50e2b"
+    },
+    {
+      "source": "THIRD_PARTY_NOTICES.md",
+      "destination": "THIRD_PARTY_NOTICES.md",
+      "size": 1238,
+      "sha256": "d1158e82c7637a965e573a4659a6e0fb08f864012a22590f7054b270e28179d3"
+    },
+    {
+      "source": "assets/meshes/contact_25_0.obj",
+      "destination": "meshes/contact_25_0.obj",
+      "size": 11317,
+      "sha256": "e17e104f21cb35396a5d2b6e37594060daf3497159250ffed25db41b757eee95"
+    },
+    {
+      "source": "assets/meshes/contact_25_1.obj",
+      "destination": "meshes/contact_25_1.obj",
+      "size": 9619,
+      "sha256": "f5089f0e2c5bfe80a8673afce7e3fec86f67086c838fed57d2a548e2c150f05d"
+    },
+    {
+      "source": "assets/meshes/contact_25_10.obj",
+      "destination": "meshes/contact_25_10.obj",
+      "size": 9304,
+      "sha256": "a938f235e77ad51c835202e3b20789e7fc0c94586ceddbb2219050c09cc28a35"
+    },
+    {
+      "source": "assets/meshes/contact_25_11.obj",
+      "destination": "meshes/contact_25_11.obj",
+      "size": 5366,
+      "sha256": "70b3a17146bd9d6bbee15c87c2af966ad7c42eb2f6b5a7fee0ca17d9eb7f7513"
+    },
+    {
+      "source": "assets/meshes/contact_25_12.obj",
+      "destination": "meshes/contact_25_12.obj",
+      "size": 13395,
+      "sha256": "173adb75f4f53a6f3777f52bbb171c0531a3f388fd69ad56aee097c283f5c139"
+    },
+    {
+      "source": "assets/meshes/contact_25_13.obj",
+      "destination": "meshes/contact_25_13.obj",
+      "size": 4960,
+      "sha256": "98aa820baf763a5591c0ccdc2238db54d016dc896a942462d44b413d17182d78"
+    },
+    {
+      "source": "assets/meshes/contact_25_14.obj",
+      "destination": "meshes/contact_25_14.obj",
+      "size": 3852,
+      "sha256": "91b1be3770effaea5feb82652e3cb7d28d7110ba90a8034a099f1ed1503961ab"
+    },
+    {
+      "source": "assets/meshes/contact_25_15.obj",
+      "destination": "meshes/contact_25_15.obj",
+      "size": 5037,
+      "sha256": "e1bf178dee553e913b3a84a2a5159c7570675c680a375b39a2e60e4e09c20c49"
+    },
+    {
+      "source": "assets/meshes/contact_25_16.obj",
+      "destination": "meshes/contact_25_16.obj",
+      "size": 9916,
+      "sha256": "da2bfd5932e9402ce3efd0b0d405e5650a5ce8be17cb2bbf16ad58cd0921bf2b"
+    },
+    {
+      "source": "assets/meshes/contact_25_17.obj",
+      "destination": "meshes/contact_25_17.obj",
+      "size": 5891,
+      "sha256": "c6f0a6931377cdde68165bb1681acc2652a51f4fdf38423eb80cecf8e5f6e463"
+    },
+    {
+      "source": "assets/meshes/contact_25_18.obj",
+      "destination": "meshes/contact_25_18.obj",
+      "size": 2256,
+      "sha256": "6f08fdb43fa839047230a0f6694077b1465ab4b6182f6887b9e3a54f0d9044c1"
+    },
+    {
+      "source": "assets/meshes/contact_25_19.obj",
+      "destination": "meshes/contact_25_19.obj",
+      "size": 7811,
+      "sha256": "622df4a6522d1168058ab0a0160269e7a795f7a1842ecec113d05ee03d3b9494"
+    },
+    {
+      "source": "assets/meshes/contact_25_2.obj",
+      "destination": "meshes/contact_25_2.obj",
+      "size": 5266,
+      "sha256": "b303bc00d3ce8701a055cc78bc11463cfd92d6b1c32d34f9e747224c6c6f2d93"
+    },
+    {
+      "source": "assets/meshes/contact_25_20.obj",
+      "destination": "meshes/contact_25_20.obj",
+      "size": 6837,
+      "sha256": "a759b146dcdb32449c5a51192f8bdabbbf3c2e9e78a9ea1f9f280c2324c03f7f"
+    },
+    {
+      "source": "assets/meshes/contact_25_21.obj",
+      "destination": "meshes/contact_25_21.obj",
+      "size": 9564,
+      "sha256": "64fa5d2175b86acbbd0959f11dcd3057c68c488c4a6e08d5a962e464a3a5bf6c"
+    },
+    {
+      "source": "assets/meshes/contact_25_22.obj",
+      "destination": "meshes/contact_25_22.obj",
+      "size": 3337,
+      "sha256": "42a06bb6be0d6241edfa71dbec8d45f070f9b97d15e1b7803034db819cef652d"
+    },
+    {
+      "source": "assets/meshes/contact_25_23.obj",
+      "destination": "meshes/contact_25_23.obj",
+      "size": 1060,
+      "sha256": "68f97a07fc202b6bfc9514d092dbb029c3389624be0d8312a34b48edf0230cfa"
+    },
+    {
+      "source": "assets/meshes/contact_25_24.obj",
+      "destination": "meshes/contact_25_24.obj",
+      "size": 5184,
+      "sha256": "9cf390bb0e3e90af710662fb80024b0bdb2c402047a5034b10948f0312bd6124"
+    },
+    {
+      "source": "assets/meshes/contact_25_25.obj",
+      "destination": "meshes/contact_25_25.obj",
+      "size": 3874,
+      "sha256": "bb57203358e5595ead8a9de5112f5ac173b5f245b91c69ec7719a9b305bcb089"
+    },
+    {
+      "source": "assets/meshes/contact_25_26.obj",
+      "destination": "meshes/contact_25_26.obj",
+      "size": 6532,
+      "sha256": "31bb181c2f662ae10394a817e46bfe3e1ca9c5196cd9a5b0c70bc1257cc45918"
+    },
+    {
+      "source": "assets/meshes/contact_25_27.obj",
+      "destination": "meshes/contact_25_27.obj",
+      "size": 1780,
+      "sha256": "18989863392e718e657bceb917fb1fda10a945837bde1caf7fd9fcdf42b2298f"
+    },
+    {
+      "source": "assets/meshes/contact_25_28.obj",
+      "destination": "meshes/contact_25_28.obj",
+      "size": 25805,
+      "sha256": "9ae52c2122949d042f628fc1aee948555cb92c639daf67a6b53b066782dc3175"
+    },
+    {
+      "source": "assets/meshes/contact_25_29.obj",
+      "destination": "meshes/contact_25_29.obj",
+      "size": 4710,
+      "sha256": "e610bd0bcba251d1abbc854905c6770d71c6ed05b1a09b021aab270116cbd5d5"
+    },
+    {
+      "source": "assets/meshes/contact_25_3.obj",
+      "destination": "meshes/contact_25_3.obj",
+      "size": 12876,
+      "sha256": "291404753fc2a328279299f2e7aadd75144fe678820409ec612db28a3861aff7"
+    },
+    {
+      "source": "assets/meshes/contact_25_30.obj",
+      "destination": "meshes/contact_25_30.obj",
+      "size": 3840,
+      "sha256": "9f7424fdd3fb536c1fb107ef9c6461f9fe1446ff2888f36cb86e4d025ad9c63f"
+    },
+    {
+      "source": "assets/meshes/contact_25_31.obj",
+      "destination": "meshes/contact_25_31.obj",
+      "size": 5283,
+      "sha256": "3b89d7f95815ffa9b875b14ba3aee12605f473074758b248244fe9b90f64fee7"
+    },
+    {
+      "source": "assets/meshes/contact_25_32.obj",
+      "destination": "meshes/contact_25_32.obj",
+      "size": 7175,
+      "sha256": "dbe4c8956897e2c0736053147414715b5fc4e76f4152fd1592891184db2b820d"
+    },
+    {
+      "source": "assets/meshes/contact_25_33.obj",
+      "destination": "meshes/contact_25_33.obj",
+      "size": 2818,
+      "sha256": "cc48a01305c6b3e4e487a7ebcacc18138f4fc1892e871039dc3d40d6325c46a2"
+    },
+    {
+      "source": "assets/meshes/contact_25_34.obj",
+      "destination": "meshes/contact_25_34.obj",
+      "size": 3708,
+      "sha256": "90c43bcb69b4db3ea9bd59d47cf9d7a18d5aabef10bc888aa231243a13fc9e77"
+    },
+    {
+      "source": "assets/meshes/contact_25_35.obj",
+      "destination": "meshes/contact_25_35.obj",
+      "size": 6736,
+      "sha256": "4c4203effd288e70fb5fb8687487c504ad88028d2a630ba6c29dfedd397a17a4"
+    },
+    {
+      "source": "assets/meshes/contact_25_36.obj",
+      "destination": "meshes/contact_25_36.obj",
+      "size": 2164,
+      "sha256": "fbf20b1c1c14a0a4ec32352679a619cb91367444e5fc7b96c5d1b35a9484dc58"
+    },
+    {
+      "source": "assets/meshes/contact_25_37.obj",
+      "destination": "meshes/contact_25_37.obj",
+      "size": 1730,
+      "sha256": "0a93594e715f192bab7a4c9550e8bef71144f3e0ec9a23a3be73a557a7a8b689"
+    },
+    {
+      "source": "assets/meshes/contact_25_38.obj",
+      "destination": "meshes/contact_25_38.obj",
+      "size": 2844,
+      "sha256": "6341a106bb5d389c50f3c344a24c7c0acaa81a39d7c5299227a6a86f5031ccda"
+    },
+    {
+      "source": "assets/meshes/contact_25_39.obj",
+      "destination": "meshes/contact_25_39.obj",
+      "size": 14068,
+      "sha256": "fd2556a0a0e23ac90aa7c7d703994be38673e91f6d99431eb8e2e8af1028b21a"
+    },
+    {
+      "source": "assets/meshes/contact_25_4.obj",
+      "destination": "meshes/contact_25_4.obj",
+      "size": 5002,
+      "sha256": "f513f5e871a956381dfeb661b5bf0560ebe89f943335acff8ff7cdc95ba8e03d"
+    },
+    {
+      "source": "assets/meshes/contact_25_40.obj",
+      "destination": "meshes/contact_25_40.obj",
+      "size": 7867,
+      "sha256": "f253bf539bfd2e64052585d8d211d77c5a1bb40192c154ec9181890189fad43e"
+    },
+    {
+      "source": "assets/meshes/contact_25_41.obj",
+      "destination": "meshes/contact_25_41.obj",
+      "size": 6800,
+      "sha256": "b4652061d0a7460f79a5953e2d2e2beb230970302b3522f5cbf006cf4befbfde"
+    },
+    {
+      "source": "assets/meshes/contact_25_42.obj",
+      "destination": "meshes/contact_25_42.obj",
+      "size": 6005,
+      "sha256": "9f9cf51f535b20f14d122a21428ba4315e8da89cb73f8ffa5a82fee6c834e5b1"
+    },
+    {
+      "source": "assets/meshes/contact_25_43.obj",
+      "destination": "meshes/contact_25_43.obj",
+      "size": 4954,
+      "sha256": "e528f18e2e1c88c5bfb614674a22b190744df0f36824340be5c69a396a0bb012"
+    },
+    {
+      "source": "assets/meshes/contact_25_44.obj",
+      "destination": "meshes/contact_25_44.obj",
+      "size": 1931,
+      "sha256": "290fae1457e8a31855ccc9c718cf728528faf702d3e4241cd66ac2bb8a6f7628"
+    },
+    {
+      "source": "assets/meshes/contact_25_45.obj",
+      "destination": "meshes/contact_25_45.obj",
+      "size": 5587,
+      "sha256": "02fe20c2be6b51bb5e64e4340c7f8c1f489474304e17701f6aef8aeefc1e2f15"
+    },
+    {
+      "source": "assets/meshes/contact_25_46.obj",
+      "destination": "meshes/contact_25_46.obj",
+      "size": 5640,
+      "sha256": "50f96415af0ab52a8a7d873055dd53333ddc6db46d9ecab9e82cff2abc4dd781"
+    },
+    {
+      "source": "assets/meshes/contact_25_47.obj",
+      "destination": "meshes/contact_25_47.obj",
+      "size": 1409,
+      "sha256": "d68dad1af1e133d2b20efe799b2282ed1813e06c19cdb6884e7e4ae2f54f11a1"
+    },
+    {
+      "source": "assets/meshes/contact_25_5.obj",
+      "destination": "meshes/contact_25_5.obj",
+      "size": 4960,
+      "sha256": "27a06d507157c013e208bf4f8b7761ef17d4fd2003be7a100d24c84b4d75d521"
+    },
+    {
+      "source": "assets/meshes/contact_25_6.obj",
+      "destination": "meshes/contact_25_6.obj",
+      "size": 8308,
+      "sha256": "8a77f891c03038bb4d01bc8e9fd5447b6392caa066afd54e36d116b2ee9c156b"
+    },
+    {
+      "source": "assets/meshes/contact_25_7.obj",
+      "destination": "meshes/contact_25_7.obj",
+      "size": 6434,
+      "sha256": "35105a6ca4027725760fb16cdb953a71f4c830407479dac9f807b084c3f742c6"
+    },
+    {
+      "source": "assets/meshes/contact_25_8.obj",
+      "destination": "meshes/contact_25_8.obj",
+      "size": 2818,
+      "sha256": "55dcb177e865fbd39c21965bd145ec5a9f427c213e088a6de915fa6dd48a2608"
+    },
+    {
+      "source": "assets/meshes/contact_25_9.obj",
+      "destination": "meshes/contact_25_9.obj",
+      "size": 17811,
+      "sha256": "1c813d1f3ed7360ebc72df1319c7b3e2ff764d7ce1d27b92a6e1a9bbbfee3284"
+    },
+    {
+      "source": "assets/meshes/contact_27_0.obj",
+      "destination": "meshes/contact_27_0.obj",
+      "size": 4255,
+      "sha256": "9790c4ff737ecb4657da17cb6ff7eb3e5a8a452aefa6177018c538b7ea3123bb"
+    },
+    {
+      "source": "assets/meshes/contact_27_1.obj",
+      "destination": "meshes/contact_27_1.obj",
+      "size": 11369,
+      "sha256": "3def8180179776de0771001a1ed32754b788b8f3dbbfbe59fb7c5efc2772a80a"
+    },
+    {
+      "source": "assets/meshes/contact_27_10.obj",
+      "destination": "meshes/contact_27_10.obj",
+      "size": 5460,
+      "sha256": "3b2c640e60f8669cb9b86f5b70cb27cd885349ff92e34c43bb8f1c4a19d48af2"
+    },
+    {
+      "source": "assets/meshes/contact_27_11.obj",
+      "destination": "meshes/contact_27_11.obj",
+      "size": 3584,
+      "sha256": "4cf9859f2ba337462365677147fb21967d2a9368b8011a1fa9e96518e549038a"
+    },
+    {
+      "source": "assets/meshes/contact_27_12.obj",
+      "destination": "meshes/contact_27_12.obj",
+      "size": 4279,
+      "sha256": "4a7e1fd16f8906664dd113582f63939eba5102441f956bb2679b2ceb594107f1"
+    },
+    {
+      "source": "assets/meshes/contact_27_13.obj",
+      "destination": "meshes/contact_27_13.obj",
+      "size": 9572,
+      "sha256": "44e43118579527aebebd970f1f4c77c38cc63d1e7cce90921926d9a371943044"
+    },
+    {
+      "source": "assets/meshes/contact_27_14.obj",
+      "destination": "meshes/contact_27_14.obj",
+      "size": 2163,
+      "sha256": "c8017f3a470c470712dae39ba4e1a4e022805b8e51aa21be4a0a9643aa25648a"
+    },
+    {
+      "source": "assets/meshes/contact_27_15.obj",
+      "destination": "meshes/contact_27_15.obj",
+      "size": 1369,
+      "sha256": "a74396d4868e5287737a15d7a055f912fd190a39e976c1568dcb1be3e4a33d44"
+    },
+    {
+      "source": "assets/meshes/contact_27_16.obj",
+      "destination": "meshes/contact_27_16.obj",
+      "size": 9719,
+      "sha256": "afd0b200246be33ee7cfff92c8a72ca44adb6c00c0132d2146ccb4bbbb8631dc"
+    },
+    {
+      "source": "assets/meshes/contact_27_17.obj",
+      "destination": "meshes/contact_27_17.obj",
+      "size": 8456,
+      "sha256": "8bd28bb01ff777ce80bceb1a55b87bbf38f6cd9aa6683c986b3bf4b07e6b8e72"
+    },
+    {
+      "source": "assets/meshes/contact_27_18.obj",
+      "destination": "meshes/contact_27_18.obj",
+      "size": 6713,
+      "sha256": "d8501cb77fb2a94107c85e83af0cacf4f2d3749c99cc8cc61eef779a2b56397a"
+    },
+    {
+      "source": "assets/meshes/contact_27_19.obj",
+      "destination": "meshes/contact_27_19.obj",
+      "size": 5865,
+      "sha256": "a37f03123479f0d33d47ddc50238c104dc2c1ad584c2c59e5dedbd686ff35f00"
+    },
+    {
+      "source": "assets/meshes/contact_27_2.obj",
+      "destination": "meshes/contact_27_2.obj",
+      "size": 10346,
+      "sha256": "567820f351de6c84b9b4d11c29d05e8b30ebb2b3030228341db61c57fdae0064"
+    },
+    {
+      "source": "assets/meshes/contact_27_20.obj",
+      "destination": "meshes/contact_27_20.obj",
+      "size": 7423,
+      "sha256": "c2cacc3b9d13efacb190aff7961137672a752c8f9c8959f83721d0b2945b9a7f"
+    },
+    {
+      "source": "assets/meshes/contact_27_21.obj",
+      "destination": "meshes/contact_27_21.obj",
+      "size": 3457,
+      "sha256": "629452f7f6725050deedda98454d1f8e67ac4ac083a35356f067895532c4b78f"
+    },
+    {
+      "source": "assets/meshes/contact_27_22.obj",
+      "destination": "meshes/contact_27_22.obj",
+      "size": 4498,
+      "sha256": "880b064e98fccff34052ff4fb82fbd735eddfb790727e795f4f93d3f166ef9ee"
+    },
+    {
+      "source": "assets/meshes/contact_27_23.obj",
+      "destination": "meshes/contact_27_23.obj",
+      "size": 3228,
+      "sha256": "afdbb2b5f7883cb95944b8b7a83ef2502f77e6b40a8011b7e1108dec869e6f8c"
+    },
+    {
+      "source": "assets/meshes/contact_27_24.obj",
+      "destination": "meshes/contact_27_24.obj",
+      "size": 4095,
+      "sha256": "99f67f1dae00aa0da2aacf4150e630ffaa65786ae7025f0cc6abbefcb1f7148b"
+    },
+    {
+      "source": "assets/meshes/contact_27_25.obj",
+      "destination": "meshes/contact_27_25.obj",
+      "size": 6340,
+      "sha256": "400462b59285079faec1c8a72d9d0be485eec3b7be12cc4274321a1f3e351638"
+    },
+    {
+      "source": "assets/meshes/contact_27_26.obj",
+      "destination": "meshes/contact_27_26.obj",
+      "size": 6273,
+      "sha256": "30d88d835022e40bd3772042e7684b1cadfe93bacfec97d67c366cca6a8e9ee1"
+    },
+    {
+      "source": "assets/meshes/contact_27_27.obj",
+      "destination": "meshes/contact_27_27.obj",
+      "size": 2204,
+      "sha256": "f40e4a4f559ae6107028815681233648650a6d68b9608b1b2378a6fc98934c9f"
+    },
+    {
+      "source": "assets/meshes/contact_27_28.obj",
+      "destination": "meshes/contact_27_28.obj",
+      "size": 3416,
+      "sha256": "18cb7fc64b760231c9e22de40601d9d9e7e853df0d63b9cba2c176e6ed906996"
+    },
+    {
+      "source": "assets/meshes/contact_27_29.obj",
+      "destination": "meshes/contact_27_29.obj",
+      "size": 3981,
+      "sha256": "aa68dbacbeebdf9cf2c4a9a5b42d070873fc2b2068d6d452a2570bb98f612bd4"
+    },
+    {
+      "source": "assets/meshes/contact_27_3.obj",
+      "destination": "meshes/contact_27_3.obj",
+      "size": 5755,
+      "sha256": "6e7e2ee85d01a53e51d1c2e6dd6ecb3f3ce261e1af4ffd04165f996c45ac0be5"
+    },
+    {
+      "source": "assets/meshes/contact_27_30.obj",
+      "destination": "meshes/contact_27_30.obj",
+      "size": 2525,
+      "sha256": "b3e7ed828a768e65a5f5452ca9c96aa39e4c75e0da422a2db74a85a4f44a624e"
+    },
+    {
+      "source": "assets/meshes/contact_27_31.obj",
+      "destination": "meshes/contact_27_31.obj",
+      "size": 4189,
+      "sha256": "dd1fe26a23706dffc68d9facff8b3f687306b649547a13424b439280c6033b64"
+    },
+    {
+      "source": "assets/meshes/contact_27_32.obj",
+      "destination": "meshes/contact_27_32.obj",
+      "size": 26326,
+      "sha256": "8333a75d4aedaa43bfa2824dcc7a09087d2f1e51c183c6062c21dc07a1a656a9"
+    },
+    {
+      "source": "assets/meshes/contact_27_33.obj",
+      "destination": "meshes/contact_27_33.obj",
+      "size": 6887,
+      "sha256": "e356d7f377fc3a0860d3e4ab421cf9d708a5288c600c15faffe92682285c22d4"
+    },
+    {
+      "source": "assets/meshes/contact_27_34.obj",
+      "destination": "meshes/contact_27_34.obj",
+      "size": 2620,
+      "sha256": "a23f9713fafed7ba77a15889a4190ca65aebb7182c0aa50fd2d2bdbbcce0672a"
+    },
+    {
+      "source": "assets/meshes/contact_27_35.obj",
+      "destination": "meshes/contact_27_35.obj",
+      "size": 2012,
+      "sha256": "1c195312c900996ccda1e2d0144b609dec4e17d4131ffc616406cd399323cab6"
+    },
+    {
+      "source": "assets/meshes/contact_27_36.obj",
+      "destination": "meshes/contact_27_36.obj",
+      "size": 3658,
+      "sha256": "18a8b71c800d26b3936b137293ffe1060d46f1bdf905471553bb41e015bce329"
+    },
+    {
+      "source": "assets/meshes/contact_27_37.obj",
+      "destination": "meshes/contact_27_37.obj",
+      "size": 4781,
+      "sha256": "69964189f0ef0876be84c088345df3c9ebe4846fa33dd276b3766c9b11383d36"
+    },
+    {
+      "source": "assets/meshes/contact_27_38.obj",
+      "destination": "meshes/contact_27_38.obj",
+      "size": 1261,
+      "sha256": "4951ecf7c207dcfb9b33e523977d4a7205e609f26e4cf382657069b846d0934b"
+    },
+    {
+      "source": "assets/meshes/contact_27_39.obj",
+      "destination": "meshes/contact_27_39.obj",
+      "size": 1320,
+      "sha256": "4fc60171fb56e119a2b0355001f2bb917ee0676295d5902066f790e3f4af7a64"
+    },
+    {
+      "source": "assets/meshes/contact_27_4.obj",
+      "destination": "meshes/contact_27_4.obj",
+      "size": 12295,
+      "sha256": "4a3a3c8c02cf4d50396f21720f2c423e46dd4514b75fbc509381ca47141eba72"
+    },
+    {
+      "source": "assets/meshes/contact_27_40.obj",
+      "destination": "meshes/contact_27_40.obj",
+      "size": 13637,
+      "sha256": "e07b1863d873ecbb1c52570d39f0ba4185126cd553a136e8d5b34df45a8970ef"
+    },
+    {
+      "source": "assets/meshes/contact_27_41.obj",
+      "destination": "meshes/contact_27_41.obj",
+      "size": 5883,
+      "sha256": "d091d2208e0fae1257e085182e5087cefa65064f2dee0fc5b17a28fe84dcbd4d"
+    },
+    {
+      "source": "assets/meshes/contact_27_42.obj",
+      "destination": "meshes/contact_27_42.obj",
+      "size": 12542,
+      "sha256": "92f04146c10d4552f0eaa0f8c430375bf302a8752c20a683a39bf02b1c7495f4"
+    },
+    {
+      "source": "assets/meshes/contact_27_43.obj",
+      "destination": "meshes/contact_27_43.obj",
+      "size": 1009,
+      "sha256": "3d2a0b2f5c4c6ca236eba0ac636c5b40cc4b930b2cf50123a51156b2ad54c7cc"
+    },
+    {
+      "source": "assets/meshes/contact_27_44.obj",
+      "destination": "meshes/contact_27_44.obj",
+      "size": 4702,
+      "sha256": "7a3a333beaf6425527ed2ea5d089a02b8a0917cb7e5561bbe7b668be9a98a784"
+    },
+    {
+      "source": "assets/meshes/contact_27_45.obj",
+      "destination": "meshes/contact_27_45.obj",
+      "size": 3583,
+      "sha256": "1e6edebf0cad7b60c7bc0cf636f399efe2d20d53557ac79caf04947e92f65bd3"
+    },
+    {
+      "source": "assets/meshes/contact_27_46.obj",
+      "destination": "meshes/contact_27_46.obj",
+      "size": 8340,
+      "sha256": "236c0d143c94fc45cfdb271b62cdea071ea1244af1309a2143061280a7f67f46"
+    },
+    {
+      "source": "assets/meshes/contact_27_47.obj",
+      "destination": "meshes/contact_27_47.obj",
+      "size": 3170,
+      "sha256": "b5c703a798c739f54fbef168a92aeab2f56678013db847137a07d1f96f871c06"
+    },
+    {
+      "source": "assets/meshes/contact_27_5.obj",
+      "destination": "meshes/contact_27_5.obj",
+      "size": 9164,
+      "sha256": "e7ecea984d972b50ffa5c91800c5d2f73bd773de0ffed3fd8f1a842bf0a68cd4"
+    },
+    {
+      "source": "assets/meshes/contact_27_6.obj",
+      "destination": "meshes/contact_27_6.obj",
+      "size": 4876,
+      "sha256": "43fca6f4fe11cefd8003cb19504ee2cdb378acc13b7f20e962bd9a1c7d3577a2"
+    },
+    {
+      "source": "assets/meshes/contact_27_7.obj",
+      "destination": "meshes/contact_27_7.obj",
+      "size": 18821,
+      "sha256": "d79fbcd244fe46c4e7531c6ab3f4c13c6d39344d4acd474ba683220d421158f6"
+    },
+    {
+      "source": "assets/meshes/contact_27_8.obj",
+      "destination": "meshes/contact_27_8.obj",
+      "size": 8932,
+      "sha256": "a69ae435fd3cce0603a91103344dc8ebd7def695b8ee09fffa0206f67db60f89"
+    },
+    {
+      "source": "assets/meshes/contact_27_9.obj",
+      "destination": "meshes/contact_27_9.obj",
+      "size": 11580,
+      "sha256": "dc14b606fc30c6583b759b5a82248a32a6d581b4a2471aafbb973241d6ab5bf0"
+    },
+    {
+      "source": "assets/meshes/part_000.obj",
+      "destination": "meshes/part_000.obj",
+      "size": 180509,
+      "sha256": "d0a4b0a858300ab5fcd8f3c9cd033c373f1166f49a06d87c55c428c3300ed834"
+    },
+    {
+      "source": "assets/meshes/part_001.obj",
+      "destination": "meshes/part_001.obj",
+      "size": 3197015,
+      "sha256": "ff4ce74126c0aebdd033dbef2c472636f478fc97e1d85f2572b4ce725cd515e2"
+    },
+    {
+      "source": "assets/meshes/part_002.obj",
+      "destination": "meshes/part_002.obj",
+      "size": 163445,
+      "sha256": "32d123ed939a599f8750c2f87254380018546b13031f8b35f772b1b446ade5a3"
+    },
+    {
+      "source": "assets/meshes/part_003.obj",
+      "destination": "meshes/part_003.obj",
+      "size": 992916,
+      "sha256": "d1b8eacb01c62b77c87f3717370f36d37e2f10ace8c09049ea655f925d8ca7ef"
+    },
+    {
+      "source": "assets/meshes/part_004.obj",
+      "destination": "meshes/part_004.obj",
+      "size": 177048,
+      "sha256": "5dde688916cd5dc1488b6cd2cec95aeb688f94bc9f8ef6b8abf771aea6513cea"
+    },
+    {
+      "source": "assets/meshes/part_005.obj",
+      "destination": "meshes/part_005.obj",
+      "size": 179595,
+      "sha256": "4bda970ba925b97fbbcd004acc382b6ab8bf7b495c4d1134a85e5ace27362176"
+    },
+    {
+      "source": "assets/meshes/part_006.obj",
+      "destination": "meshes/part_006.obj",
+      "size": 173761,
+      "sha256": "5da498dfb23978a2dedfa79f6e92cb068e5976c3359f3cec1daa08a3b80f4f9d"
+    },
+    {
+      "source": "assets/meshes/part_007.obj",
+      "destination": "meshes/part_007.obj",
+      "size": 171214,
+      "sha256": "91dfaaee379a80eb2fddaa20f7402d8349b620f723ddea358dae5f4fb61ff8e9"
+    },
+    {
+      "source": "assets/meshes/part_008.obj",
+      "destination": "meshes/part_008.obj",
+      "size": 12942,
+      "sha256": "6a80fec19643b58bd270cd0717859c5d5d491c906cb50b7865756f781a81945c"
+    },
+    {
+      "source": "assets/meshes/part_009.obj",
+      "destination": "meshes/part_009.obj",
+      "size": 183769,
+      "sha256": "5755d0ea141d474635b7f6595378ed156196d6c91d268bd42621c73d0d9057e5"
+    },
+    {
+      "source": "assets/meshes/part_010.obj",
+      "destination": "meshes/part_010.obj",
+      "size": 3245550,
+      "sha256": "f4fbb3c82c4efa5c5f8d678971dbcfe9f3f395174f23adcfb3cbe67bf9df2436"
+    },
+    {
+      "source": "assets/meshes/part_011.obj",
+      "destination": "meshes/part_011.obj",
+      "size": 166503,
+      "sha256": "fd7fb736ea96b97a5669bfe283fc7c07eed91b5881cc8570c538fde7d22b50b8"
+    },
+    {
+      "source": "assets/meshes/part_012.obj",
+      "destination": "meshes/part_012.obj",
+      "size": 1009119,
+      "sha256": "ef5cda1b23120c3bf0b8dd089fa0ae826b4a0fbedd3eb100a3f3f77408f203c2"
+    },
+    {
+      "source": "assets/meshes/part_013.obj",
+      "destination": "meshes/part_013.obj",
+      "size": 179631,
+      "sha256": "4ffd54895adb2670f2eded2cb3272d4e312d2ea14335ab4546f42b809d276d85"
+    },
+    {
+      "source": "assets/meshes/part_014.obj",
+      "destination": "meshes/part_014.obj",
+      "size": 182178,
+      "sha256": "6713ce784e15c5a2d54ee44cf9394c2a106c9ba752414b1023217bbb7f427abc"
+    },
+    {
+      "source": "assets/meshes/part_015.obj",
+      "destination": "meshes/part_015.obj",
+      "size": 176271,
+      "sha256": "5748c987b6b4ca72cbf67038a5417260eaeeb8614fdd6141724118ef3931b3e2"
+    },
+    {
+      "source": "assets/meshes/part_016.obj",
+      "destination": "meshes/part_016.obj",
+      "size": 173724,
+      "sha256": "905907ac08e29b4aba05523108dcb9b9445455d475b93f502310c7a3fe952d07"
+    },
+    {
+      "source": "assets/meshes/part_017.obj",
+      "destination": "meshes/part_017.obj",
+      "size": 13194,
+      "sha256": "c8db57945ac0415bb6b0ee5080c052daadc9533e011a8e216b8aff7610b35f49"
+    },
+    {
+      "source": "assets/meshes/part_018.obj",
+      "destination": "meshes/part_018.obj",
+      "size": 3031826,
+      "sha256": "4709643bbe8abf58666a02baffe02892b67a5f291d671535416afe614b65a192"
+    },
+    {
+      "source": "assets/meshes/part_019.obj",
+      "destination": "meshes/part_019.obj",
+      "size": 809901,
+      "sha256": "b5b4c07a3722a4efc1e50864e9c950bda5943b6a2c1fca6df38422544e7bf44c"
+    },
+    {
+      "source": "assets/meshes/part_020.obj",
+      "destination": "meshes/part_020.obj",
+      "size": 3062890,
+      "sha256": "0f4e993c579e4699ec4307286158a2535d16e8ba6cedbb0fc835ef005d5b44fb"
+    },
+    {
+      "source": "assets/meshes/part_021.obj",
+      "destination": "meshes/part_021.obj",
+      "size": 817702,
+      "sha256": "55796f4f8a8d740789d58944298a3dde9e3afeb00ffabbd233176fe4dc309d90"
+    },
+    {
+      "source": "assets/meshes/part_022.obj",
+      "destination": "meshes/part_022.obj",
+      "size": 201248,
+      "sha256": "b1a70a1400ab821aff788a86d73d266a52f5c4b415834f65a7bbced1d012fe40"
+    },
+    {
+      "source": "assets/meshes/part_023.obj",
+      "destination": "meshes/part_023.obj",
+      "size": 203541,
+      "sha256": "52a40ddb24753209c3a809bbe4c6ac6d9bd1b17d74417a3da35665804d7738ad"
+    },
+    {
+      "source": "assets/meshes/part_024.obj",
+      "destination": "meshes/part_024.obj",
+      "size": 333489,
+      "sha256": "4f15623c999ceab1975fbaf62cf56c35629acb3e6010dbfa1fd49d20581cd709"
+    },
+    {
+      "source": "assets/meshes/part_025.obj",
+      "destination": "meshes/part_025.obj",
+      "size": 956253,
+      "sha256": "708e91e13da9fd1a6a32a1415c04217e82ab6895ab79d2984dba92ef30e273a1"
+    },
+    {
+      "source": "assets/meshes/part_026.obj",
+      "destination": "meshes/part_026.obj",
+      "size": 338706,
+      "sha256": "530783d07568140d49bc3c6931b88f96845227fba8ea48cfa4aedd7df5852d5f"
+    },
+    {
+      "source": "assets/meshes/part_027.obj",
+      "destination": "meshes/part_027.obj",
+      "size": 974919,
+      "sha256": "2a425348ece71e7ee8fdaad9eeaef98ce651b15d58a5322b59e0362d74a9ad14"
+    },
+    {
+      "source": "assets/meshes/part_028.obj",
+      "destination": "meshes/part_028.obj",
+      "size": 53559,
+      "sha256": "644afd62c5df663563ec465362ece891e8870f734bc73fa2380d9009cb750899"
+    },
+    {
+      "source": "assets/meshes/part_029.obj",
+      "destination": "meshes/part_029.obj",
+      "size": 54571,
+      "sha256": "0909e26e59e19664b5319facd1561018676ac4a66c5d0ee734008282fcc154a4"
+    },
+    {
+      "source": "assets/meshes/part_030.obj",
+      "destination": "meshes/part_030.obj",
+      "size": 415460,
+      "sha256": "6a486547152d57f12a94dea65c0e4d14c1048b6d4752033416030a7f4f93e8ed"
+    },
+    {
+      "source": "assets/meshes/part_031.obj",
+      "destination": "meshes/part_031.obj",
+      "size": 83530,
+      "sha256": "836d4b9b0a2415254450adf3b1e5d8df26a6334048638a365a129a81b6c3324f"
+    },
+    {
+      "source": "assets/meshes/part_032.obj",
+      "destination": "meshes/part_032.obj",
+      "size": 83538,
+      "sha256": "e45b156813aa68eb621af8576f9f9bef50f4a4ff516efa959d2de2f90e2d3afd"
+    },
+    {
+      "source": "assets/meshes/part_033.obj",
+      "destination": "meshes/part_033.obj",
+      "size": 83506,
+      "sha256": "4e59904fc2b8bbf7fd73195853183c8f7bd36f4035a8202848aeb61c0ad2702d"
+    },
+    {
+      "source": "assets/meshes/part_034.obj",
+      "destination": "meshes/part_034.obj",
+      "size": 83563,
+      "sha256": "995c2f6eb9ee8cb2255639a00231f96786ce67e0963aae0c85c43ca10f6b79fb"
+    },
+    {
+      "source": "assets/meshes/part_035.obj",
+      "destination": "meshes/part_035.obj",
+      "size": 83542,
+      "sha256": "e6f1ae10746473325fe772c209996e40ee15aa9528cba224958c5791b0e76bd3"
+    },
+    {
+      "source": "assets/meshes/part_036.obj",
+      "destination": "meshes/part_036.obj",
+      "size": 83538,
+      "sha256": "83be633ff61e29c415c84c05cd31dcb7e360ee0bbd4fa0f46a20ab619a3035bf"
+    },
+    {
+      "source": "assets/meshes/part_037.obj",
+      "destination": "meshes/part_037.obj",
+      "size": 83516,
+      "sha256": "aa0d305070eaa36265e838d15d421bc3fb633406dafed3945b205ca9fded3b41"
+    },
+    {
+      "source": "assets/meshes/part_038.obj",
+      "destination": "meshes/part_038.obj",
+      "size": 83569,
+      "sha256": "c5f02f3b473df4c21f8e2b547ddaaaa9dae6f81a2fbfbfb5fd4ec0eaeafc264a"
+    },
+    {
+      "source": "assets/meshes/part_039.obj",
+      "destination": "meshes/part_039.obj",
+      "size": 78114,
+      "sha256": "72582ed2863ce4734a7d04b4994d413efa3cd7f1b8023b362ce40c43bcfdb075"
+    },
+    {
+      "source": "assets/meshes/part_040.obj",
+      "destination": "meshes/part_040.obj",
+      "size": 83532,
+      "sha256": "61ed158452a3b369ca5df3437ef3f730bdcb9cc0d7a3ffa59ce7d23529368614"
+    },
+    {
+      "source": "assets/meshes/part_041.obj",
+      "destination": "meshes/part_041.obj",
+      "size": 415260,
+      "sha256": "851a7f69aafda9e042bd5079affd47f691b8de7dd467f5c4de4362c00f6a52a2"
+    },
+    {
+      "source": "assets/meshes/part_042.obj",
+      "destination": "meshes/part_042.obj",
+      "size": 409856,
+      "sha256": "3fd96b944533f4f22e4b0807ff31169507e4b7bc58c34407306356a1872cdbfa"
+    },
+    {
+      "source": "assets/meshes/part_043.obj",
+      "destination": "meshes/part_043.obj",
+      "size": 82408,
+      "sha256": "68f2fdaacc4ca15cdc4ee0c94dea5cb520ea8b13763fd9bc3cc8cf4e57fd3d8b"
+    },
+    {
+      "source": "assets/meshes/part_044.obj",
+      "destination": "meshes/part_044.obj",
+      "size": 82421,
+      "sha256": "5ffa4f410a8734e38a2c0ac627656cbb3b6d2c9029809df618da7225a692b30a"
+    },
+    {
+      "source": "assets/meshes/part_045.obj",
+      "destination": "meshes/part_045.obj",
+      "size": 82425,
+      "sha256": "cef8e07a98ff66beeec6296e8987da0f59778a3ce2df7879e4dada062028afaf"
+    },
+    {
+      "source": "assets/meshes/part_046.obj",
+      "destination": "meshes/part_046.obj",
+      "size": 82419,
+      "sha256": "227b005484e4be79228439c17dda5296a61aabf78b4acae1cc8c8df83c0af03b"
+    },
+    {
+      "source": "assets/meshes/part_047.obj",
+      "destination": "meshes/part_047.obj",
+      "size": 82381,
+      "sha256": "f002719f0311107fb5842d7ac0c2422b6c6bcb42d430c750d661fa3954e554e6"
+    },
+    {
+      "source": "assets/meshes/part_048.obj",
+      "destination": "meshes/part_048.obj",
+      "size": 82395,
+      "sha256": "36937e42d1148216ac9718534848e3c0f89c90a0fa227c44fe3e6c63419fa99b"
+    },
+    {
+      "source": "assets/meshes/part_049.obj",
+      "destination": "meshes/part_049.obj",
+      "size": 82395,
+      "sha256": "dc8dcae8c2cb73688cf6b0195b00bbcc04ddbc6d444a14d2e6f9de9c60b562f5"
+    },
+    {
+      "source": "assets/meshes/part_050.obj",
+      "destination": "meshes/part_050.obj",
+      "size": 82378,
+      "sha256": "9446d1630a86d8b4dc3302e45c0a56bd8221cf4f729f35ee187bd299a887fe8d"
+    },
+    {
+      "source": "assets/meshes/part_051.obj",
+      "destination": "meshes/part_051.obj",
+      "size": 77034,
+      "sha256": "f5cef218424e535e99c97886802de793175a3ba10e1070db979ebc1c4eb666c9"
+    },
+    {
+      "source": "assets/meshes/part_052.obj",
+      "destination": "meshes/part_052.obj",
+      "size": 82400,
+      "sha256": "4e630be8ce9b69b8ad36e864353ee2c8c8e07f9d86a768fb8559d9127943a88a"
+    },
+    {
+      "source": "assets/meshes/part_053.obj",
+      "destination": "meshes/part_053.obj",
+      "size": 409568,
+      "sha256": "8f8c83b7a2686d305524ac06d239ee90b3b01fd6d8dad56cf27d76ff0f2e0a6a"
+    },
+    {
+      "source": "assets/meshes/part_054.obj",
+      "destination": "meshes/part_054.obj",
+      "size": 410738,
+      "sha256": "8479e721cd4857f38c73449ad288e25b9e9089b406c854802c895718077f89f2"
+    },
+    {
+      "source": "assets/meshes/part_055.obj",
+      "destination": "meshes/part_055.obj",
+      "size": 82340,
+      "sha256": "2928e918d385b83086f5ff4c6e5d897f6d2d87c062d2f162f073a94bcde28825"
+    },
+    {
+      "source": "assets/meshes/part_056.obj",
+      "destination": "meshes/part_056.obj",
+      "size": 82347,
+      "sha256": "2ea52f21e5d600ba1206c1c562f4472d9b5104d8247b2df682089f5e475c11a1"
+    },
+    {
+      "source": "assets/meshes/part_057.obj",
+      "destination": "meshes/part_057.obj",
+      "size": 82329,
+      "sha256": "fefed06ce282583d3e99b7080aaa04a9342826ce97a2483f247b4f76e90d5459"
+    },
+    {
+      "source": "assets/meshes/part_058.obj",
+      "destination": "meshes/part_058.obj",
+      "size": 82342,
+      "sha256": "f64e77814cafe71f94f6782ce30277cd834e6eeae994b1de27c1f2e1134a1edd"
+    },
+    {
+      "source": "assets/meshes/part_059.obj",
+      "destination": "meshes/part_059.obj",
+      "size": 82328,
+      "sha256": "5997275eb567082539da4cec08565ef94f9fd75e451dc3fef2056631965b0349"
+    },
+    {
+      "source": "assets/meshes/part_060.obj",
+      "destination": "meshes/part_060.obj",
+      "size": 82290,
+      "sha256": "2fa3e5cafc6ca375f3a66398300d860c534e814cd2357f818f08d29fd9a76055"
+    },
+    {
+      "source": "assets/meshes/part_061.obj",
+      "destination": "meshes/part_061.obj",
+      "size": 82293,
+      "sha256": "a6cfe04f3b253bd943182c1718052d7f665f8b01e1b199ce5a96fd9cdb375539"
+    },
+    {
+      "source": "assets/meshes/part_062.obj",
+      "destination": "meshes/part_062.obj",
+      "size": 82345,
+      "sha256": "1fca80ea9321cf683255d315fdb86d4f66d6bdce5b3d30363746e2df285bdf9e"
+    },
+    {
+      "source": "assets/meshes/part_063.obj",
+      "destination": "meshes/part_063.obj",
+      "size": 76949,
+      "sha256": "c664d82d35baca4a61698d6aaec90de5610f1898281e59519d8688ba1421d0c4"
+    },
+    {
+      "source": "assets/meshes/part_064.obj",
+      "destination": "meshes/part_064.obj",
+      "size": 82339,
+      "sha256": "11ad88ee01715debe27d60a87385a80b2a3a676cb1af8a3f83af7978f1a18e30"
+    },
+    {
+      "source": "assets/meshes/part_065.obj",
+      "destination": "meshes/part_065.obj",
+      "size": 410524,
+      "sha256": "9519e15941944cdd1d8e818ce4538fa368f70f43055de85b92bc4906ce4df698"
+    },
+    {
+      "source": "assets/meshes/part_066.obj",
+      "destination": "meshes/part_066.obj",
+      "size": 405166,
+      "sha256": "7a02fa5b911d6357d147bb08f73865e16c829c2f8234142702f65df03756f520"
+    },
+    {
+      "source": "assets/meshes/part_067.obj",
+      "destination": "meshes/part_067.obj",
+      "size": 81205,
+      "sha256": "030d85b6f623c463cce7ca6cc09a03765d6f53eb63a9c63e5e73cfa7283732b8"
+    },
+    {
+      "source": "assets/meshes/part_068.obj",
+      "destination": "meshes/part_068.obj",
+      "size": 81232,
+      "sha256": "ee4bd7a23d10a61bfb377dfd26b8fe0ac58058ab613325c8b088e73f7e3117d1"
+    },
+    {
+      "source": "assets/meshes/part_069.obj",
+      "destination": "meshes/part_069.obj",
+      "size": 81197,
+      "sha256": "2f095c48b48a5aa4d35479e8b4cbe1cfbbf49797f32807dc23ec2ee9c4bffcc6"
+    },
+    {
+      "source": "assets/meshes/part_070.obj",
+      "destination": "meshes/part_070.obj",
+      "size": 81216,
+      "sha256": "e7bf920ecba7d277fdfea1767021591d8a854d2a03241620fd46cb73bbf623ed"
+    },
+    {
+      "source": "assets/meshes/part_071.obj",
+      "destination": "meshes/part_071.obj",
+      "size": 81240,
+      "sha256": "1681be16d16a39ba2e3fbacf5d88d776db9ba3a806f06bd3295834566603f544"
+    },
+    {
+      "source": "assets/meshes/part_072.obj",
+      "destination": "meshes/part_072.obj",
+      "size": 81239,
+      "sha256": "31ddd59dd48cf324d4555be3646138bcd1804c1e3be2603acf45dd8e1ae3c07e"
+    },
+    {
+      "source": "assets/meshes/part_073.obj",
+      "destination": "meshes/part_073.obj",
+      "size": 81208,
+      "sha256": "42096d2784a43b360a08c134b52039209c0e0b99d193eb623df32c1fc1a45ac4"
+    },
+    {
+      "source": "assets/meshes/part_074.obj",
+      "destination": "meshes/part_074.obj",
+      "size": 81210,
+      "sha256": "2df529b268402a8369d547520c026a55ad2ec29d993a2e7c7105065562ff3102"
+    },
+    {
+      "source": "assets/meshes/part_075.obj",
+      "destination": "meshes/part_075.obj",
+      "size": 75893,
+      "sha256": "ab6d3b7c1fad59ba8caebe0167daa6c45fb1b9a0fc085c779f802b8057213316"
+    },
+    {
+      "source": "assets/meshes/part_076.obj",
+      "destination": "meshes/part_076.obj",
+      "size": 81200,
+      "sha256": "232364c8293dc43bb554262961a2a80a123c866cfbf5d73623ae13ddfc6ccd1c"
+    },
+    {
+      "source": "assets/meshes/part_077.obj",
+      "destination": "meshes/part_077.obj",
+      "size": 405006,
+      "sha256": "31cca89afe92c6bbe1b3807dc4fae1b4dd11a1b44e5a02474a157bd9ce33a947"
+    },
+    {
+      "source": "assets/meshes/part_078.obj",
+      "destination": "meshes/part_078.obj",
+      "size": 26673,
+      "sha256": "ce8809797a250a4f76159f62dad6334ed76809a2b81330287e7040c7abad14cf"
+    },
+    {
+      "source": "assets/meshes/part_079.obj",
+      "destination": "meshes/part_079.obj",
+      "size": 27179,
+      "sha256": "144286f3b8db2d0c7cd176763ef775199173d68cda56b7e556a33705c472ca4d"
+    },
+    {
+      "source": "assets/meshes/part_080.obj",
+      "destination": "meshes/part_080.obj",
+      "size": 77815,
+      "sha256": "5d0d47a5b122a3b5092b37e9c4310c9fb972cebd411951a9d5e854d4f7dc5ee6"
+    },
+    {
+      "source": "assets/meshes/part_081.obj",
+      "destination": "meshes/part_081.obj",
+      "size": 77651,
+      "sha256": "0be43711a5b417999941faf5578373b00cb627e02261e4a3c6c917f768ff4953"
+    },
+    {
+      "source": "assets/meshes/part_082.obj",
+      "destination": "meshes/part_082.obj",
+      "size": 77922,
+      "sha256": "4d9f20f668c1a1c38e1cf7ee908715b4609b99cee5885b29ebe30d7440fcad6a"
+    },
+    {
+      "source": "assets/meshes/part_083.obj",
+      "destination": "meshes/part_083.obj",
+      "size": 78606,
+      "sha256": "10606ac0bbc198700277f69afa6d4e86867abc776efaf6b69f1e40c51871fb69"
+    },
+    {
+      "source": "assets/meshes/part_084.obj",
+      "destination": "meshes/part_084.obj",
+      "size": 76518,
+      "sha256": "8ff1b1141d2b8bf5932f2b035e77386928d7420a874d3d9a46dc4c183c223957"
+    },
+    {
+      "source": "assets/meshes/part_085.obj",
+      "destination": "meshes/part_085.obj",
+      "size": 79146,
+      "sha256": "01f854add392cea22f074de5ec55b35426389cb0dc38fc392d0b5b0146509824"
+    },
+    {
+      "source": "assets/meshes/part_086.obj",
+      "destination": "meshes/part_086.obj",
+      "size": 77896,
+      "sha256": "a34caca40876aa04b5dcdddbdc754e659ad79a81403d3a2edd956af5b4aaecfa"
+    },
+    {
+      "source": "assets/meshes/part_087.obj",
+      "destination": "meshes/part_087.obj",
+      "size": 79196,
+      "sha256": "005c86b1d676d3a3d47dc1878b1fcec558fe782196df12ab9235aa779aa59da6"
+    },
+    {
+      "source": "assets/meshes/part_088.obj",
+      "destination": "meshes/part_088.obj",
+      "size": 193630,
+      "sha256": "4c23d5ae9f352eca73625ff388c6bb8a158b5029ca2558d1b50706b2039990e3"
+    },
+    {
+      "source": "assets/meshes/part_089.obj",
+      "destination": "meshes/part_089.obj",
+      "size": 78613,
+      "sha256": "404f2157e1143e527394e44e06a1cbf20e521b9de8cdfa9b6460d8d75e779d12"
+    },
+    {
+      "source": "assets/meshes/part_090.obj",
+      "destination": "meshes/part_090.obj",
+      "size": 271262,
+      "sha256": "da8267ad999d76154d598b6d2066c2180597f3fd4689f96fd4b2f1393d81a413"
+    },
+    {
+      "source": "assets/meshes/part_091.obj",
+      "destination": "meshes/part_091.obj",
+      "size": 76507,
+      "sha256": "bda2594a55215f7f9e50e3c6203628f50700b8c856842115fb10a8d47247a0bc"
+    },
+    {
+      "source": "assets/meshes/part_092.obj",
+      "destination": "meshes/part_092.obj",
+      "size": 76499,
+      "sha256": "8812c34ae1085bbf2210eba1ef974e138bcd67061b7d501fc49f903c4104470b"
+    },
+    {
+      "source": "assets/meshes/part_093.obj",
+      "destination": "meshes/part_093.obj",
+      "size": 76497,
+      "sha256": "7ccf0c00d7ae9d5462217c134ac9efc96191caed10d70d9684d5f9672363c40c"
+    },
+    {
+      "source": "assets/meshes/part_094.obj",
+      "destination": "meshes/part_094.obj",
+      "size": 76484,
+      "sha256": "e5d179550cb8fe83d02890c10963a4ae56c574dc3930d865bc12677400ea0976"
+    },
+    {
+      "source": "assets/meshes/part_095.obj",
+      "destination": "meshes/part_095.obj",
+      "size": 76501,
+      "sha256": "ac932ab1754b8a779199e707366def2f01cfc86583b935da7c0dc979bd472274"
+    },
+    {
+      "source": "assets/meshes/part_096.obj",
+      "destination": "meshes/part_096.obj",
+      "size": 76471,
+      "sha256": "20050a3a4b3f24cd362f76d51646cc1ec54e8c07c13efb5a40c302dc41fe3cd6"
+    },
+    {
+      "source": "assets/meshes/part_097.obj",
+      "destination": "meshes/part_097.obj",
+      "size": 76476,
+      "sha256": "806fc03fb365802974890d115e593bde854e4ab137205e7d5f4a0132fd50e348"
+    },
+    {
+      "source": "assets/meshes/part_098.obj",
+      "destination": "meshes/part_098.obj",
+      "size": 76472,
+      "sha256": "3324871f766eef1f5ccc56cde39f98e97d27a0de008ab3e540ab135816398e55"
+    },
+    {
+      "source": "assets/meshes/part_099.obj",
+      "destination": "meshes/part_099.obj",
+      "size": 188939,
+      "sha256": "4d1ec9f1ac5f44e1839a6ada4278bd9f1fd5fec8693134324d1675beaa46e015"
+    },
+    {
+      "source": "assets/meshes/part_100.obj",
+      "destination": "meshes/part_100.obj",
+      "size": 76483,
+      "sha256": "c2aeac06630b1a83044b6c6f88a3659ab16c6d0d531542557a69f606627917cc"
+    },
+    {
+      "source": "assets/meshes/part_101.obj",
+      "destination": "meshes/part_101.obj",
+      "size": 264339,
+      "sha256": "ff9be5322b31f784dc456ab4c830e26be850c5b87650c8c71517a7e68ee373c1"
+    },
+    {
+      "source": "assets/meshes/part_102.obj",
+      "destination": "meshes/part_102.obj",
+      "size": 77543,
+      "sha256": "0706be94520cb413a27d382a08e8c1d012ba6dd411abfef524f6208134d4f4e7"
+    },
+    {
+      "source": "assets/meshes/part_103.obj",
+      "destination": "meshes/part_103.obj",
+      "size": 80391,
+      "sha256": "2177112d8388ecd2bbc0a88458142b9188683dd326cf02997db6a6895cc68b59"
+    },
+    {
+      "source": "assets/meshes/part_104.obj",
+      "destination": "meshes/part_104.obj",
+      "size": 79271,
+      "sha256": "88251ba0bd110b2e64c206617f5b26a70a706b1fe833bbc884c2ea8d672db856"
+    },
+    {
+      "source": "assets/meshes/part_105.obj",
+      "destination": "meshes/part_105.obj",
+      "size": 79986,
+      "sha256": "bbee3e46a2c6be7381fa9af0c632d311f6950f680bc70207c7249b5bf889b6c2"
+    },
+    {
+      "source": "assets/meshes/part_106.obj",
+      "destination": "meshes/part_106.obj",
+      "size": 79033,
+      "sha256": "efad4205c424b7657e2478ef738c3c211e39235567afa36f74666bb9e5e83d6d"
+    },
+    {
+      "source": "assets/meshes/part_107.obj",
+      "destination": "meshes/part_107.obj",
+      "size": 79726,
+      "sha256": "dde911d6e8714fb6772b7f49120f28aa457d635a77a140f3ab73243f83a7f806"
+    },
+    {
+      "source": "assets/meshes/part_108.obj",
+      "destination": "meshes/part_108.obj",
+      "size": 78598,
+      "sha256": "4bc994ac659c093e3bf1b8d8af6af6b8406c6cc76a364baa7c1ddd7c23e1d8bb"
+    },
+    {
+      "source": "assets/meshes/part_109.obj",
+      "destination": "meshes/part_109.obj",
+      "size": 78585,
+      "sha256": "3b97fdbf129fae6592969b0d18a58be6f338adca56bf2d0186111070913df30c"
+    },
+    {
+      "source": "assets/meshes/part_110.obj",
+      "destination": "meshes/part_110.obj",
+      "size": 195656,
+      "sha256": "724b3ce5afffbe584a45e02feee7ce8156268643a8b535da67824db5f341ddae"
+    },
+    {
+      "source": "assets/meshes/part_111.obj",
+      "destination": "meshes/part_111.obj",
+      "size": 79138,
+      "sha256": "f611e6e2aa6417d95138644aac0905afe2d7357bb3abe69cec794becc7108c00"
+    },
+    {
+      "source": "assets/meshes/part_112.obj",
+      "destination": "meshes/part_112.obj",
+      "size": 274687,
+      "sha256": "1984aa44798ca254b893a9d5ce86c3843023e34315a322a7ad1687fb9e7f27cb"
+    },
+    {
+      "source": "assets/meshes/part_113.obj",
+      "destination": "meshes/part_113.obj",
+      "size": 77515,
+      "sha256": "932737d3c9e3534199c99e2900206f0177a33df279f5be8fdb1024f0aeadaeb8"
+    },
+    {
+      "source": "assets/meshes/part_114.obj",
+      "destination": "meshes/part_114.obj",
+      "size": 77531,
+      "sha256": "f34e50102efafb9832c7f54eb65cd92f667e6271a6842693ffdf8e70586bf48e"
+    },
+    {
+      "source": "assets/meshes/part_115.obj",
+      "destination": "meshes/part_115.obj",
+      "size": 77556,
+      "sha256": "9fce2d9f0eb60253cb529e8e9648e1a5a2a11209bf0885602bd326ac5b47c647"
+    },
+    {
+      "source": "assets/meshes/part_116.obj",
+      "destination": "meshes/part_116.obj",
+      "size": 77535,
+      "sha256": "acdc07d0ebac9a296da6afd620b7dfd60b96996f2a668934b6c895d474ea58b1"
+    },
+    {
+      "source": "assets/meshes/part_117.obj",
+      "destination": "meshes/part_117.obj",
+      "size": 77533,
+      "sha256": "1329b5163a3f0675d69ff1ec384cc377de32c11f8ff8b43ee1ccacc54135f96f"
+    },
+    {
+      "source": "assets/meshes/part_118.obj",
+      "destination": "meshes/part_118.obj",
+      "size": 77560,
+      "sha256": "214364a95218a886d8024c19111ba18956d0938143bf1774dd8e8db0a2901961"
+    },
+    {
+      "source": "assets/meshes/part_119.obj",
+      "destination": "meshes/part_119.obj",
+      "size": 77523,
+      "sha256": "b2e679c41b004e684410e46941400ad9d8967a678b3c19a7422be10cc0fd0d96"
+    },
+    {
+      "source": "assets/meshes/part_120.obj",
+      "destination": "meshes/part_120.obj",
+      "size": 77519,
+      "sha256": "51a0143f63511279a6234000ea2881508ba48a20670e317798d70b5aac4f2222"
+    },
+    {
+      "source": "assets/meshes/part_121.obj",
+      "destination": "meshes/part_121.obj",
+      "size": 191676,
+      "sha256": "49a992281030414e2c508c428c60c214866d039c6c51f085b8b41cd87089deba"
+    },
+    {
+      "source": "assets/meshes/part_122.obj",
+      "destination": "meshes/part_122.obj",
+      "size": 77550,
+      "sha256": "a49f7c8ddbe93d3cfb418bcb3916c59d9b2d8d5223c3d4f39ba75fccfee1eac8"
+    },
+    {
+      "source": "assets/meshes/part_123.obj",
+      "destination": "meshes/part_123.obj",
+      "size": 268082,
+      "sha256": "eb9cfeb9404a1c206fabcda8befb35d8af8c9b5c4f81075ef7bcdc88a04c72ae"
+    },
+    {
+      "source": "assets/meshes/part_124.obj",
+      "destination": "meshes/part_124.obj",
+      "size": 171892,
+      "sha256": "67993258623524306c17905a2d080e2afa404af09a74bc72ee26c49c67399567"
+    },
+    {
+      "source": "assets/meshes/part_125.obj",
+      "destination": "meshes/part_125.obj",
+      "size": 429145,
+      "sha256": "8b732be318906f39183c41440ec8d1084ae50ca0170429a7904cbe1ba7365b8e"
+    },
+    {
+      "source": "assets/meshes/part_127.obj",
+      "destination": "meshes/part_127.obj",
+      "size": 126317,
+      "sha256": "95d0bd66fbc1869fd84d666d6368b4763315f9980c681e6c01a64914dbb87347"
+    },
+    {
+      "source": "assets/meshes/part_128.obj",
+      "destination": "meshes/part_128.obj",
+      "size": 128741,
+      "sha256": "3b892a7ac2f9fb2ef5b62b169d58bd7394b996baedc0850d35167d22ccc7f40d"
+    },
+    {
+      "source": "assets/meshes/part_129.obj",
+      "destination": "meshes/part_129.obj",
+      "size": 25688,
+      "sha256": "b3f0d17e2bdffdaef0b162db989249eb6bc4e3fdeb1b63c27e018d05ccff841c"
+    },
+    {
+      "source": "assets/meshes/part_130.obj",
+      "destination": "meshes/part_130.obj",
+      "size": 26154,
+      "sha256": "c97fdab238b66c2b3302bf1c8fd1f221787514253bd07b2c27b2a5dab74664d7"
+    },
+    {
+      "source": "assets/meshes/part_131.obj",
+      "destination": "meshes/part_131.obj",
+      "size": 28142,
+      "sha256": "f258aed95bac2ec801b0ef03c27e23a8effe676d7604b4a35a5e04821a759ed3"
+    },
+    {
+      "source": "assets/meshes/part_132.obj",
+      "destination": "meshes/part_132.obj",
+      "size": 27924,
+      "sha256": "c2aa3ff87620f7558f9c648e245ea5a14e0904357675afcc31b754d46228994e"
+    },
+    {
+      "source": "assets/meshes/part_133.obj",
+      "destination": "meshes/part_133.obj",
+      "size": 28904,
+      "sha256": "fb00bdf94fae5c540bebf2d2501810f690552f03943f35864dcf1bf486de7342"
+    },
+    {
+      "source": "assets/meshes/part_134.obj",
+      "destination": "meshes/part_134.obj",
+      "size": 28476,
+      "sha256": "f0f43e2db9dcefd6f8ce16c38fae82ba24ca48d55568e097361522365b3f4da2"
+    },
+    {
+      "source": "assets/meshes/part_135.obj",
+      "destination": "meshes/part_135.obj",
+      "size": 29438,
+      "sha256": "c0ac531c910c6189c688f0115f2c42993289996d87488c6ccfc9297c9e1705df"
+    },
+    {
+      "source": "assets/meshes/part_136.obj",
+      "destination": "meshes/part_136.obj",
+      "size": 233692,
+      "sha256": "757c99bf589edfe72ea14b8f86d38bf414006b7e687f0e9b3889abfbc9b50535"
+    },
+    {
+      "source": "assets/meshes/part_137.obj",
+      "destination": "meshes/part_137.obj",
+      "size": 97908,
+      "sha256": "8915615c150f3a9460d069eab932b9df57c383d033e09955787a365d52baaacb"
+    },
+    {
+      "source": "assets/meshes/part_138.obj",
+      "destination": "meshes/part_138.obj",
+      "size": 99525,
+      "sha256": "1e53dddf489e4438d5d0f2dcadc61c3faecb9702e36502b1b0bd15066ca07b1e"
+    },
+    {
+      "source": "assets/meshes/part_139.obj",
+      "destination": "meshes/part_139.obj",
+      "size": 25168,
+      "sha256": "72f3249c9a8af654cd76309535b8235e51b26c2b570a24b5d6c6fd1ae73bfda5"
+    },
+    {
+      "source": "assets/meshes/part_140.obj",
+      "destination": "meshes/part_140.obj",
+      "size": 83318,
+      "sha256": "b91d4d27612d3b97daafa0bbeb1f78e756a81b16b1a893c51b452df05bd28a6e"
+    },
+    {
+      "source": "assets/meshes/part_141.obj",
+      "destination": "meshes/part_141.obj",
+      "size": 70602,
+      "sha256": "8647d88e61e0a45f6cda0b8832f0642955cf6a6cad529be9817788273f8a68d2"
+    },
+    {
+      "source": "assets/meshes/part_142.obj",
+      "destination": "meshes/part_142.obj",
+      "size": 71948,
+      "sha256": "b52151e980d8a4d0fdbe7309bc2e24658e956e83f25ba6ffaef5ec9c7320e500"
+    },
+    {
+      "source": "assets/meshes/part_143.obj",
+      "destination": "meshes/part_143.obj",
+      "size": 27517,
+      "sha256": "443f8f32fe2842d1d1ba965bfe0e0de4ecb4d40bd56fa86942a4e60bb27d22d1"
+    },
+    {
+      "source": "assets/meshes/part_144.obj",
+      "destination": "meshes/part_144.obj",
+      "size": 26818,
+      "sha256": "93e362408e2eab95ba72633fbf5bc461449b396778106b0827af08f904307c4f"
+    },
+    {
+      "source": "assets/meshes/part_145.obj",
+      "destination": "meshes/part_145.obj",
+      "size": 26310,
+      "sha256": "97c599cbaad8fa1121c092a61d494c0f5c03649cf0cc1258258426683938c98d"
+    },
+    {
+      "source": "assets/meshes/part_146.obj",
+      "destination": "meshes/part_146.obj",
+      "size": 475929,
+      "sha256": "1ecbd6e813b137d68dda80746c071b533e7adbd7ba9e8e710b600c84f56f84e5"
+    },
+    {
+      "source": "assets/meshes/part_147.obj",
+      "destination": "meshes/part_147.obj",
+      "size": 475832,
+      "sha256": "8d2cbe9dd16e996dcbcf5f8ba834f33201cfb654425b45859eecdb8f5f69532a"
+    },
+    {
+      "source": "assets/meshes/part_148.obj",
+      "destination": "meshes/part_148.obj",
+      "size": 233399,
+      "sha256": "2a1a433044f5abe6d3a78eb6343bab83c050ea7ba8d3ea294ac293c0aa26c5ef"
+    },
+    {
+      "source": "assets/meshes/part_149.obj",
+      "destination": "meshes/part_149.obj",
+      "size": 232937,
+      "sha256": "611a1504c12b5bb74ea4f1c83bf86b522d6bddf65bb05facdc1b6925ef33dc72"
+    },
+    {
+      "source": "assets/meshes/part_150.obj",
+      "destination": "meshes/part_150.obj",
+      "size": 29410,
+      "sha256": "0adebc6b1a5a90a42403f882b981e337c4427366d9368d98062fc15cc3f7aa99"
+    },
+    {
+      "source": "assets/meshes/part_151.obj",
+      "destination": "meshes/part_151.obj",
+      "size": 29940,
+      "sha256": "d1089fb4a2e47c2b68de5e90d75c86bff1b3eabb1c671e802d63776e1218d2f9"
+    },
+    {
+      "source": "assets/meshes/part_152.obj",
+      "destination": "meshes/part_152.obj",
+      "size": 27466,
+      "sha256": "0563fc03997aa197e07648485323f9cca599078252b5976cc103a087a547a353"
+    },
+    {
+      "source": "assets/meshes/part_153.obj",
+      "destination": "meshes/part_153.obj",
+      "size": 26543,
+      "sha256": "d647f67c48abcbb39965c5ad934bcec6567bdb93ba2485fd91d01726f95a0a27"
+    },
+    {
+      "source": "assets/meshes/part_154.obj",
+      "destination": "meshes/part_154.obj",
+      "size": 27967,
+      "sha256": "055c8e794f239122256e2115849cc9254798e673ab0b2bad6b52421e3e2f9d51"
+    },
+    {
+      "source": "assets/meshes/part_155.obj",
+      "destination": "meshes/part_155.obj",
+      "size": 27059,
+      "sha256": "6cd85be480fbead711f481305a4d787429b1f19a8cb8a6dbf766fca78975aa1e"
+    },
+    {
+      "source": "assets/meshes/part_156.obj",
+      "destination": "meshes/part_156.obj",
+      "size": 119262,
+      "sha256": "7d2cdd75c06cb81c2fa74ccd532454b3443d1d20c75a6f6b14ebb3de0d8d8b33"
+    }
+  ]
+}
