@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "scope": "colcon build plus real ros2 launch and cross-process DDS /clock",
+  "process_return_code": 0,
+  "physics_dt_seconds": 0.0005,
+  "profile": "hardware_2s",
+  "native_viewer_enabled": true,
+  "invalid_profile_rejected": true,
+  "colcon_build": "passed",
+  "startup": true,
+  "sigint_clean_shutdown": true,
+  "received_clock_messages": 101,
+  "last_simulation_clock_seconds": 1.0,
+  "clock_strictly_increasing": true,
+  "ros_domain_id": "75",
+  "external_velocity_commands_sent": 138,
+  "received_odom_messages": 100,
+  "body_x_range_m": 0.026840571859428886,
+  "python_version": "3.14.10",
+  "tool_versions": {
+    "colcon-core": "0.21.3",
+    "setuptools": "79.0.1",
+    "mujoco": "3.17.0"
+  },
+  "source_sha256": {
+    "src/wheellegged/model.py": "b8ae0ce2684dd6a285eac083cabbb014c5a48f85d68f2a8e4f3829ea3d8010ae",
+    "src/wheellegged/control.py": "e641750d48e7ccd0d889cd963655b303cca3e4b4919f1805c09148265ac5eed0",
+    "src/wheellegged/lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+    "src/wheellegged/state.py": "cca37a8fd62d7440c1aab00293d9bef23df1a1d90aeb888d8b47fd1b580d86c9",
+    "src/wheellegged/jump.py": "179ffc28a560846c625f399896d00b456cf8c56f92543daac35edb0a4f0f1514",
+    "scripts/ros2_launch_smoke.py": "38b557cb8bda67de5a15abb527c141b765e21afb333c032d4b889667d8271dcb",
+    "src/wheellegged/hardware.py": "425dd6b62fbfdb324d34d3da0825f56507408e1c054d4de57fa45144b7bc027b",
+    "src/wheellegged/mass_properties.py": "9aa016dbdfd8ac02b99e5b39d78b2237757c63c8cfcd1a4de4b049211ab9e974",
+    "src/wheellegged/viewer.py": "3622ba0615c8d1e662022c4222e7645587e5e6a145df1775c79ce7ec0892a441",
+    "config/hardware_parameters.json": "9048d38ec46bb4a802f9256ab9cccb2b71e85ae445b6612c50c33c1d1a240631",
+    "models/cad_mass_properties.json": "272ca92483dd6af924a651c136cdb8f4253422f192ffd2a94f3055acc9b4b683",
+    "ros2/wheellegged_ros/wheellegged_ros/sim_node.py": "e6d9c9cab882bd8fcf4c32d9b993777e4e47fa089debd8aa6441ef1a8f2c16e5",
+    "ros2/wheellegged_ros/setup.py": "087758a2d3214dedccc69044b86f4424d037f59e2801da799b86dedc71800cf6",
+    "ros2/wheellegged_ros/package.xml": "3ed93d2ac23296d43b303ac6f7cfa2beba0fb6766b94982e94c8f2fad5d783b7",
+    "ros2/wheellegged_ros/launch/simulation.launch.py": "e58d7cc9a5ecd811f1ead17696d4460d6be64ef8528a87c9bc1fb1c263436748"
+  }
+}

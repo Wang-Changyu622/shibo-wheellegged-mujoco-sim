@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "real DDS adapter integration; not a control-performance test",
+  "simulated_seconds": 2.8000000000001024,
+  "received_messages": {
+    "clock": 279,
+    "joints": 279,
+    "imu": 279,
+    "odom": 279,
+    "tf": 279,
+    "tf_static": 1
+  },
+  "forward_command_received": true,
+  "reverse_command_received": true,
+  "command_timeout_stopped_reference": true,
+  "jump_events_forwarded": 1,
+  "quaternion_and_frames_valid": true,
+  "monotonic_clock": true,
+  "stamped_mujoco_fields_match": true,
+  "static_imu_transform_matches_model": true,
+  "rotated_body_frame": {
+    "passed": true,
+    "oracle": "body-origin Jacobian and free-joint kinematics",
+    "expected_twist_angular_then_linear": [
+      0.4000000000000001,
+      0.5,
+      0.6,
+      0.29521465221347865,
+      0.08554917002085087,
+      0.2133767762133883
+    ],
+    "received_twist_angular_then_linear": [
+      0.39999999999999997,
+      0.5,
+      0.6,
+      0.29521465221347865,
+      0.08554917002085087,
+      0.2133767762133883
+    ],
+    "inertial_frame_twist_difference_norm": 1.4244555560843493
+  },
+  "profile": "hardware_2s",
+  "robot_mass_kg": 0.3176493810131978,
+  "physics_dt_seconds": 0.0005,
+  "mujoco_version": "3.17.0",
+  "joint_count": 8,
+  "joint_readings_dynamic": true,
+  "invalid_command_checks": [
+    {
+      "command_unchanged": true,
+      "watchdog_not_refreshed": true
+    },
+    {
+      "command_unchanged": true,
+      "watchdog_not_refreshed": true
+    }
+  ],
+  "ros_domain_id": "73",
+  "source_sha256": {
+    "src/wheellegged/model.py": "b8ae0ce2684dd6a285eac083cabbb014c5a48f85d68f2a8e4f3829ea3d8010ae",
+    "src/wheellegged/control.py": "e641750d48e7ccd0d889cd963655b303cca3e4b4919f1805c09148265ac5eed0",
+    "src/wheellegged/lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+    "src/wheellegged/state.py": "cca37a8fd62d7440c1aab00293d9bef23df1a1d90aeb888d8b47fd1b580d86c9",
+    "src/wheellegged/jump.py": "179ffc28a560846c625f399896d00b456cf8c56f92543daac35edb0a4f0f1514",
+    "src/wheellegged/hardware.py": "425dd6b62fbfdb324d34d3da0825f56507408e1c054d4de57fa45144b7bc027b",
+    "src/wheellegged/mass_properties.py": "9aa016dbdfd8ac02b99e5b39d78b2237757c63c8cfcd1a4de4b049211ab9e974",
+    "config/hardware_parameters.json": "9048d38ec46bb4a802f9256ab9cccb2b71e85ae445b6612c50c33c1d1a240631",
+    "models/cad_mass_properties.json": "272ca92483dd6af924a651c136cdb8f4253422f192ffd2a94f3055acc9b4b683",
+    "ros2/wheellegged_ros/wheellegged_ros/sim_node.py": "e6d9c9cab882bd8fcf4c32d9b993777e4e47fa089debd8aa6441ef1a8f2c16e5",
+    "scripts/ros2_smoke.py": "b490e91fa3eb4c965515c174ee3933cfa8e07fa6fe77aa57903866a6c124da72"
+  }
+}

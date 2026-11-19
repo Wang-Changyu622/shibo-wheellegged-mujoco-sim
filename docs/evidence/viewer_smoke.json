@@ -1,0 +1,1311 @@
+{
+  "schema_version": 2,
+  "test_date": "2026-11-20",
+  "created_at_utc": "2026-11-19T17:33:53.479694+00:00",
+  "mujoco_version": "3.17.0",
+  "glfw_python_version": "2.11.0",
+  "python_version": "3.14.10",
+  "platform": "Linux",
+  "display": ":0",
+  "method": "Real application-owned GLFW windows and MuJoCo mjv/mjr rendering. PRESS, RELEASE, REPEAT and focus events are injected into the registered GLFW callbacks from the render thread, then consumed by the production input queue. No OS-level input automation and no manual keyboard claim.",
+  "scope": "Window rendering/lifecycle, action-state input semantics, no-repeat hold, release/focus/stop/pause/reset, one-shot jump and scene changes. Headless motion cases separately measure true closed-loop turning and braking; not hardware validation.",
+  "source_sha256": "3622ba0615c8d1e662022c4222e7645587e5e6a145df1775c79ce7ec0892a441",
+  "probe_sha256": "8fc3264c430a196836f1dc78fcbb6987ec1eea10bf5943795b1ff08a4628291f",
+  "automatic_timeout": {
+    "reason": "duration_elapsed",
+    "wall_time_s": 3.0121796799999174,
+    "frames": 146,
+    "physics_steps": 4844,
+    "physics_timestep_s": 0.0005,
+    "render_hz_target": 60.0,
+    "input_api": "glfw_press_release_focus",
+    "window_closed": true,
+    "profile": "hardware_2s",
+    "scenario": "move",
+    "terrain": "flat",
+    "automatic": true,
+    "paused": false,
+    "focused": true,
+    "held_keys": [],
+    "camera_follow": true,
+    "scene_visits": [
+      "move"
+    ],
+    "received_keys": [],
+    "received_key_events": [],
+    "received_focus_events": [
+      true
+    ],
+    "final_simulation_time_s": 2.421999999999976,
+    "final_command": {
+      "velocity": 0.12,
+      "yaw_rate": 0.0
+    },
+    "jump_phase": "balance",
+    "jump_request_count": 0,
+    "warning_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "callback_integration": {
+    "reason": "escape",
+    "wall_time_s": 4.256008600999849,
+    "frames": 127,
+    "physics_steps": 3848,
+    "physics_timestep_s": 0.0005,
+    "render_hz_target": 60.0,
+    "input_api": "glfw_press_release_focus",
+    "window_closed": true,
+    "profile": "hardware_2s",
+    "scenario": "move",
+    "terrain": "flat",
+    "automatic": true,
+    "paused": false,
+    "focused": true,
+    "held_keys": [
+      256
+    ],
+    "camera_follow": true,
+    "scene_visits": [
+      "balance",
+      "step",
+      "bridge",
+      "jump",
+      "balance",
+      "move"
+    ],
+    "received_keys": [
+      87,
+      65,
+      83,
+      87,
+      68,
+      87,
+      65,
+      87,
+      87,
+      88,
+      87,
+      80,
+      82,
+      32,
+      74,
+      70,
+      77,
+      77,
+      51,
+      52,
+      53,
+      49,
+      50,
+      256
+    ],
+    "received_key_events": [
+      {
+        "key": 87,
+        "action": 1
+      },
+      {
+        "key": 65,
+        "action": 1
+      },
+      {
+        "key": 87,
+        "action": 0
+      },
+      {
+        "key": 65,
+        "action": 0
+      },
+      {
+        "key": 83,
+        "action": 1
+      },
+      {
+        "key": 87,
+        "action": 1
+      },
+      {
+        "key": 83,
+        "action": 0
+      },
+      {
+        "key": 87,
+        "action": 0
+      },
+      {
+        "key": 68,
+        "action": 1
+      },
+      {
+        "key": 68,
+        "action": 0
+      },
+      {
+        "key": 87,
+        "action": 1
+      },
+      {
+        "key": 65,
+        "action": 1
+      },
+      {
+        "key": 87,
+        "action": 1
+      },
+      {
+        "key": 65,
+        "action": 2
+      },
+      {
+        "key": 87,
+        "action": 1
+      },
+      {
+        "key": 88,
+        "action": 1
+      },
+      {
+        "key": 88,
+        "action": 0
+      },
+      {
+        "key": 87,
+        "action": 2
+      },
+      {
+        "key": 87,
+        "action": 0
+      },
+      {
+        "key": 87,
+        "action": 1
+      },
+      {
+        "key": 80,
+        "action": 1
+      },
+      {
+        "key": 80,
+        "action": 0
+      },
+      {
+        "key": 87,
+        "action": 0
+      },
+      {
+        "key": 80,
+        "action": 2
+      },
+      {
+        "key": 82,
+        "action": 1
+      },
+      {
+        "key": 82,
+        "action": 0
+      },
+      {
+        "key": 32,
+        "action": 1
+      },
+      {
+        "key": 32,
+        "action": 0
+      },
+      {
+        "key": 74,
+        "action": 1
+      },
+      {
+        "key": 74,
+        "action": 2
+      },
+      {
+        "key": 74,
+        "action": 2
+      },
+      {
+        "key": 74,
+        "action": 2
+      },
+      {
+        "key": 74,
+        "action": 0
+      },
+      {
+        "key": 70,
+        "action": 1
+      },
+      {
+        "key": 70,
+        "action": 0
+      },
+      {
+        "key": 77,
+        "action": 1
+      },
+      {
+        "key": 77,
+        "action": 0
+      },
+      {
+        "key": 77,
+        "action": 1
+      },
+      {
+        "key": 77,
+        "action": 0
+      },
+      {
+        "key": 51,
+        "action": 1
+      },
+      {
+        "key": 51,
+        "action": 0
+      },
+      {
+        "key": 52,
+        "action": 1
+      },
+      {
+        "key": 52,
+        "action": 0
+      },
+      {
+        "key": 53,
+        "action": 1
+      },
+      {
+        "key": 53,
+        "action": 0
+      },
+      {
+        "key": 49,
+        "action": 1
+      },
+      {
+        "key": 49,
+        "action": 0
+      },
+      {
+        "key": 50,
+        "action": 1
+      },
+      {
+        "key": 50,
+        "action": 0
+      },
+      {
+        "key": 256,
+        "action": 1
+      }
+    ],
+    "received_focus_events": [
+      true,
+      true,
+      false,
+      true
+    ],
+    "final_simulation_time_s": 0.04950000000000004,
+    "final_command": {
+      "velocity": 0.0,
+      "yaw_rate": 0.0
+    },
+    "jump_phase": "balance",
+    "jump_request_count": 0,
+    "warning_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "headless_motion": {
+    "left": {
+      "keys": "W+A",
+      "metrics": {
+        "held_seconds": 3.0,
+        "release_recovery_seconds": 6.0,
+        "moving_displacement_xy_m": [
+          0.26608395347148794,
+          0.18776329946622883
+        ],
+        "moving_translation_m": 0.32566198261611945,
+        "yaw_change_rad": 1.1212281818325438,
+        "speed_at_release_m_s": 0.12269828755446391,
+        "qvel_norm_at_release": 9.550891387057582,
+        "pitch_peak_rad": 0.05983156398658041,
+        "roll_peak_rad": 0.00013154023183882925,
+        "tail_speed_peak_m_s": 0.0002056636395849615,
+        "tail_yaw_rate_peak_rad_s": 0.004285828489919752,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "checks": {
+        "target_zero_on_release": true,
+        "release_does_not_write_physics_state": true,
+        "actual_motion_still_present_at_release": true,
+        "real_forward_translation": true,
+        "turns_in_requested_direction": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "released_speed_converges": true,
+        "released_yaw_rate_converges": true,
+        "no_solver_warnings": true
+      },
+      "passed": true
+    },
+    "right": {
+      "keys": "W+D",
+      "metrics": {
+        "held_seconds": 3.0,
+        "release_recovery_seconds": 6.0,
+        "moving_displacement_xy_m": [
+          0.2656746061545443,
+          -0.18805645355047512
+        ],
+        "moving_translation_m": 0.32549689104099633,
+        "yaw_change_rad": -1.1227350191623409,
+        "speed_at_release_m_s": 0.12255800540787523,
+        "qvel_norm_at_release": 9.551309018295385,
+        "pitch_peak_rad": 0.05977251224565995,
+        "roll_peak_rad": 0.0001397320126194798,
+        "tail_speed_peak_m_s": 0.0001866589050789643,
+        "tail_yaw_rate_peak_rad_s": 0.004298181109973035,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "checks": {
+        "target_zero_on_release": true,
+        "release_does_not_write_physics_state": true,
+        "actual_motion_still_present_at_release": true,
+        "real_forward_translation": true,
+        "turns_in_requested_direction": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "released_speed_converges": true,
+        "released_yaw_rate_converges": true,
+        "no_solver_warnings": true
+      },
+      "passed": true
+    }
+  },
+  "injected_events": [
+    {
+      "kind": "focus",
+      "focused": true
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 65,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 65,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 83,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 83,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 68,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 68,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 65,
+      "action": 1
+    },
+    {
+      "kind": "focus",
+      "focused": false
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 65,
+      "action": 2
+    },
+    {
+      "kind": "focus",
+      "focused": true
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 88,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 88,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 2
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 80,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 80,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 87,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 80,
+      "action": 2
+    },
+    {
+      "kind": "key",
+      "key": 82,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 82,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 32,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 32,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 74,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 74,
+      "action": 2
+    },
+    {
+      "kind": "key",
+      "key": 74,
+      "action": 2
+    },
+    {
+      "kind": "key",
+      "key": 74,
+      "action": 2
+    },
+    {
+      "kind": "key",
+      "key": 74,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 70,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 70,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 77,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 77,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 77,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 77,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 51,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 51,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 52,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 52,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 53,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 53,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 49,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 49,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 50,
+      "action": 1
+    },
+    {
+      "kind": "key",
+      "key": 50,
+      "action": 0
+    },
+    {
+      "kind": "key",
+      "key": 256,
+      "action": 1
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "focus_callback_ready",
+      "simulation_time_s": 0.01650000000000001,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.008908934000373847
+    },
+    {
+      "label": "w_press_moves_forward",
+      "simulation_time_s": 0.03300000000000002,
+      "scenario": "balance",
+      "velocity_target": 0.12,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.015442786000221531
+    },
+    {
+      "label": "held_without_repeat_for_one_second",
+      "simulation_time_s": 1.1499999999999289,
+      "scenario": "balance",
+      "velocity_target": 0.12,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 67,
+      "observed_wall_seconds": 1.116259798000101
+    },
+    {
+      "label": "w_a_combination",
+      "simulation_time_s": 1.166499999999927,
+      "scenario": "balance",
+      "velocity_target": 0.12,
+      "yaw_target": 0.4,
+      "focused": true,
+      "held_keys": [
+        65,
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016752762000123766
+    },
+    {
+      "label": "release_w_preserves_held_turn",
+      "simulation_time_s": 1.1829999999999252,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.4,
+      "focused": true,
+      "held_keys": [
+        65
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01640028700012408
+    },
+    {
+      "label": "release_a_zeros_axes",
+      "simulation_time_s": 1.1999999999999234,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016910806999931083
+    },
+    {
+      "label": "s_press_moves_backward",
+      "simulation_time_s": 1.2164999999999215,
+      "scenario": "balance",
+      "velocity_target": -0.12,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        83
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016860231000009662
+    },
+    {
+      "label": "opposite_w_s_cancel",
+      "simulation_time_s": 1.2329999999999197,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        83,
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.020991172999856644
+    },
+    {
+      "label": "release_s_restores_held_w",
+      "simulation_time_s": 1.2499999999999178,
+      "scenario": "balance",
+      "velocity_target": 0.12,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016199407999920368
+    },
+    {
+      "label": "release_last_motion_key_zeros_target",
+      "simulation_time_s": 1.266499999999916,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016052338999998028
+    },
+    {
+      "label": "d_press_turns_right",
+      "simulation_time_s": 1.2829999999999142,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": -0.4,
+      "focused": true,
+      "held_keys": [
+        68
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.013078552000024501
+    },
+    {
+      "label": "release_d_stops_turn_target",
+      "simulation_time_s": 1.2999999999999123,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.017053346000011516
+    },
+    {
+      "label": "moving_before_focus_loss",
+      "simulation_time_s": 1.3164999999999105,
+      "scenario": "balance",
+      "velocity_target": 0.12,
+      "yaw_target": 0.4,
+      "focused": true,
+      "held_keys": [
+        65,
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01644712500001333
+    },
+    {
+      "label": "focus_loss_clears_held_and_targets",
+      "simulation_time_s": 1.3334999999999086,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": false,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016822687000058067
+    },
+    {
+      "label": "unfocused_press_and_repeat_ignored",
+      "simulation_time_s": 1.3499999999999068,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": false,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01642677400013781
+    },
+    {
+      "label": "refocus_does_not_resume_movement",
+      "simulation_time_s": 1.366499999999905,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016732278999825212
+    },
+    {
+      "label": "fresh_press_after_refocus",
+      "simulation_time_s": 1.3834999999999031,
+      "scenario": "balance",
+      "velocity_target": 0.12,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01681451600006767
+    },
+    {
+      "label": "x_explicit_stop",
+      "simulation_time_s": 1.3999999999999013,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01647974700017585
+    },
+    {
+      "label": "repeat_does_not_undo_x_stop",
+      "simulation_time_s": 1.4164999999998995,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01675132999980633
+    },
+    {
+      "label": "fresh_press_after_x",
+      "simulation_time_s": 1.4334999999998976,
+      "scenario": "balance",
+      "velocity_target": 0.12,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        87
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01671626200004539
+    },
+    {
+      "label": "pause_clears_movement",
+      "simulation_time_s": 1.4334999999998976,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": true,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.012156429999777174
+    },
+    {
+      "label": "pause_freezes_physics",
+      "simulation_time_s": 1.4334999999998976,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": true,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 16,
+      "observed_wall_seconds": 0.26650388400003067
+    },
+    {
+      "label": "release_and_repeat_while_paused",
+      "simulation_time_s": 1.4334999999998976,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": true,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.016815551000036066
+    },
+    {
+      "label": "reset_while_paused",
+      "simulation_time_s": 0.0,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": true,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.03618198799995298
+    },
+    {
+      "label": "space_resumes_without_stale_keys",
+      "simulation_time_s": 0.020500000000000015,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.00692905999994764
+    },
+    {
+      "label": "jump_press_is_one_pulse",
+      "simulation_time_s": 0.03300000000000002,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        74
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 1,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.012397236000197154
+    },
+    {
+      "label": "jump_repeat_does_not_retrigger",
+      "simulation_time_s": 0.19950000000000015,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [
+        74
+      ],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 1,
+      "observed_frames": 10,
+      "observed_wall_seconds": 0.16559870599985516
+    },
+    {
+      "label": "jump_release_does_not_retrigger",
+      "simulation_time_s": 0.21650000000000016,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": true,
+      "jump_request_count": 1,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01675893499987069
+    },
+    {
+      "label": "free_camera_toggle",
+      "simulation_time_s": 0.23300000000000018,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": false,
+      "jump_request_count": 1,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01653291899992837
+    },
+    {
+      "label": "automatic_mode_toggle",
+      "simulation_time_s": 0.01650000000000001,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": true,
+      "camera_follow": false,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.036018371999944065
+    },
+    {
+      "label": "manual_mode_toggle_stops",
+      "simulation_time_s": 0.04150000000000003,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": false,
+      "camera_follow": false,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.01824803699992117
+    },
+    {
+      "label": "scene_step",
+      "simulation_time_s": 0.018000000000000013,
+      "scenario": "step",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": true,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.3530311190002067
+    },
+    {
+      "label": "scene_bridge",
+      "simulation_time_s": 0.04950000000000004,
+      "scenario": "bridge",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": true,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.3524287310001455
+    },
+    {
+      "label": "scene_jump",
+      "simulation_time_s": 0.04950000000000004,
+      "scenario": "jump",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": true,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.3897967560001234
+    },
+    {
+      "label": "scene_balance",
+      "simulation_time_s": 0.04950000000000004,
+      "scenario": "balance",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": true,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.34333618500022567
+    },
+    {
+      "label": "scene_move",
+      "simulation_time_s": 0.04950000000000004,
+      "scenario": "move",
+      "velocity_target": 0.0,
+      "yaw_target": 0.0,
+      "focused": true,
+      "held_keys": [],
+      "paused": false,
+      "automatic": true,
+      "camera_follow": true,
+      "jump_request_count": 0,
+      "observed_frames": 1,
+      "observed_wall_seconds": 0.3328496069998437
+    }
+  ],
+  "checks": {
+    "wall_timeout_exit": true,
+    "timeout_fixed_step": true,
+    "timeout_render_and_physics": true,
+    "focus_callback_ready": true,
+    "w_press_moves_forward": true,
+    "held_without_repeat_for_one_second": true,
+    "w_a_combination": true,
+    "release_w_preserves_held_turn": true,
+    "release_a_zeros_axes": true,
+    "s_press_moves_backward": true,
+    "opposite_w_s_cancel": true,
+    "release_s_restores_held_w": true,
+    "release_last_motion_key_zeros_target": true,
+    "d_press_turns_right": true,
+    "release_d_stops_turn_target": true,
+    "moving_before_focus_loss": true,
+    "focus_loss_clears_held_and_targets": true,
+    "unfocused_press_and_repeat_ignored": true,
+    "refocus_does_not_resume_movement": true,
+    "fresh_press_after_refocus": true,
+    "x_explicit_stop": true,
+    "repeat_does_not_undo_x_stop": true,
+    "fresh_press_after_x": true,
+    "pause_clears_movement": true,
+    "pause_freezes_physics": true,
+    "release_and_repeat_while_paused": true,
+    "reset_while_paused": true,
+    "space_resumes_without_stale_keys": true,
+    "jump_press_is_one_pulse": true,
+    "jump_repeat_does_not_retrigger": true,
+    "jump_release_does_not_retrigger": true,
+    "free_camera_toggle": true,
+    "automatic_mode_toggle": true,
+    "manual_mode_toggle_stops": true,
+    "scene_step": true,
+    "scene_bridge": true,
+    "scene_jump": true,
+    "scene_balance": true,
+    "scene_move": true,
+    "same_window_scene_switches": true,
+    "all_injected_key_actions_received": true,
+    "genuine_release_and_repeat_actions_exercised": true,
+    "escape_exits_window": true,
+    "glfw_input_api": true,
+    "interactive_fixed_step": true,
+    "interactive_no_solver_warnings": true,
+    "both_windows_closed": true,
+    "all_created_windows_destroyed": true,
+    "no_new_threads_left": true,
+    "probe_completed_without_error": true,
+    "closed_loop_left_and_right_motion": true
+  },
+  "errors": [],
+  "windows_created": 2,
+  "windows_destroyed": 2,
+  "remaining_threads": [],
+  "passed": true
+}
