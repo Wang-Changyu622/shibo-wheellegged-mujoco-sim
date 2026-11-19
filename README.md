@@ -33,6 +33,8 @@ WHEELLEGGED_PYTHON=/path/to/ros-compatible/python bash scripts/setup.sh
 
 采用游戏式 **WASD按住控制、松开停车**：`W`前进、`S`后退（±0.12m/s），`A`左转、`D`右转（±0.4rad/s），可组合按键。释放运动键后相应目标归零，由平衡控制器减速；窗口失焦会清除按键，避免持续运动。`X`停车、`J`单次跳跃；`1–5`切换五个自动演示，`M`切换手动/自动，`R`重置，`P`暂停，`F`切换跟随视角。窗口显示目标与实测速度、姿态、轮接触和执行器状态。物理步长固定0.5ms，画面约60Hz刷新，完整操作见[可视化说明](docs/visualization.md)。核心指令边界为速度±0.3m/s、偏航率±1rad/s，不表示边界内任意复合动作均已验证。
 
+左右腿可以单独调整：按住 `Q/Z` 伸长/缩短左腿，`E/C` 伸长/缩短右腿；松开保持当前高度，`T/G` 同时伸长/缩短双腿，`H` 恢复双腿默认高度。平地左右腿不等长时，机身会形成相应的横滚姿态。`J` 请求站立跳跃并清除运动键；尚在快速移动或姿态不满足条件时会明确拒绝，停稳后重新按 `J`。跳跃期间双腿由状态机接管，落地回稳后恢复此前设定的左右高度。
+
 硬件JSON修改后请重启仿真进程，使新配置生效。
 
 默认 `--profile hardware_2s` 使用用户确认的2S标称7.4V、电机/舵机规格约束及修正组件质量。`--profile reference` 保留旧参考参数用于对照。来源、换算及待测项见[硬件参数](docs/hardware_parameters.md)和[质量审计](docs/hardware_mass_audit.md)。
@@ -54,7 +56,7 @@ WHEELLEGGED_PYTHON=/path/to/ros-compatible/python bash scripts/setup.sh
 - 156 个 CAD 可视零件、左右四杆闭环、浮动机身；轮半径 18.5 mm、轮距 87.3 mm。
 - 默认两轮q轴电压控制范围 ±3.7 V，与2S母线下SinePWM及配套反电动势近似一致；两腿位置伺服力矩范围 ±0.14709975 N·m。没有锁机身、位姿驱动移动、外加跳跃升力或瞬时速度重置。
 - 用实际 MuJoCo 质量矩阵建立无滑滚动的局部倒立摆近似，解离散 LQR；七个腿姿态插值增益，计入反电动势和关节阻尼。完整仿真保留被动闭链与接触。
-- 保留共同高度的左右腿差分调平；到达髋限位时，只使用两侧都可用的差分行程。
+- 左右高度可分别指定，四杆几何差决定横滚目标；反馈修正其误差，使用剩余髋行程并限制调整速率。默认等高目标继续自动调平。
 - 跳跃由持续离地/持续接地确认驱动，带起跳前守门及超时恢复。轮净空与质心跳高分开记录。
 - 默认物理/控制周期 0.5 ms；ROS 发布 100 Hz。1 ms 曾出现可见的输入数值抖动，因此单独保留步长对照。
 
@@ -72,6 +74,7 @@ bash scripts/ros2_run.sh --ros-args -p use_sim_time:=true -p viewer:=true
 ```bash
 ros2 topic pub --rate 10 /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 0.05}}'
 ros2 topic pub --once /jump std_msgs/msg/Empty '{}'
+ros2 topic pub --once /leg_command sensor_msgs/msg/JointState '{name: [L_hip, R_hip], position: [-0.24, -0.20]}'
 ```
 
 发布 `/clock`、`/joint_states`、`/imu`、`/odom`、TF；0.5 s 未更新速度命令后目标归零。ROS 消息输入直接复用同一物理控制核心。构建、启动和真实 DDS 测试见 [ROS 说明](ros2/README.md)。
