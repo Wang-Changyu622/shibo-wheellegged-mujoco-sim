@@ -7,7 +7,7 @@ name = "shibo-wheellegged"
 version = "0.1.0"
 description = "Reproducible CAD-based micro wheel-legged robot simulation"
 requires-python = ">=3.10"
-dependencies = ["mujoco>=3.17,<3.18", "numpy>=2.0", "scipy>=1.14", "matplotlib>=3.8", "imageio>=2.34", "imageio-ffmpeg>=0.5"]
+dependencies = ["mujoco>=3.17,<3.18", "glfw>=2.8,<3", "numpy>=2.0", "scipy>=1.14", "matplotlib>=3.8", "imageio>=2.34", "imageio-ffmpeg>=0.5"]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
