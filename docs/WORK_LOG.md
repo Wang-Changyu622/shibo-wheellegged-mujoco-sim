@@ -1,6 +1,18 @@
 # 开发与上下文记录
 
-用户目标：基于世博微型轮腿车 CAD 与硬件代码，做可复现 ROS 2 + MuJoCo 仿真，覆盖平衡、前后移动、单边桥、台阶、跳跃；本地验证之后上传 GitHub。额外加速度计优化留到后阶段。当前工作分支尚未发布。
+用户目标：基于世博微型轮腿车 CAD 与硬件代码，做可复现 ROS 2 + MuJoCo 仿真，覆盖平衡、前后移动、单边桥、台阶、跳跃；本地验证之后上传 GitHub。额外加速度计优化留到后阶段。公开仓库为 https://github.com/Wang-Changyu622/shibo-wheellegged-mujoco-sim ，按先本地验收、后发布执行。
+
+## 2026-11-20 跳跃与左右独立高度追加需求
+
+- 用户要求在WASD游戏式操作基础上加入跳跃与左右高低调整。现在Q/Z左腿伸长/缩短，E/C右腿伸长/缩短，T/G双腿，H默认高度；高度键松开保持请求。J仅一次请求，清运动/高度held状态，跳跃中不积存新高度输入。
+- `Command`新增可选左右髋目标；未指定时继承共同角度。保持原[-.30,0]rad范围与硬件限矩；四杆高度差确定roll参考，剩余行程分配和抗饱和用于反馈。每腿名义参考斜坡<=.5rad/s，键盘请求变化.1rad/s。
+- 跳跃接收稳定的受支持侧倾姿态；crouch平滑收齐，push前检查真实近对称/近直立和运动状态。落地回稳后恢复原左右请求。姿态/速度不满足时有明确拒绝或恢复原因，不用直接写状态制造跳跃。
+- 独立物理5案例114项检查全部通过：单腿实际升约5.14mm、另一腿变化约.074mm；全差分实际约28.09mm/roll.311rad；默认/差分/全差分J真实腾空59–59.5ms，双轮最小净空峰值约6.98mm；W+Q前进.265m后松键保留高度并停车。非轮支撑0、求解器警告0，闭链峰值<.188mm。
+- 全套pytest 140 passed，2条既有Lark弃用警告。新窗口探针72项通过，输入单测21项通过。五个默认场景各32个trace数组与旧Control类精确相同（numpy.array_equal）；共享组件和源hash记录在default_trajectory_compatibility.json。
+- ROS新增命名JointState `/leg_command`，使用replace保留高度请求；真实DDS验证名称映射、无效消息拒绝、速度命令/超时后保持。普通colcon与无头/窗口launch均通过，子进程clean exit已核查。
+- 当前证据：docs/evidence/leg_motion.json、viewer_smoke.json、pytest_with_leg_controls.txt、ros2_*.json；所有对应源码hash一致。完整轨迹outputs/leg-motion/final，真实重放视频outputs/leg-motion/height-and-jump.mp4及来源video_provenance.json。
+- 本轮开发分支codex/leg-height-jump；本地完成后通过已授权GitHub网页更新同一公开仓库，再核对远端文件与CI。最终发布记录保存在本地outputs/publication.json和outputs/COMPLETION.md。
+- 额外加速度计优化仍按用户要求留待后阶段；当前扩展没有增加执行器能力或宣称实机标定完成。
 
 ## 2026-11-20 WASD追加需求
 
