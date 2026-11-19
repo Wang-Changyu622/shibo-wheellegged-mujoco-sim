@@ -1,0 +1,949 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-19T17:55:21.921032+00:00",
+  "passed": true,
+  "sources_unchanged_during_run": true,
+  "profile": "hardware_2s",
+  "terrain": "flat",
+  "timestep_s": 0.0005,
+  "input_delivery": "Application key-handler PRESS/RELEASE injection; no operating-system keyboard automation",
+  "height_measurement": "Chassis-frame vertical distance from chassis origin to each wheel axle, from MuJoCo kinematics",
+  "jump_acceptance": "Both contact forces <0.02 N and both exact cylinder bottoms >1 mm above floor for >=20 ms, then supported recovery",
+  "mujoco_version": "3.17.0",
+  "python_version": "3.14.10",
+  "wall_seconds": 58.09693443000015,
+  "source_sha256": {
+    "scripts/leg_motion_smoke.py": "b1a0d61ed3a42a7ad8eb2067b6f7ec197616f06dde838fa88f7308065587b1d0",
+    "src/wheellegged/__init__.py": "261be76482b6557b8ab3c23883e8b2af633c3de66b395e8568f282f59e7e56c7",
+    "src/wheellegged/lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+    "src/wheellegged/mass_properties.py": "9aa016dbdfd8ac02b99e5b39d78b2237757c63c8cfcd1a4de4b049211ab9e974",
+    "src/wheellegged/jump.py": "212c9d49c15d5c4c90b60ea7326771ac243f547653cea9cd5893a987afdf5abe",
+    "src/wheellegged/evaluate.py": "4b982cfe2bf740dd29563dfa7548e13e6ce27cf59e857d7f79fa6491de1c67e8",
+    "src/wheellegged/hardware.py": "425dd6b62fbfdb324d34d3da0825f56507408e1c054d4de57fa45144b7bc027b",
+    "src/wheellegged/viewer.py": "5665098de7443b46f6ba403db7b05b6f55fce864487c1915a4ecd8a681b2606f",
+    "src/wheellegged/control.py": "8a0629273a0d56cd14304a43d0d91e9a9170823f221ce7c38cccd94ef4136f5e",
+    "src/wheellegged/state.py": "cca37a8fd62d7440c1aab00293d9bef23df1a1d90aeb888d8b47fd1b580d86c9",
+    "src/wheellegged/model.py": "b8ae0ce2684dd6a285eac083cabbb014c5a48f85d68f2a8e4f3829ea3d8010ae",
+    "src/wheellegged/cli.py": "c95204ddf9aa94a1bc1efa46871d525abc7d9a32d8e897ab9850772e5b9de6f4",
+    "src/wheellegged/render.py": "a00c549c68cf7f729e4755dd17669b066a638585a2ecfe1a21e23881aa083898"
+  },
+  "cases": {
+    "independent_heights": {
+      "passed": true,
+      "checks": {
+        "L_release_holds_target": true,
+        "L_extension_really_increases": true,
+        "L_other_leg_remains_near_nominal": true,
+        "L_roll_follows_raised_side": true,
+        "L_extension_really_decreases": true,
+        "L_roll_follows_lowered_side": true,
+        "R_release_holds_target": true,
+        "R_extension_really_increases": true,
+        "R_other_leg_remains_near_nominal": true,
+        "R_roll_follows_raised_side": true,
+        "R_extension_really_decreases": true,
+        "R_roll_follows_lowered_side": true,
+        "bilateral_upper_target_limit": true,
+        "bilateral_actual_raise": true,
+        "bilateral_lower_target_limit": true,
+        "bilateral_actual_lower": true,
+        "neutral_height_restored": true,
+        "neutral_roll_restored": true,
+        "final_neutral_jump_really_airborne": true,
+        "final_neutral_jump_landed": true,
+        "events_never_write_physics": true,
+        "finite_state_and_telemetry": true,
+        "time_monotonic": true,
+        "closed_chain_bounded": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "no_nonwheel_ground_support": true,
+        "no_solver_warnings": true,
+        "requested_hips_in_bounds": true,
+        "control_limits": true,
+        "actuator_force_limits": true,
+        "tail_stopped": true
+      },
+      "failed_checks": [],
+      "metrics": {
+        "nominal": {
+          "extension_m": [
+            0.05457982758068894,
+            0.05457995799514101
+          ],
+          "hip_rad": [
+            -0.18626736358720858,
+            -0.18618524650092733
+          ],
+          "roll_rad": -3.8159016906129543e-07,
+          "height_m": 0.07321668597056026,
+          "requested_hip_rad": [
+            -0.2,
+            -0.2
+          ]
+        },
+        "L_raised": {
+          "extension_m": [
+            0.059720990816231195,
+            0.054653948477259635
+          ],
+          "hip_rad": [
+            -0.24646902589862096,
+            -0.18691429705331353
+          ],
+          "roll_rad": 0.05797263233845641,
+          "height_m": 0.07606872274540237,
+          "requested_hip_rad": [
+            -0.2599999999999934,
+            -0.2
+          ]
+        },
+        "L_lowered": {
+          "extension_m": [
+            0.04913267481665237,
+            0.05450557049532521
+          ],
+          "hip_rad": [
+            -0.12623910069615707,
+            -0.18543523571882575
+          ],
+          "roll_rad": -0.061440923069731535,
+          "height_m": 0.0707275308892677,
+          "requested_hip_rad": [
+            -0.14000000000000662,
+            -0.2
+          ]
+        },
+        "R_raised": {
+          "extension_m": [
+            0.054653451615638844,
+            0.05972170370749522
+          ],
+          "hip_rad": [
+            -0.18699401231447726,
+            -0.2463894205701055
+          ],
+          "roll_rad": -0.05798440174877946,
+          "height_m": 0.07606882181487586,
+          "requested_hip_rad": [
+            -0.2,
+            -0.2599999999999934
+          ]
+        },
+        "R_lowered": {
+          "extension_m": [
+            0.0545051086924806,
+            0.04913300540519123
+          ],
+          "hip_rad": [
+            -0.18551891914441626,
+            -0.12615524768055525
+          ],
+          "roll_rad": 0.06143438934758035,
+          "height_m": 0.07072748428600399,
+          "requested_hip_rad": [
+            -0.2,
+            -0.14000000000000662
+          ]
+        },
+        "both_raised_to_limit": {
+          "extension_m": [
+            0.06307991889753377,
+            0.06308002842197982
+          ],
+          "hip_rad": [
+            -0.2875127788833323,
+            -0.28743059220855416
+          ],
+          "roll_rad": -4.666206761700787e-07,
+          "height_m": 0.0817039680207453,
+          "requested_hip_rad": [
+            -0.3,
+            -0.3
+          ]
+        },
+        "both_lowered_to_limit": {
+          "extension_m": [
+            0.03417823877375587,
+            0.034178469741947604
+          ],
+          "hip_rad": [
+            0.01808352192130252,
+            0.018169572311064808
+          ],
+          "roll_rad": -3.240629740392981e-07,
+          "height_m": 0.052904717605436725,
+          "requested_hip_rad": [
+            0.0,
+            0.0
+          ]
+        },
+        "restored": {
+          "extension_m": [
+            0.05458012887490303,
+            0.05458023325764772
+          ],
+          "hip_rad": [
+            -0.1862726550885989,
+            -0.18618616172579056
+          ],
+          "roll_rad": -9.148917914527039e-08,
+          "height_m": 0.07321572215798058,
+          "requested_hip_rad": [
+            -0.2,
+            -0.2
+          ]
+        },
+        "final_jump_airborne_duration_s": 0.05949999999986133,
+        "final_jump_minimum_wheel_clearance_peak_m": 0.006985064544882312,
+        "elapsed_s": 30.0999999999752,
+        "pitch_peak_rad": 0.06666789537756927,
+        "roll_peak_rad": 0.061464714526208206,
+        "closure_peak_m": 0.0001874618307930054,
+        "nonwheel_support_peak_n": 0.0,
+        "tail_speed_peak_m_s": 9.225306592118783e-05,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "allowed_roll_peak_rad": 0.25
+      },
+      "events": [
+        {
+          "time_s": 0.9999999999999453,
+          "key": "Q",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 1.5999999999998793,
+          "key": "Q",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 3.1000000000002026,
+          "key": "Z",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 4.300000000000336,
+          "key": "Z",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 5.799999999999505,
+          "key": "H",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 5.799999999999505,
+          "key": "H",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 7.299999999998674,
+          "key": "E",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 7.899999999998341,
+          "key": "E",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 9.399999999999997,
+          "key": "C",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 10.600000000001463,
+          "key": "C",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 12.100000000003297,
+          "key": "H",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 12.100000000003297,
+          "key": "H",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 13.60000000000513,
+          "key": "Q",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 13.60000000000513,
+          "key": "E",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 16.600000000006663,
+          "key": "Q",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 16.600000000006663,
+          "key": "E",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 18.100000000003167,
+          "key": "Z",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 18.100000000003167,
+          "key": "C",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 22.099999999993845,
+          "key": "Z",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 22.099999999993845,
+          "key": "C",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 23.59999999999035,
+          "key": "H",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 23.59999999999035,
+          "key": "H",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 25.599999999985688,
+          "key": "J",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 25.599999999985688,
+          "key": "J",
+          "action": 0,
+          "physics_unchanged": true
+        }
+      ],
+      "jump_events": [
+        {
+          "time": 25.599999999985688,
+          "event": "phase_changed",
+          "phase": "crouch",
+          "reason": "request_accepted"
+        },
+        {
+          "time": 26.400499999983822,
+          "event": "phase_changed",
+          "phase": "push",
+          "reason": "crouch_complete"
+        },
+        {
+          "time": 26.480499999983635,
+          "event": "phase_changed",
+          "phase": "tuck",
+          "reason": "push_minimum_complete"
+        },
+        {
+          "time": 26.488999999983616,
+          "event": "takeoff_confirmed",
+          "phase": "tuck",
+          "reason": "both_wheels_unloaded_8ms"
+        },
+        {
+          "time": 26.488999999983616,
+          "event": "phase_changed",
+          "phase": "flight",
+          "reason": "takeoff_confirmed"
+        },
+        {
+          "time": 26.562499999983444,
+          "event": "phase_changed",
+          "phase": "land",
+          "reason": "both_wheels_supported_10ms"
+        },
+        {
+          "time": 27.062999999982278,
+          "event": "phase_changed",
+          "phase": "balance",
+          "reason": "supported_recovery_complete"
+        }
+      ]
+    },
+    "neutral_jump": {
+      "passed": true,
+      "checks": {
+        "one_accepted_jump": true,
+        "sustained_physical_takeoff": true,
+        "landed_on_both_wheels": true,
+        "returned_to_balance": true,
+        "jump_outcome_landed": true,
+        "requested_posture_preserved": true,
+        "physical_leg_posture_restored": true,
+        "physical_roll_restored": true,
+        "push_begins_with_near_level_symmetric_actual_posture": true,
+        "events_never_write_physics": true,
+        "finite_state_and_telemetry": true,
+        "time_monotonic": true,
+        "closed_chain_bounded": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "no_nonwheel_ground_support": true,
+        "no_solver_warnings": true,
+        "requested_hips_in_bounds": true,
+        "control_limits": true,
+        "actuator_force_limits": true,
+        "tail_stopped": true
+      },
+      "failed_checks": [],
+      "metrics": {
+        "before_jump": {
+          "extension_m": [
+            0.05457980873055128,
+            0.05457993902254898
+          ],
+          "hip_rad": [
+            -0.18626712040715915,
+            -0.18618507974851983
+          ],
+          "roll_rad": -3.7872229121723837e-07,
+          "height_m": 0.07321672637272494,
+          "requested_hip_rad": [
+            -0.2,
+            -0.2
+          ]
+        },
+        "after_jump": {
+          "extension_m": [
+            0.05458000161069583,
+            0.054580185085674846
+          ],
+          "hip_rad": [
+            -0.18627663584294973,
+            -0.18618034479442194
+          ],
+          "roll_rad": -8.100792206317848e-07,
+          "height_m": 0.07321638790751726,
+          "requested_hip_rad": [
+            -0.2,
+            -0.2
+          ]
+        },
+        "jump_requested_at_s": 1.4999999999998903,
+        "airborne_duration_s": 0.05950000000001987,
+        "minimum_wheel_clearance_peak_m": 0.0069848465472895915,
+        "jump_outcome": "landed",
+        "elapsed_s": 5.999999999999394,
+        "pitch_peak_rad": 0.05380194228864539,
+        "roll_peak_rad": 0.002986759841661243,
+        "closure_peak_m": 0.00018746280193680188,
+        "nonwheel_support_peak_n": 0.0,
+        "tail_speed_peak_m_s": 9.826901510838543e-05,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "allowed_roll_peak_rad": 0.25
+      },
+      "events": [
+        {
+          "time_s": 1.4999999999998903,
+          "key": "J",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 1.4999999999998903,
+          "key": "J",
+          "action": 0,
+          "physics_unchanged": true
+        }
+      ],
+      "jump_events": [
+        {
+          "time": 1.4999999999998903,
+          "event": "phase_changed",
+          "phase": "crouch",
+          "reason": "request_accepted"
+        },
+        {
+          "time": 2.2999999999999354,
+          "event": "phase_changed",
+          "phase": "push",
+          "reason": "crouch_complete"
+        },
+        {
+          "time": 2.379999999999962,
+          "event": "phase_changed",
+          "phase": "tuck",
+          "reason": "push_minimum_complete"
+        },
+        {
+          "time": 2.388499999999965,
+          "event": "takeoff_confirmed",
+          "phase": "tuck",
+          "reason": "both_wheels_unloaded_8ms"
+        },
+        {
+          "time": 2.388499999999965,
+          "event": "phase_changed",
+          "phase": "flight",
+          "reason": "takeoff_confirmed"
+        },
+        {
+          "time": 2.4619999999999895,
+          "event": "phase_changed",
+          "phase": "land",
+          "reason": "both_wheels_supported_10ms"
+        },
+        {
+          "time": 2.9620000000001565,
+          "event": "phase_changed",
+          "phase": "balance",
+          "reason": "supported_recovery_complete"
+        }
+      ]
+    },
+    "asymmetric_jump": {
+      "passed": true,
+      "checks": {
+        "one_accepted_jump": true,
+        "sustained_physical_takeoff": true,
+        "landed_on_both_wheels": true,
+        "returned_to_balance": true,
+        "jump_outcome_landed": true,
+        "requested_posture_preserved": true,
+        "physical_leg_posture_restored": true,
+        "physical_roll_restored": true,
+        "push_begins_with_near_level_symmetric_actual_posture": true,
+        "events_never_write_physics": true,
+        "finite_state_and_telemetry": true,
+        "time_monotonic": true,
+        "closed_chain_bounded": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "no_nonwheel_ground_support": true,
+        "no_solver_warnings": true,
+        "requested_hips_in_bounds": true,
+        "control_limits": true,
+        "actuator_force_limits": true,
+        "tail_stopped": true
+      },
+      "failed_checks": [],
+      "metrics": {
+        "before_jump": {
+          "extension_m": [
+            0.059720995627790034,
+            0.05465395066227838
+          ],
+          "hip_rad": [
+            -0.24646908122933583,
+            -0.18691431976278652
+          ],
+          "roll_rad": 0.057972664526619574,
+          "height_m": 0.07606871070213743,
+          "requested_hip_rad": [
+            -0.2599999999999934,
+            -0.2
+          ]
+        },
+        "after_jump": {
+          "extension_m": [
+            0.05972924391224622,
+            0.05464553824145174
+          ],
+          "hip_rad": [
+            -0.2465683782944065,
+            -0.18681838677511037
+          ],
+          "roll_rad": 0.05816288245655954,
+          "height_m": 0.07606879727104388,
+          "requested_hip_rad": [
+            -0.2599999999999934,
+            -0.2
+          ]
+        },
+        "jump_requested_at_s": 3.6000000000003696,
+        "airborne_duration_s": 0.059499999999967024,
+        "minimum_wheel_clearance_peak_m": 0.006983322417602071,
+        "jump_outcome": "landed",
+        "elapsed_s": 8.099999999998408,
+        "pitch_peak_rad": 0.0535537380806542,
+        "roll_peak_rad": 0.06465629902235438,
+        "closure_peak_m": 0.00018739679036429776,
+        "nonwheel_support_peak_n": 0.0,
+        "tail_speed_peak_m_s": 0.0001316624586598337,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "allowed_roll_peak_rad": 0.25
+      },
+      "events": [
+        {
+          "time_s": 1.4999999999998903,
+          "key": "Q",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 2.0999999999998686,
+          "key": "Q",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 3.6000000000003696,
+          "key": "J",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 3.6000000000003696,
+          "key": "J",
+          "action": 0,
+          "physics_unchanged": true
+        }
+      ],
+      "jump_events": [
+        {
+          "time": 3.6000000000003696,
+          "event": "phase_changed",
+          "phase": "crouch",
+          "reason": "request_accepted"
+        },
+        {
+          "time": 4.400000000000281,
+          "event": "phase_changed",
+          "phase": "push",
+          "reason": "crouch_complete"
+        },
+        {
+          "time": 4.480000000000237,
+          "event": "phase_changed",
+          "phase": "tuck",
+          "reason": "push_minimum_complete"
+        },
+        {
+          "time": 4.488500000000232,
+          "event": "takeoff_confirmed",
+          "phase": "tuck",
+          "reason": "both_wheels_unloaded_8ms"
+        },
+        {
+          "time": 4.488500000000232,
+          "event": "phase_changed",
+          "phase": "flight",
+          "reason": "takeoff_confirmed"
+        },
+        {
+          "time": 4.562000000000191,
+          "event": "phase_changed",
+          "phase": "land",
+          "reason": "both_wheels_supported_10ms"
+        },
+        {
+          "time": 5.061999999999914,
+          "event": "phase_changed",
+          "phase": "balance",
+          "reason": "supported_recovery_complete"
+        }
+      ]
+    },
+    "full_split_jump": {
+      "passed": true,
+      "checks": {
+        "one_accepted_jump": true,
+        "sustained_physical_takeoff": true,
+        "landed_on_both_wheels": true,
+        "returned_to_balance": true,
+        "jump_outcome_landed": true,
+        "requested_posture_preserved": true,
+        "physical_leg_posture_restored": true,
+        "physical_roll_restored": true,
+        "push_begins_with_near_level_symmetric_actual_posture": true,
+        "full_independent_travel_was_requested": true,
+        "full_independent_travel_was_physical": true,
+        "events_never_write_physics": true,
+        "finite_state_and_telemetry": true,
+        "time_monotonic": true,
+        "closed_chain_bounded": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "no_nonwheel_ground_support": true,
+        "no_solver_warnings": true,
+        "requested_hips_in_bounds": true,
+        "control_limits": true,
+        "actuator_force_limits": true,
+        "tail_stopped": true
+      },
+      "failed_checks": [],
+      "metrics": {
+        "before_jump": {
+          "extension_m": [
+            0.06274478309215675,
+            0.03465724685333559
+          ],
+          "hip_rad": [
+            -0.2829715052560462,
+            0.013792140905642878
+          ],
+          "roll_rad": 0.3110063114642091,
+          "height_m": 0.06613038135802543,
+          "requested_hip_rad": [
+            -0.3,
+            0.0
+          ]
+        },
+        "after_jump": {
+          "extension_m": [
+            0.06274425523251839,
+            0.034658683050189605
+          ],
+          "hip_rad": [
+            -0.28296501712791283,
+            0.013779862288093851
+          ],
+          "roll_rad": 0.3109871755504674,
+          "height_m": 0.06613092050066345,
+          "requested_hip_rad": [
+            -0.3,
+            0.0
+          ]
+        },
+        "jump_requested_at_s": 6.499999999999117,
+        "airborne_duration_s": 0.0589999999999673,
+        "minimum_wheel_clearance_peak_m": 0.006983028322748441,
+        "jump_outcome": "landed",
+        "elapsed_s": 11.000000000001952,
+        "pitch_peak_rad": 0.054396625168724476,
+        "roll_peak_rad": 0.31302076167670634,
+        "closure_peak_m": 0.00018694002184208112,
+        "nonwheel_support_peak_n": 0.0,
+        "tail_speed_peak_m_s": 0.00047884984326473484,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "allowed_roll_peak_rad": 0.35
+      },
+      "events": [
+        {
+          "time_s": 1.4999999999998903,
+          "key": "Q",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 1.4999999999998903,
+          "key": "C",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 4.500000000000226,
+          "key": "Q",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 4.500000000000226,
+          "key": "C",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 6.499999999999117,
+          "key": "J",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 6.499999999999117,
+          "key": "J",
+          "action": 0,
+          "physics_unchanged": true
+        }
+      ],
+      "jump_events": [
+        {
+          "time": 6.499999999999117,
+          "event": "phase_changed",
+          "phase": "crouch",
+          "reason": "request_accepted"
+        },
+        {
+          "time": 7.299999999998674,
+          "event": "phase_changed",
+          "phase": "push",
+          "reason": "crouch_complete"
+        },
+        {
+          "time": 7.379999999998629,
+          "event": "phase_changed",
+          "phase": "tuck",
+          "reason": "push_minimum_complete"
+        },
+        {
+          "time": 7.389499999998624,
+          "event": "takeoff_confirmed",
+          "phase": "tuck",
+          "reason": "both_wheels_unloaded_8ms"
+        },
+        {
+          "time": 7.389499999998624,
+          "event": "phase_changed",
+          "phase": "flight",
+          "reason": "takeoff_confirmed"
+        },
+        {
+          "time": 7.461999999998584,
+          "event": "phase_changed",
+          "phase": "land",
+          "reason": "both_wheels_supported_10ms"
+        },
+        {
+          "time": 7.961999999998307,
+          "event": "phase_changed",
+          "phase": "balance",
+          "reason": "supported_recovery_complete"
+        }
+      ]
+    },
+    "drive_and_height": {
+      "passed": true,
+      "checks": {
+        "forward_motion_with_asymmetric_height": true,
+        "release_zeros_movement_target": true,
+        "release_preserves_height_target": true,
+        "asymmetric_height_remains_physical": true,
+        "asymmetric_roll_remains_controlled": true,
+        "events_never_write_physics": true,
+        "finite_state_and_telemetry": true,
+        "time_monotonic": true,
+        "closed_chain_bounded": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "no_nonwheel_ground_support": true,
+        "no_solver_warnings": true,
+        "requested_hips_in_bounds": true,
+        "control_limits": true,
+        "actuator_force_limits": true,
+        "tail_stopped": true
+      },
+      "failed_checks": [],
+      "metrics": {
+        "held_forward_duration_s": 2.4,
+        "forward_displacement_m": 0.2648873007113475,
+        "posture_after_braking": {
+          "extension_m": [
+            0.05803397108968558,
+            0.05463965864720972
+          ],
+          "hip_rad": [
+            -0.22639722094719117,
+            -0.18671428314247177
+          ],
+          "roll_rad": 0.038858872055916566,
+          "height_m": 0.07516512155051433,
+          "requested_hip_rad": [
+            -0.2399999999999956,
+            -0.2
+          ]
+        },
+        "elapsed_s": 7.399999999998618,
+        "pitch_peak_rad": 0.05738986270256986,
+        "roll_peak_rad": 0.038863986296499946,
+        "closure_peak_m": 5.092677455376779e-05,
+        "nonwheel_support_peak_n": 0.0,
+        "tail_speed_peak_m_s": 0.000784808127863094,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "allowed_roll_peak_rad": 0.25
+      },
+      "events": [
+        {
+          "time_s": 0.9999999999999453,
+          "key": "W",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 0.9999999999999453,
+          "key": "Q",
+          "action": 1,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 1.3999999999999013,
+          "key": "Q",
+          "action": 0,
+          "physics_unchanged": true
+        },
+        {
+          "time_s": 3.400000000000303,
+          "key": "W",
+          "action": 0,
+          "physics_unchanged": true
+        }
+      ],
+      "jump_events": []
+    }
+  }
+}
