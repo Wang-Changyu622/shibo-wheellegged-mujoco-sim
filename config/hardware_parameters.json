@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "default_profile": "hardware_2s",
+  "units": "SI; wheel commands are actual q-axis phase voltage in V for hardware_2s",
+  "profiles": {
+    "reference": {
+      "bus_voltage_v": null,
+      "wheel_voltage_limit_v": 7.4,
+      "wheel_gain_nm_per_v": 0.01,
+      "wheel_bias_nm_per_rad_s": 0.0001,
+      "wheel_torque_limit_nm": 0.08,
+      "hip_torque_limit_nm": 0.15,
+      "description": "Historical uncalibrated actuator proxy retained only for explicit reproduction of reference experiments; 7.4 V was an actuator command limit, not a validated mapping from the actual 2S bus.",
+      "confidence": "historical_reference_not_hardware_validation"
+    },
+    "hardware_2s": {
+      "bus_voltage_v": 7.4,
+      "wheel_voltage_limit_v": 3.7,
+      "wheel_gain_nm_per_v": 0.01,
+      "wheel_bias_nm_per_rad_s": 0.00047746482927568597,
+      "wheel_torque_limit_nm": 0.0588,
+      "hip_torque_limit_nm": 0.14709975,
+      "description": "vendor_bus_equivalent_sine_2s: nominal user-confirmed 2S supply, linear SinePWM phase-voltage limit Vbus/2, paired bus-to-phase Kv approximation, uncalibrated voltage-to-torque gain, and STS3032 rated 6 V torque used as the continuous simulation envelope.",
+      "confidence": "spec_constrained_engineering_proxy_not_calibrated",
+      "source_ids": ["user_supply", "yt2208_user_table", "sts3032_manufacturer_mirror", "local_simplefoc_2_2_1", "simplefoc_pwm"],
+      "derivation": {
+        "voltage_convention": "actual_phase_q_axis_voltage; vendor Kv treated as bus-equivalent no-load Kv",
+        "vendor_kv_rpm_per_v": 100.0,
+        "bus_to_phase_voltage_factor": 0.5,
+        "bus_equivalent_back_emf_v_s_per_rad": 0.0954929658551372,
+        "phase_back_emf_v_s_per_rad": 0.0477464829275686,
+        "wheel_bias_formula": "wheel_gain_nm_per_v * phase_back_emf_v_s_per_rad",
+        "mechanical_wheel_joint_damping_nm_s_per_rad": 0.00005,
+        "electrical_no_loss_speed_upper_bound_rpm": 740.0,
+        "ideal_free_wheel_speed_including_joint_damping_rpm": 669.8531429084887,
+        "static_voltage_limited_torque_nm": 0.037,
+        "wheel_force_cap_role": "rounded seller 3S torque is an outer proxy cap, not measured available torque at 2S",
+        "hip_force_cap_role": "manufacturer rated 1.5 kgf.cm at 6 V; no increase to stall torque or extrapolation to 7.4 V"
+      }
+    }
+  },
+  "parameter_status": {
+    "battery_nominal_voltage": "user_confirmed_2S_7.4V; instantaneous bus voltage and sag not measured",
+    "wheel_kv": "seller_table_100rpm_per_V; no independent manufacturer datasheet located",
+    "wheel_voltage_to_torque_gain": "retained_engineering_assumption_0.01Nm_per_V; requires bench identification",
+    "wheel_phase_back_emf": "derived_convention_assumption; not a measured phase/dq constant",
+    "wheel_mechanical_damping": "existing_simulation_assumption_separate_from_electrical_back_emf",
+    "wheel_torque_cap": "seller_3S_marketing_value_used_only_as_outer_proxy_ceiling",
+    "hip_continuous_torque_cap": "manufacturer_rated_6V_value_used_as_simulation_envelope; thermal_duty_not_identified",
+    "hip_kp_kd": "retained_simulation_servo_proxy_not_identified_internal_servo_gains",
+    "hip_supply_rail": "unknown_whether_regulated_or_direct_battery; do_not_infer_from_battery_nominal_voltage",
+    "current_limits": "not_implemented_or_identifiable_from_voltage_only_motor_model",
+    "component_mass_distribution": "catalog_component_masses_do_not_identify_rotor_stator_split_or_assembled_robot_inertia"
+  },
+  "catalog": {
+    "yt2208": {
+      "source_id": "yt2208_user_table",
+      "diameter_m": 0.028,
+      "body_height_m": 0.024,
+      "mass_kg": 0.041,
+      "recommended_voltage_v": [10.0, 12.0],
+      "max_power_w_unspecified_basis": 36.0,
+      "max_current_a_unspecified_basis": 3.0,
+      "no_load_current_a": 0.1,
+      "kv_rpm_per_v": 100.0,
+      "no_load_speed_rpm_at_recommended_voltage": [1000.0, 1200.0],
+      "seller_torque_3s_kgf_cm": 0.6,
+      "seller_torque_3s_nm_rounded": 0.0588,
+      "seller_torque_3s_nm_exact_conversion": 0.0588399,
+      "torque_operating_point": "unspecified; not established as continuous or stall; not proven simultaneous with 3 A"
+    },
+    "sts3032": {
+      "source_ids": ["sts3032_user_table", "sts3032_manufacturer_mirror"],
+      "mass_kg": 0.0206,
+      "mass_tolerance_kg": 0.001,
+      "input_voltage_range_v": [4.0, 7.4],
+      "electrical_test_voltage_v": 6.0,
+      "no_load_speed_rpm": 111.0,
+      "no_load_speed_rad_s": 11.623892818282235,
+      "no_load_current_a": 0.15,
+      "rated_current_a": 0.4,
+      "rated_torque_kgf_cm": 1.5,
+      "rated_torque_nm": 0.14709975,
+      "stall_current_a": 1.2,
+      "stall_torque_kgf_cm": 4.5,
+      "stall_torque_nm": 0.44129925,
+      "catalog_kt_kgf_cm_per_a": 3.5,
+      "catalog_kt_nm_per_a": 0.34323275,
+      "internal_motor_terminal_resistance_ohm": 2.8,
+      "resistance_warning": "servo internal motor specification; never use as YT2208 wheel winding resistance",
+      "manufacturer_dimensions_m": [0.032, 0.012, 0.0275],
+      "user_table_dimensions_m": [0.023, 0.012, 0.0275],
+      "dimension_status": "conflicting_length; resolve against CAD/physical part before changing geometry",
+      "encoder_steps_per_revolution": 4096,
+      "communication": "TTL half-duplex serial",
+      "peak_torque_policy": "stall value is metadata for separate transient sensitivity studies, never the default continuous limit"
+    }
+  },
+  "sources": {
+    "user_supply": {
+      "kind": "user_statement",
+      "date": "2026-11-20",
+      "content": "Actual battery is 2S nominal 7.4 V; work remains local for now.",
+      "confidence": "confirmed_configuration_not_voltage_measurement"
+    },
+    "yt2208_user_table": {
+      "kind": "user_supplied_seller_image_transcription",
+      "basename": "f56bd354f4e7e5d052d8637ae4142cd5.jpg",
+      "sha256": "2af0f2e8cc0ea3e63d43152b125302e0cc4a8cfa1a15cd25dea59189a0d77c0f",
+      "confidence": "seller_claim_not_independently_manufacturer_verified",
+      "storage": "original image intentionally not copied into repository"
+    },
+    "sts3032_user_table": {
+      "kind": "user_supplied_seller_image_transcription",
+      "basename": "87a126a1cbb0f2e3ea54903b0cd6e4f8.jpg",
+      "sha256": "76ea262b8d62137c0156b3eeaef79168ab938199f405aaf1c18b174e67f63f78",
+      "confidence": "electrical_6V_values_corroborated_by_manufacturer_authored_datasheet; length_conflicts",
+      "storage": "original image intentionally not copied into repository"
+    },
+    "sts3032_manufacturer_mirror": {
+      "kind": "manufacturer_authored_datasheet_on_distributor_mirror",
+      "url": "https://pages.switch-science.com/comparison/files/feetech/serial-sts/STS3032_datasheet.pdf",
+      "author": "SHENZHEN FEETECH RC MODEL CO., LTD.",
+      "edition": "A/0",
+      "document_date": "2020-06-08",
+      "electrical_table_printed_page": 3,
+      "mechanical_table_printed_page": 4,
+      "sha256": "fc777696d2c915786b3dbb327d3fa18264772975377739739ad48e6f0a22f639",
+      "confidence": "manufacturer_authored_mirrored_document; electrical_table_visually_checked",
+      "official_host_candidate": "https://www.feetech.cn/Data/feetechrc/upload/file/20211019/6377025719620052024350972.pdf",
+      "official_host_status": "located_but_download_failed; mirror_bytes_not_asserted_identical_to_official_host"
+    },
+    "local_firmware": {
+      "kind": "user_local_reference_firmware",
+      "relative_source": "3.Software/wl_pro_robot/wl_pro_robot.ino",
+      "sha256": "488220b83a18ada2d5ad9b461c7dfd1c5c114c335f4ddcf37cd9c23d9f9b2787",
+      "facts": {"declared_driver_supply_v": 8.0, "pole_pairs_constructor": 7, "torque_control_type": "voltage", "phase_resistance_configured": false, "kv_configured": false, "pwm_modulation_override": false},
+      "confidence": "direct_source_inspection; firmware_declarations_not_physical_calibration"
+    },
+    "local_simplefoc_2_2_1": {
+      "kind": "bundled_local_library_source",
+      "relative_source": "3.Software/libraries/Simple_FOC.zip",
+      "version": "2.2.1",
+      "sha256": "a5f9e49023e328afb33247566a4188bbce3fb25189523176b3bc82444f7626b6",
+      "default_pwm_modulation": "SinePWM",
+      "confidence": "direct_source_inspection"
+    },
+    "simplefoc_pwm": {"kind": "official_documentation", "url": "https://docs.simplefoc.com/pwm_modulation", "confidence": "official_theory_cross_checked_with_local_2_2_1_source"},
+    "simplefoc_voltage_mode": {"kind": "official_documentation", "url": "https://olddocs.simplefoc.com/v2.3.2/voltage_torque_mode", "confidence": "official_nearby_version; local_2_2_1_source_controls_actual_behavior"},
+    "simplefoc_torque_theory": {"kind": "official_documentation", "url": "https://docs.simplefoc.com/voltage_torque_control", "confidence": "official_theory; phase_RMS_peak_conventions_still_require_identification"},
+    "simplefoc_parameter_measurement": {"kind": "official_documentation", "url": "https://docs.simplefoc.com/motor_params_test", "confidence": "official_measurement_guidance"}
+  },
+  "sensitivity_proposals_not_measured_bounds": {
+    "wheel_gain_multiplier": [0.5, 1.0, 2.0],
+    "paired_back_emf_conventions": [
+      {"name": "vendor_bus_equivalent_sine", "phase_back_emf_v_s_per_rad": 0.0477464829275686, "status": "default_declared_approximation"},
+      {"name": "vendor_kv_with_sqrt3_conversion", "phase_back_emf_v_s_per_rad": 0.05513288954217921, "status": "alternative_convention_sensitivity_not_calibration"},
+      {"name": "kv_interpreted_directly_as_q_axis", "phase_back_emf_v_s_per_rad": 0.0954929658551372, "status": "alternative_test_interpretation_only_not_additional_derating_of_bus_equivalent_default"}
+    ],
+    "coupling_rule": "When varying voltage-to-torque gain a at fixed Ke, recompute electrical bias b=a*Ke; do not accidentally alter no-loss electrical Kv.",
+    "servo_policy": "Keep rated 0.14709975 N.m default. Any transient 0.44129925 N.m stall-cap exploration must be a separately named study with no continuous-hardware claim."
+  },
+  "missing_measurements": [
+    "Actual driver DC-bus voltage under load, sag, and servo regulated supply rail",
+    "Wheel motor phase/line winding resistance with measurement convention and temperature",
+    "Phase/dq back-EMF versus mechanical speed with voltage peak/RMS/line/phase convention",
+    "Wheel static torque versus actual Uq and current; identify voltage-to-torque gain and saturation",
+    "Current sensing convention, driver current protection, and torque/speed thermal duty envelope",
+    "Servo output torque/speed response, deadband, backlash, delay and continuous thermal performance at its actual rail",
+    "Assembled total mass, rotor/stator mass split, wheel inertia and robot center of mass"
+  ]
+}
