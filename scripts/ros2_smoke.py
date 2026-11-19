@@ -164,6 +164,28 @@ def main() -> None:
         simulator.publish_state = record_and_publish_state
         velocity_publisher = probe.create_publisher(Twist, "/cmd_vel", 10)
         jump_publisher = probe.create_publisher(Empty, "/jump", 10)
+        leg_publisher = probe.create_publisher(JointState, "/leg_command", 10)
+        leg_events = []
+        leg_subscription = next(subscription for subscription in simulator.subscriptions
+                                if subscription.topic_name == "/leg_command")
+        original_leg_callback = leg_subscription.callback
+
+        def record_leg_callback(message):
+            before = simulator.command
+            before_time = simulator._last_command_time
+            qpos, qvel, sim_time = (simulator.data.qpos.copy(), simulator.data.qvel.copy(),
+                                    simulator.data.time)
+            original_leg_callback(message)
+            leg_events.append({
+                "names": list(message.name),
+                "command_unchanged": before == simulator.command,
+                "targets": list(simulator.command.hip_targets),
+                "watchdog_not_refreshed": before_time == simulator._last_command_time,
+                "physics_untouched": bool(np.array_equal(qpos, simulator.data.qpos)
+                    and np.array_equal(qvel, simulator.data.qvel) and sim_time == simulator.data.time),
+            })
+
+        leg_subscription.callback = record_leg_callback
         invalid_commands = []
         velocity_subscription = next(
             subscription for subscription in simulator.subscriptions
@@ -198,8 +220,20 @@ def main() -> None:
         saw_forward = saw_reverse = False
         jump_sent = False
         invalid_sent = set()
+        leg_sent = set()
+        leg_schedule = (
+            (.50, ["R_hip", "L_hip"], [-.20, -.24]),  # resolve by name, not array order
+            (.70, ["L_hip", "R_hip"], [float("nan"), -.2]),
+            (.75, ["L_hip", "L_hip"], [-.2, -.2]),
+            (.80, ["L_hip", "R_hip"], [-.2]),
+            (.85, ["L_hip", "unknown"], [-.2, -.2]),
+        )
         while simulator.data.time < 2.8 and time.monotonic() < deadline:
             now = simulator.data.time
+            for send_time, names, positions in leg_schedule:
+                if now >= send_time and send_time not in leg_sent:
+                    leg_publisher.publish(JointState(name=names, position=positions))
+                    leg_sent.add(send_time)
             if 0.2 <= now < 1.6 and now >= next_command:
                 message = Twist()
                 message.linear.x = 0.05 if now < 0.9 else -0.04
@@ -227,6 +261,12 @@ def main() -> None:
         assert len(invalid_commands) == 2, "invalid /cmd_vel messages did not reach the subscription"
         assert all(all(result.values()) for result in invalid_commands), "invalid command modified state or watchdog"
         assert len(forwarded_jumps) == 1, "/jump must forward exactly one controller event"
+        assert len(leg_events) == len(leg_schedule), "/leg_command messages were not delivered"
+        assert not leg_events[0]["command_unchanged"]
+        assert all(event["command_unchanged"] for event in leg_events[1:]), "invalid leg target accepted"
+        assert all(event["physics_untouched"] and event["watchdog_not_refreshed"]
+                   for event in leg_events), "leg callback changed physics or velocity timeout"
+        np.testing.assert_allclose(simulator.command.hip_targets, [-.24, -.20], atol=1e-12)
         counts = {name: len(messages) for name, messages in received.items()}
         assert all(counts[name] >= 10 for name in received if name != "tf_static"), counts
         assert counts["tf_static"] >= 1, "transient-local IMU transform was not delivered"
@@ -293,6 +333,8 @@ def main() -> None:
             "mujoco_version": mujoco.__version__,
             "joint_count": len(expected_joint_names), "joint_readings_dynamic": True,
             "invalid_command_checks": invalid_commands,
+            "leg_command_events": leg_events,
+            "leg_targets_preserved_after_velocity_commands_and_timeout": True,
             "ros_domain_id": os.environ["ROS_DOMAIN_ID"],
             "source_sha256": {
                 str(path): hashlib.sha256(path.read_bytes()).hexdigest()

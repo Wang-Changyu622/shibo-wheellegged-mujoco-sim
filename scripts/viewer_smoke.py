@@ -29,7 +29,7 @@ import mujoco
 import numpy as np
 
 from wheellegged.state import observe
-from wheellegged.viewer import (GlfwViewer, MANUAL_SPEED, MANUAL_YAW_RATE,
+from wheellegged.viewer import (GlfwViewer, HEIGHT_KEYS, MANUAL_SPEED, MANUAL_YAW_RATE,
                                PHYSICS_TIMESTEP, _Session, run_viewer)
 
 
@@ -109,10 +109,12 @@ class CallbackProbe:
         self.original_create = glfw.create_window
         self.original_destroy = glfw.destroy_window
         self.original_render = GlfwViewer.render
+        self.original_handle_key = _Session.handle_key
         self.callbacks = {}
         self.windows_created = self.windows_destroyed = 0
         self.active = self.finished = False
         self.checks, self.snapshots, self.injected_events = {}, [], []
+        self.unchanged_physics = []
         self.frames = 0
         self.current_stage = None
         self.stage_started = 0.
@@ -197,7 +199,54 @@ class CallbackProbe:
         yield Stage("reset_while_paused", tap(glfw.KEY_R),
                     lambda s: s["paused"] and s["simulation_time_s"] == 0. and not s["held_keys"])
         yield Stage("space_resumes_without_stale_keys", tap(glfw.KEY_SPACE), lambda s: not s["paused"] and target(s, 0., 0.))
+        initial = self.state["hip_targets"]
+        yield Stage("q_raises_left_leg_only", (p(glfw.KEY_Q),),
+                    lambda s: s["hip_targets"][0] < initial[0] and s["hip_targets"][1] == initial[1], .15)
+        raised_left = self.state["hip_targets"]
+        yield Stage("release_q_holds_requested_height", (r(glfw.KEY_Q),),
+                    lambda s: s["hip_targets"] == raised_left, .15)
+        yield Stage("e_raises_right_leg_only", (p(glfw.KEY_E),),
+                    lambda s: s["hip_targets"][0] == raised_left[0] and s["hip_targets"][1] < raised_left[1], .15)
+        raised_both = self.state["hip_targets"]
+        yield Stage("release_e_holds_requested_height", (r(glfw.KEY_E),),
+                    lambda s: s["hip_targets"] == raised_both, .1)
+        yield Stage("z_lowers_left_leg_only", (p(glfw.KEY_Z),),
+                    lambda s: s["hip_targets"][0] > raised_both[0] and s["hip_targets"][1] == raised_both[1])
+        yield Stage("release_z", (r(glfw.KEY_Z),), lambda s: glfw.KEY_Z not in s["held_keys"])
+        before_right = self.state["hip_targets"]
+        yield Stage("c_lowers_right_leg_only", (p(glfw.KEY_C),),
+                    lambda s: s["hip_targets"][0] == before_right[0] and s["hip_targets"][1] > before_right[1])
+        yield Stage("release_c", (r(glfw.KEY_C),), lambda s: glfw.KEY_C not in s["held_keys"])
+        opposite_start = self.state["hip_targets"]
+        yield Stage("opposite_height_keys_cancel", (p(glfw.KEY_Q), p(glfw.KEY_Z)),
+                    lambda s: s["hip_targets"] == opposite_start, .1)
+        yield Stage("release_height_opposites", (r(glfw.KEY_Q), r(glfw.KEY_Z)),
+                    lambda s: not (set(s["held_keys"]) & HEIGHT_KEYS))
+        before_both = self.state["hip_targets"]
+        yield Stage("t_raises_both_legs", (p(glfw.KEY_T),),
+                    lambda s: all(a < b for a, b in zip(s["hip_targets"], before_both)), .1)
+        yield Stage("release_t", (r(glfw.KEY_T),), lambda s: glfw.KEY_T not in s["held_keys"])
+        both_raised = self.state["hip_targets"]
+        yield Stage("g_lowers_both_legs", (p(glfw.KEY_G),),
+                    lambda s: all(a > b for a, b in zip(s["hip_targets"], both_raised)), .1)
+        yield Stage("h_restores_nominal_and_clears_height_keys", tap(glfw.KEY_H),
+                    lambda s: s["hip_targets"] == [-.2, -.2] and not (set(s["held_keys"]) & HEIGHT_KEYS), .3)
+        yield Stage("height_adjustment_before_focus_loss", (p(glfw.KEY_Q),),
+                    lambda s: s["hip_targets"][0] < -.2)
+        focus_height = self.state["hip_targets"]
+        yield Stage("focus_loss_stops_height_editing_but_preserves_request", (("focus", False),),
+                    lambda s: not s["held_keys"] and s["hip_targets"] == focus_height, .1)
+        yield Stage("refocus_keeps_height_without_latent_adjustment", (("focus", True),),
+                    lambda s: s["hip_targets"] == focus_height, .1)
+        yield Stage("height_and_movement_held_before_jump", (p(glfw.KEY_Q), p(glfw.KEY_W)),
+                    lambda s: glfw.KEY_Q in s["held_keys"] and s["velocity_target"] == speed)
+        jump_height = self.state["hip_targets"]
         yield Stage("jump_press_is_one_pulse", (p(glfw.KEY_J),), lambda s: s["jump_request_count"] == 1)
+        yield Stage("jump_stops_motion_preserves_heights_and_clears_height_keys", (),
+                    lambda s: target(s, 0., 0.) and s["hip_targets"] == jump_height
+                    and not (set(s["held_keys"]) & HEIGHT_KEYS) and s["jump_feedback"] == "ACCEPTED")
+        yield Stage("height_and_h_ignored_during_jump", (p(glfw.KEY_Q), p(glfw.KEY_E), *tap(glfw.KEY_H)),
+                    lambda s: s["hip_targets"] == jump_height and not (set(s["held_keys"]) & HEIGHT_KEYS), .1)
         yield Stage("jump_repeat_does_not_retrigger", (("key", glfw.KEY_J, glfw.REPEAT),) * 3,
                     lambda s: s["jump_request_count"] == 1, .15)
         yield Stage("jump_release_does_not_retrigger", (r(glfw.KEY_J),), lambda s: s["jump_request_count"] == 1)
@@ -220,6 +269,9 @@ class CallbackProbe:
             "focused": session.focused, "held_keys": sorted(session.held_keys),
             "paused": session.paused, "automatic": session.automatic, "camera_follow": session.follow,
             "jump_request_count": session.jump_request_count,
+            "jump_feedback": session.jump_feedback, "jump_phase": session.controller.phase,
+            "hip_targets": list(session.command.hip_targets),
+            "hip_actual": observe(session.model, session.data).hip.tolist(),
         }
         if self.current_stage is not None and self.frames > self.stage_frame:
             stage = self.current_stage
@@ -262,6 +314,19 @@ def run_smoke() -> dict:
                 return probe.render(viewer)
 
             stack.enter_context(patch.object(GlfwViewer, "render", render))
+
+            def handle_key(session, key, action):
+                check_physics = key in HEIGHT_KEYS or key in (glfw.KEY_H, glfw.KEY_J)
+                if check_physics:
+                    qpos, qvel, now = session.data.qpos.copy(), session.data.qvel.copy(), session.data.time
+                result = probe.original_handle_key(session, key, action)
+                if check_physics:
+                    probe.unchanged_physics.append(bool(np.array_equal(qpos, session.data.qpos)
+                                                         and np.array_equal(qvel, session.data.qvel)
+                                                         and now == session.data.time))
+                return result
+
+            stack.enter_context(patch.object(_Session, "handle_key", handle_key))
             automatic = run_viewer(scenario="move", automatic=True, duration=3.)
             probe.checks["wall_timeout_exit"] = automatic["reason"] == "duration_elapsed" and automatic["wall_time_s"] < 5.
             probe.checks["timeout_fixed_step"] = automatic["physics_timestep_s"] == .0005
@@ -288,8 +353,10 @@ def run_smoke() -> dict:
     probe.checks["no_new_threads_left"] = not remaining
     probe.checks["probe_completed_without_error"] = probe.finished and not errors
     probe.checks["closed_loop_left_and_right_motion"] = all(case["passed"] for case in motion.values())
+    probe.checks["height_and_jump_handlers_do_not_teleport_physics"] = (
+        bool(probe.unchanged_physics) and all(probe.unchanged_physics))
     return {
-        "schema_version": 2, "test_date": datetime.now().date().isoformat(),
+        "schema_version": 3, "test_date": datetime.now().date().isoformat(),
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "mujoco_version": mujoco.__version__, "glfw_python_version": glfw.__version__,
         "python_version": platform.python_version(), "platform": platform.system(),
@@ -299,7 +366,8 @@ def run_smoke() -> dict:
                   "callbacks from the render thread, then consumed by the production input queue. "
                   "No OS-level input automation and no manual keyboard claim.",
         "scope": "Window rendering/lifecycle, action-state input semantics, no-repeat hold, "
-                 "release/focus/stop/pause/reset, one-shot jump and scene changes. Headless motion "
+                 "release/focus/stop/pause/reset, independent leg height keys, one-shot jump, "
+                 "jump height-edit freeze and scene changes. Headless motion "
                  "cases separately measure true closed-loop turning and braking; not hardware validation.",
         "source_sha256": hashlib.sha256((ROOT / "src/wheellegged/viewer.py").read_bytes()).hexdigest(),
         "probe_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
