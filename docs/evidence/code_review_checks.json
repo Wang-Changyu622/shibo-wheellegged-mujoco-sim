@@ -1,0 +1,99 @@
+{
+  "status": "observations_recorded",
+  "scope": "Code-review probes, not acceptance pass/fail. Known limitations and injected faults are observations; nominal task success is evaluated separately.",
+  "mujoco_version": "3.17.0",
+  "ros_probe_enabled": true,
+  "probes": {
+    "independent_command_log_collision": {
+      "commands_hip_targets": [
+        [
+          -0.2,
+          -0.2
+        ],
+        [
+          -0.3,
+          0.0
+        ]
+      ],
+      "recorded_command_hip_angle": [
+        -0.2,
+        -0.2
+      ],
+      "all_sample_fields_identical": true,
+      "missing_fields": [
+        "command_left_hip_angle",
+        "command_right_hip_angle",
+        "roll_reference"
+      ]
+    },
+    "stalled_reference_after_stop": {
+      "fixture": "fixed robot observations, 3 s at +0.2 m/s then 1 s at zero command",
+      "physics_integrated": false,
+      "velocity_reference_m_s": 0.0,
+      "position_reference_minus_fixed_axle_m": 0.5999999999999618,
+      "wheel_voltage_commands_v": [
+        -3.7,
+        -3.7
+      ]
+    },
+    "coupled_physics_and_control_period": {
+      "gain_by_timestep": {
+        "0.0005": [
+          -45.553519373194426,
+          -91.30496272134283,
+          -41.24691669531841,
+          -6.633420992077461
+        ],
+        "0.00025": [
+          -51.23950809049243,
+          -102.41158392033958,
+          -46.031931794294074,
+          -7.452923444125669
+        ]
+      },
+      "gains_identical": false,
+      "control_updates_per_simulation_second": [
+        2000,
+        4000
+      ]
+    },
+    "metric_terrain_not_read_from_model": {
+      "fixture": "compiled platform raised from 6 mm to 12 mm as a terrain-randomization prototype",
+      "compiled_top_m": 0.012,
+      "metric_ground_heights_m": [
+        0.006,
+        0.006
+      ],
+      "nominal_fixed_scene_affected": false
+    },
+    "viewer_bad_velocity_guard": {
+      "fault": "injected qvel=1e30 to trigger MuJoCo's numerical reset",
+      "time_before": 0.006000000000000002,
+      "time_after": 0.0005,
+      "paused": true,
+      "notice": "Non-finite/reset physics state: paused; R resets"
+    },
+    "ros_bad_velocity_guard": {
+      "fault": "injected qvel=1e30; real MuJoCo step inside ROS callback",
+      "transport_scope": "direct callback probe, not a DDS integration test",
+      "time_before": 0.006000000000000002,
+      "time_after": 0.0005,
+      "callback_exception": "ValueError: jump supervisor time must be finite and monotonic; reset with a new instance"
+    }
+  },
+  "source_sha256": {
+    "src/wheellegged/control.py": "8a0629273a0d56cd14304a43d0d91e9a9170823f221ce7c38cccd94ef4136f5e",
+    "src/wheellegged/evaluate.py": "4b982cfe2bf740dd29563dfa7548e13e6ce27cf59e857d7f79fa6491de1c67e8",
+    "src/wheellegged/model.py": "b8ae0ce2684dd6a285eac083cabbb014c5a48f85d68f2a8e4f3829ea3d8010ae",
+    "src/wheellegged/jump.py": "212c9d49c15d5c4c90b60ea7326771ac243f547653cea9cd5893a987afdf5abe",
+    "src/wheellegged/lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+    "src/wheellegged/viewer.py": "5665098de7443b46f6ba403db7b05b6f55fce864487c1915a4ecd8a681b2606f",
+    "src/wheellegged/state.py": "cca37a8fd62d7440c1aab00293d9bef23df1a1d90aeb888d8b47fd1b580d86c9",
+    "src/wheellegged/hardware.py": "425dd6b62fbfdb324d34d3da0825f56507408e1c054d4de57fa45144b7bc027b",
+    "src/wheellegged/mass_properties.py": "9aa016dbdfd8ac02b99e5b39d78b2237757c63c8cfcd1a4de4b049211ab9e974",
+    "scripts/review_checks.py": "3837fb2f13d4b6f272570139a45f57a388ee1bda7b4cba48bf466ef40c8351d7",
+    "ros2/wheellegged_ros/wheellegged_ros/sim_node.py": "88f79ed27cd5a2c91d98f212511af29f772672e9fa288e16f2522a99e8675fc9",
+    "config/hardware_parameters.json": "9048d38ec46bb4a802f9256ab9cccb2b71e85ae445b6612c50c33c1d1a240631",
+    "models/cad_mass_properties.json": "272ca92483dd6af924a651c136cdb8f4253422f192ffd2a94f3055acc9b4b683"
+  }
+}

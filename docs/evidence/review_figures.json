@@ -1,0 +1,74 @@
+{
+  "render_only": true,
+  "physics_states_modified_for_control": false,
+  "mujoco_version": "3.17.0",
+  "panels": [
+    {
+      "panel": "balance",
+      "trace": "outputs/validated-hardware-v1/balance/trace.npz",
+      "trace_sha256": "67290fb8f0c022f6bef23d35c747cab3d3dbb8e9fd561ce7e01b9590807b670d",
+      "sample_index": 14000,
+      "time_s": 6.99999999999884
+    },
+    {
+      "panel": "move",
+      "trace": "outputs/validated-hardware-v1/move/trace.npz",
+      "trace_sha256": "e441d42782a7f81bcc4e561de880adf6edc0ee802673528af1e5ec5d67031baa",
+      "sample_index": 6000,
+      "time_s": 3.000000000000169
+    },
+    {
+      "panel": "step",
+      "trace": "outputs/validated-hardware-v1/step/trace.npz",
+      "trace_sha256": "b4868ebaa6c4bef6379bb51484ec48b0721a3db0d6ecc27e2fe579181030316a",
+      "sample_index": 5355,
+      "time_s": 2.6775000000000615
+    },
+    {
+      "panel": "bridge",
+      "trace": "outputs/validated-hardware-v1/bridge/trace.npz",
+      "trace_sha256": "cac4f0c172950c086d49641c563a2cb454235d078d73ffba24985aa8f028cd87",
+      "sample_index": 5800,
+      "time_s": 2.900000000000136
+    },
+    {
+      "panel": "jump",
+      "trace": "outputs/validated-hardware-v1/jump/trace.npz",
+      "trace_sha256": "cf72aaa6fce17ebff1d6dc7203ba50ec7c3d59e9f0cebdcb082fb0a0ae9e423e",
+      "sample_index": 4844,
+      "time_s": 2.421999999999976
+    },
+    {
+      "panel": "legs",
+      "trace": "outputs/leg-motion/final/full_split_jump.npz",
+      "trace_sha256": "30c5d7b2200580aa46f0e1236839e872049297b21737c38707eca85ec75471b4",
+      "sample_index": 11000,
+      "time_s": 5.499999999999671
+    },
+    {
+      "panel": "step_接近边缘",
+      "trace": "outputs/validated-hardware-v1/step/trace.npz",
+      "sample_index": 4703,
+      "time_s": 2.3514999999999526
+    },
+    {
+      "panel": "step_接触边缘",
+      "trace": "outputs/validated-hardware-v1/step/trace.npz",
+      "sample_index": 5051,
+      "time_s": 2.5255000000000107
+    },
+    {
+      "panel": "step_爬上台面",
+      "trace": "outputs/validated-hardware-v1/step/trace.npz",
+      "sample_index": 5355,
+      "time_s": 2.6775000000000615
+    },
+    {
+      "panel": "step_继续前进",
+      "trace": "outputs/validated-hardware-v1/step/trace.npz",
+      "sample_index": 6228,
+      "time_s": 3.1140000000002073
+    }
+  ],
+  "script_sha256": "5c36466bc7252ab3cfe996ae51b1b957f7c7dc046c03992718044a81c21f9c4c"
+}

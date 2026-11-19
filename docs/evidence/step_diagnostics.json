@@ -1,0 +1,1748 @@
+{
+  "protocol": {
+    "schema_version": 1,
+    "created_at_utc": "2026-11-19T18:16:18.471714+00:00",
+    "cases": [
+      {
+        "name": "h06_hip20_v10",
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.1
+      },
+      {
+        "name": "h06_hip20_v14",
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.14
+      },
+      {
+        "name": "h06_hip20_v18",
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.18
+      },
+      {
+        "name": "h06_hip20_v22",
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.22
+      },
+      {
+        "name": "h06_hip30_v10",
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.1
+      },
+      {
+        "name": "h06_hip30_v14",
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.14
+      },
+      {
+        "name": "h06_hip30_v18",
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      },
+      {
+        "name": "h06_hip30_v22",
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.22
+      },
+      {
+        "name": "h04_hip30_v18",
+        "height_m": 0.004,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      },
+      {
+        "name": "h08_hip30_v14",
+        "height_m": 0.008,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.14
+      },
+      {
+        "name": "h08_hip30_v18",
+        "height_m": 0.008,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      },
+      {
+        "name": "h10_hip30_v18",
+        "height_m": 0.01,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      }
+    ],
+    "thresholds_fixed_before_rollouts": {
+      "pitch_abs_rad": 0.45,
+      "roll_abs_rad": 0.25,
+      "closure_m": 0.001,
+      "nonwheel_contact_force_n": 0.05,
+      "support_vertical_n": 0.1,
+      "platform_height_error_m": 0.001,
+      "sustained_platform_s": 0.1,
+      "tail_window_s": 1.0,
+      "tail_speed_m_s": 0.03,
+      "tail_pitch_rms_rad": 0.03,
+      "limit_tolerance": 1e-08,
+      "loaded_contact_n": 0.02,
+      "edge_before_radii": 2.0,
+      "edge_after_radii": 3.0,
+      "quality_speed_retention": 0.5,
+      "quality_reverse_speed_m_s": -0.02,
+      "quality_slip_rms_m_s": 0.03,
+      "quality_hip_saturation_s": 0.05,
+      "quality_pitch_error_rad": 0.08,
+      "saturation_fraction": 0.99
+    },
+    "source_sha256": {
+      "assets/cad/mushibot.xml": "4affce3311987ad9d9ffc2ea0336aead48d0c9c3a7f8ee6ce730da5f6b519448",
+      "config/hardware_parameters.json": "9048d38ec46bb4a802f9256ab9cccb2b71e85ae445b6612c50c33c1d1a240631",
+      "models/cad_mass_properties.json": "272ca92483dd6af924a651c136cdb8f4253422f192ffd2a94f3055acc9b4b683",
+      "scripts/step_diagnostics.py": "a59c0d728afbb346befb690d81f538342bf98fff3799855c0d23376b39f2a236",
+      "src/wheellegged/__init__.py": "261be76482b6557b8ab3c23883e8b2af633c3de66b395e8568f282f59e7e56c7",
+      "src/wheellegged/cli.py": "c95204ddf9aa94a1bc1efa46871d525abc7d9a32d8e897ab9850772e5b9de6f4",
+      "src/wheellegged/control.py": "8a0629273a0d56cd14304a43d0d91e9a9170823f221ce7c38cccd94ef4136f5e",
+      "src/wheellegged/evaluate.py": "4b982cfe2bf740dd29563dfa7548e13e6ce27cf59e857d7f79fa6491de1c67e8",
+      "src/wheellegged/hardware.py": "425dd6b62fbfdb324d34d3da0825f56507408e1c054d4de57fa45144b7bc027b",
+      "src/wheellegged/jump.py": "212c9d49c15d5c4c90b60ea7326771ac243f547653cea9cd5893a987afdf5abe",
+      "src/wheellegged/lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+      "src/wheellegged/mass_properties.py": "9aa016dbdfd8ac02b99e5b39d78b2237757c63c8cfcd1a4de4b049211ab9e974",
+      "src/wheellegged/model.py": "b8ae0ce2684dd6a285eac083cabbb014c5a48f85d68f2a8e4f3829ea3d8010ae",
+      "src/wheellegged/render.py": "a00c549c68cf7f729e4755dd17669b066a638585a2ecfe1a21e23881aa083898",
+      "src/wheellegged/state.py": "cca37a8fd62d7440c1aab00293d9bef23df1a1d90aeb888d8b47fd1b580d86c9",
+      "src/wheellegged/viewer.py": "5665098de7443b46f6ba403db7b05b6f55fce864487c1915a4ecd8a681b2606f"
+    },
+    "hardware_profile": {
+      "name": "hardware_2s",
+      "bus_voltage_v": 7.4,
+      "wheel_voltage_limit_v": 3.7,
+      "wheel_gain_nm_per_v": 0.01,
+      "wheel_bias_nm_per_rad_s": 0.00047746482927568597,
+      "wheel_torque_limit_nm": 0.0588,
+      "hip_torque_limit_nm": 0.14709975,
+      "description": "vendor_bus_equivalent_sine_2s: nominal user-confirmed 2S supply, linear SinePWM phase-voltage limit Vbus/2, paired bus-to-phase Kv approximation, uncalibrated voltage-to-torque gain, and STS3032 rated 6 V torque used as the continuous simulation envelope."
+    },
+    "dt_s": 0.0005,
+    "duration_s": 8.0,
+    "command_on_s": 1.0,
+    "command_off_s": 4.0,
+    "initial_hip_rad": -0.2,
+    "mujoco_version": "3.17.0",
+    "numpy_version": "2.5.5",
+    "python_version": "3.14.10",
+    "randomization": "none; deterministic sensitivity cases are not independent statistical trials",
+    "quality_screen_status": "prespecified exploratory engineering screens, not published standards or original PASS criteria"
+  },
+  "source_unchanged_during_run": true,
+  "stock_baseline_parity": {
+    "stock_passed": true,
+    "max_absolute_errors": {
+      "time": 0.0,
+      "qpos": 0.0,
+      "qvel": 0.0,
+      "ctrl": 0.0,
+      "actuator_force": 0.0,
+      "speed": 0.0,
+      "pitch": 0.0
+    },
+    "identical_trajectory": true
+  },
+  "cases": [
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 3.0510000000001862,
+        "first_tire_contact_axle_x_m": 0.18634554524710123,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": null,
+        "sustained_platform_support_s": 0.0,
+        "final_axle_xyz_m": [
+          0.18631750963189908,
+          -0.00022307860756704684,
+          0.018599816217078208
+        ],
+        "max_axle_x_m": 0.18731938829003505,
+        "settling_time_after_command_stop_s": null,
+        "pre_contact_mean_speed_m_s": 0.11453035704271076,
+        "edge_min_speed_m_s": -0.07720422544910359,
+        "edge_speed_retention_fraction": -0.6740939908212503,
+        "edge_speed_drop_fraction": 1.6740939908212504,
+        "pitch_peak_rad": 0.1147677815678855,
+        "roll_peak_rad": 0.0027730692957987275,
+        "edge_pitch_error_peak_rad": 0.0936166774670231,
+        "edge_speed_tracking_rmse_m_s": 0.0920063936778436,
+        "position_reference_error_peak_m": 0.11498231190002439,
+        "edge_position_reference_error_peak_m": 0.09500723756414473,
+        "edge_loaded_contact_slip_rms_m_s": 0.004968148035103987,
+        "edge_loaded_contact_slip_peak_m_s": 0.09409759120762952,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 0.0,
+        "wheel_step_normal_peak_n": 7.435312947037334,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.0035,
+        "edge_wheel_voltage_saturation_duration_s": 0.0035,
+        "hip_torque_saturation_duration_s": 0.016,
+        "edge_hip_torque_saturation_duration_s": 0.016,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 7.763954003182929e-05,
+        "tail_speed_peak_m_s": 1.1357898035085405e-07,
+        "tail_pitch_error_rms_rad": 0.06009664810263489,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": false,
+        "both_wheels_remain_on_actual_platform": false,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": false
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": false,
+        "edge_slip_rms_below_3cm_s": true,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": false,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.739000000000082,
+          "axle_x_m": 0.15005169415236444,
+          "speed_m_s": 0.11955430728954318,
+          "pitch_deg": 0.947062190915386,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 3.0515000000001864,
+          "axle_x_m": 0.1863859265549585,
+          "speed_m_s": 0.08076877210767704,
+          "pitch_deg": 0.9634940801093311,
+          "wheel_step_force_n": [
+            4.403213629862599,
+            4.883429335385475
+          ]
+        },
+        "axle_at_edge": null,
+        "on_platform": null
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.1
+      },
+      "name": "h06_hip20_v10",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 8.336665228000129
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.6780000000000617,
+        "first_tire_contact_axle_x_m": 0.18638407936221582,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": null,
+        "sustained_platform_support_s": 0.0,
+        "final_axle_xyz_m": [
+          0.18631763245841043,
+          -0.0005998010500304907,
+          0.01859984210289052
+        ],
+        "max_axle_x_m": 0.18944494243302015,
+        "settling_time_after_command_stop_s": null,
+        "pre_contact_mean_speed_m_s": 0.17350847527129878,
+        "edge_min_speed_m_s": -0.10740096717891445,
+        "edge_speed_retention_fraction": -0.6189955102249716,
+        "edge_speed_drop_fraction": 1.6189955102249716,
+        "pitch_peak_rad": 0.18717503054304582,
+        "roll_peak_rad": 0.005831045158006462,
+        "edge_pitch_error_peak_rad": 0.16472439963094185,
+        "edge_speed_tracking_rmse_m_s": 0.13570952789249424,
+        "position_reference_error_peak_m": 0.23498273577097545,
+        "edge_position_reference_error_peak_m": 0.19581774174773262,
+        "edge_loaded_contact_slip_rms_m_s": 0.01316086209812464,
+        "edge_loaded_contact_slip_peak_m_s": 0.19718629027421714,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 2.574696973222376,
+        "wheel_step_normal_peak_n": 11.055175447136337,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.005,
+        "edge_wheel_voltage_saturation_duration_s": 0.005,
+        "hip_torque_saturation_duration_s": 0.038,
+        "edge_hip_torque_saturation_duration_s": 0.038,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 9.442581004260608e-05,
+        "tail_speed_peak_m_s": 1.2609460772701054e-07,
+        "tail_pitch_error_rms_rad": 0.123741981475679,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": false,
+        "both_wheels_remain_on_actual_platform": false,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": false
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": false,
+        "edge_slip_rms_below_3cm_s": true,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": false,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.469499999999992,
+          "axle_x_m": 0.1500826899676719,
+          "speed_m_s": 0.1758286125393334,
+          "pitch_deg": 1.0522262031884209,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.6780000000000617,
+          "axle_x_m": 0.18638407936221582,
+          "speed_m_s": 0.17180591327015918,
+          "pitch_deg": 0.9020307809401159,
+          "wheel_step_force_n": [
+            10.290170846588865,
+            11.055175447136337
+          ]
+        },
+        "axle_at_edge": null,
+        "on_platform": null
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.14
+      },
+      "name": "h06_hip20_v14",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 8.303943478999827
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.5195000000000087,
+        "first_tire_contact_axle_x_m": 0.18636703451479228,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": 2.9650000000001575,
+        "sustained_platform_support_s": 3.9329999999978202,
+        "final_axle_xyz_m": [
+          0.5382985931343875,
+          0.014805291290987552,
+          0.02459979130780319
+        ],
+        "max_axle_x_m": 0.5911742665762343,
+        "settling_time_after_command_stop_s": 2.0664999999993574,
+        "pre_contact_mean_speed_m_s": 0.2256861929847564,
+        "edge_min_speed_m_s": 0.026579101381029525,
+        "edge_speed_retention_fraction": 0.11777017029493145,
+        "edge_speed_drop_fraction": 0.8822298297050686,
+        "pitch_peak_rad": 0.10818045540262274,
+        "roll_peak_rad": 0.003089550649885316,
+        "edge_pitch_error_peak_rad": 0.08801504478090037,
+        "edge_speed_tracking_rmse_m_s": 0.08748184171703915,
+        "position_reference_error_peak_m": 0.07063643693983358,
+        "edge_position_reference_error_peak_m": 0.07063643693983358,
+        "edge_loaded_contact_slip_rms_m_s": 0.02593926143358479,
+        "edge_loaded_contact_slip_peak_m_s": 0.38246576068154586,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 3.3204760589209195,
+        "wheel_step_normal_peak_n": 13.678555334141077,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.0055,
+        "edge_wheel_voltage_saturation_duration_s": 0.0055,
+        "hip_torque_saturation_duration_s": 0.0205,
+        "edge_hip_torque_saturation_duration_s": 0.0205,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 8.418509124606064e-05,
+        "tail_speed_peak_m_s": 0.0035469545126079116,
+        "tail_pitch_error_rms_rad": 0.0010146251466576599,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": true,
+        "both_wheels_remain_on_actual_platform": true,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": true
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": true,
+        "edge_slip_rms_below_3cm_s": true,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": true,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.358499999999955,
+          "axle_x_m": 0.15006491739811936,
+          "speed_m_s": 0.22440519772801337,
+          "pitch_deg": 1.3991266313274935,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.5195000000000087,
+          "axle_x_m": 0.18636703451479228,
+          "speed_m_s": 0.22563842616192006,
+          "pitch_deg": 1.092724832734514,
+          "wheel_step_force_n": [
+            12.689111688661548,
+            13.678555334141077
+          ]
+        },
+        "axle_at_edge": {
+          "time_s": 2.7670000000000914,
+          "axle_x_m": 0.20000181455903682,
+          "speed_m_s": 0.04923415808639797,
+          "pitch_deg": 6.191135603801142,
+          "wheel_step_force_n": [
+            1.7671824117880983,
+            1.5466291926801876
+          ]
+        },
+        "on_platform": {
+          "time_s": 3.2225000000002435,
+          "axle_x_m": 0.2700265112296608,
+          "speed_m_s": 0.22189627175488819,
+          "pitch_deg": 2.7967098690043097,
+          "wheel_step_force_n": [
+            1.5441767522970267,
+            1.5715446277268703
+          ]
+        }
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.18
+      },
+      "name": "h06_hip20_v18",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.915788051999698
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.4474999999999847,
+        "first_tire_contact_axle_x_m": 0.18636295739546294,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": 2.657500000000055,
+        "sustained_platform_support_s": 3.4684999999980777,
+        "final_axle_xyz_m": [
+          0.6580297248726197,
+          0.008675507448370503,
+          0.024599791644642398
+        ],
+        "max_axle_x_m": 0.7225554384402744,
+        "settling_time_after_command_stop_s": 2.2824999999992377,
+        "pre_contact_mean_speed_m_s": 0.26850395616410655,
+        "edge_min_speed_m_s": 0.1317969086979033,
+        "edge_speed_retention_fraction": 0.4908564871101957,
+        "edge_speed_drop_fraction": 0.5091435128898043,
+        "pitch_peak_rad": 0.07499505557947615,
+        "roll_peak_rad": 0.002056863831480806,
+        "edge_pitch_error_peak_rad": 0.054759333269978484,
+        "edge_speed_tracking_rmse_m_s": 0.049150428621810044,
+        "position_reference_error_peak_m": 0.06196821673050381,
+        "edge_position_reference_error_peak_m": 0.05102732171913947,
+        "edge_loaded_contact_slip_rms_m_s": 0.044910544314837125,
+        "edge_loaded_contact_slip_peak_m_s": 0.5072565593311749,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 1.2909480415972534,
+        "wheel_step_normal_peak_n": 16.09100106203801,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.0115,
+        "edge_wheel_voltage_saturation_duration_s": 0.0115,
+        "hip_torque_saturation_duration_s": 0.029,
+        "edge_hip_torque_saturation_duration_s": 0.029,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 8.776027484120362e-05,
+        "tail_speed_peak_m_s": 0.005965790945140741,
+        "tail_pitch_error_rms_rad": 0.0015367311097549015,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": true,
+        "both_wheels_remain_on_actual_platform": true,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": true
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": true,
+        "edge_slip_rms_below_3cm_s": false,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": true
+      },
+      "safe_crossing_and_settling": true,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.3124999999999396,
+          "axle_x_m": 0.1501128426128434,
+          "speed_m_s": 0.26403579266035104,
+          "pitch_deg": 1.9601000928992314,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.4474999999999847,
+          "axle_x_m": 0.18636295739546294,
+          "speed_m_s": 0.2718261842886002,
+          "pitch_deg": 1.4978223567512876,
+          "wheel_step_force_n": [
+            14.879435825244396,
+            16.09100106203801
+          ]
+        },
+        "axle_at_edge": {
+          "time_s": 2.541500000000016,
+          "axle_x_m": 0.20002589283820382,
+          "speed_m_s": 0.1426825897790273,
+          "pitch_deg": 4.1588689943758235,
+          "wheel_step_force_n": [
+            1.3670641869503173,
+            1.5164109625200464
+          ]
+        },
+        "on_platform": {
+          "time_s": 2.885500000000131,
+          "axle_x_m": 0.2701133199050245,
+          "speed_m_s": 0.2463588524662477,
+          "pitch_deg": 2.697399085062551,
+          "wheel_step_force_n": [
+            1.5472529995087339,
+            1.5706063698412125
+          ]
+        }
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.2,
+        "speed_m_s": 0.22
+      },
+      "name": "h06_hip20_v22",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.881945490000362
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 3.0480000000001852,
+        "first_tire_contact_axle_x_m": 0.18631970218599578,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": null,
+        "sustained_platform_support_s": 0.0,
+        "final_axle_xyz_m": [
+          0.1863175668530201,
+          -0.00011865870248639956,
+          0.01859981975195217
+        ],
+        "max_axle_x_m": 0.18721787162506137,
+        "settling_time_after_command_stop_s": null,
+        "pre_contact_mean_speed_m_s": 0.11360317243427329,
+        "edge_min_speed_m_s": -0.06632970865420579,
+        "edge_speed_retention_fraction": -0.5838719749889183,
+        "edge_speed_drop_fraction": 1.5838719749889183,
+        "pitch_peak_rad": 0.10563921145375464,
+        "roll_peak_rad": 0.00301770669852936,
+        "edge_pitch_error_peak_rad": 0.09205116771789511,
+        "edge_speed_tracking_rmse_m_s": 0.09159932022027911,
+        "position_reference_error_peak_m": 0.11498209758546966,
+        "edge_position_reference_error_peak_m": 0.09500696830606689,
+        "edge_loaded_contact_slip_rms_m_s": 0.03993502801681951,
+        "edge_loaded_contact_slip_peak_m_s": 0.4777317924256593,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 0.0,
+        "wheel_step_normal_peak_n": 7.098203524363507,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.009000000000000001,
+        "edge_wheel_voltage_saturation_duration_s": 0.009000000000000001,
+        "hip_torque_saturation_duration_s": 0.009000000000000001,
+        "edge_hip_torque_saturation_duration_s": 0.009000000000000001,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 8.068537052398438e-05,
+        "tail_speed_peak_m_s": 3.0930511842294705e-08,
+        "tail_pitch_error_rms_rad": 0.059673263310385034,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": false,
+        "both_wheels_remain_on_actual_platform": false,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": false
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": false,
+        "edge_slip_rms_below_3cm_s": false,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": false,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.73350000000008,
+          "axle_x_m": 0.15001205821092473,
+          "speed_m_s": 0.11876121395449295,
+          "pitch_deg": 0.5076517673176169,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 3.0485000000001854,
+          "axle_x_m": 0.18636755062957483,
+          "speed_m_s": 0.09569807211293868,
+          "pitch_deg": 0.5210820574331106,
+          "wheel_step_force_n": [
+            4.908497768581164,
+            6.668986720170555
+          ]
+        },
+        "axle_at_edge": null,
+        "on_platform": null
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.1
+      },
+      "name": "h06_hip30_v10",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.923267584000314
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.6715000000000595,
+        "first_tire_contact_axle_x_m": 0.18631230991153755,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": null,
+        "sustained_platform_support_s": 0.0,
+        "final_axle_xyz_m": [
+          0.18631782368092556,
+          3.546434164640455e-05,
+          0.018599849486694645
+        ],
+        "max_axle_x_m": 0.18984931050411272,
+        "settling_time_after_command_stop_s": null,
+        "pre_contact_mean_speed_m_s": 0.17274280190290242,
+        "edge_min_speed_m_s": -0.10109591178194247,
+        "edge_speed_retention_fraction": -0.5852395044441145,
+        "edge_speed_drop_fraction": 1.5852395044441145,
+        "pitch_peak_rad": 0.17740502512578463,
+        "roll_peak_rad": 0.002505344831011705,
+        "edge_pitch_error_peak_rad": 0.16252712353432666,
+        "edge_speed_tracking_rmse_m_s": 0.13592007569100087,
+        "position_reference_error_peak_m": 0.23498178099926836,
+        "edge_position_reference_error_peak_m": 0.19581655663580214,
+        "edge_loaded_contact_slip_rms_m_s": 0.02787928703324171,
+        "edge_loaded_contact_slip_peak_m_s": 0.5079585755358401,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 3.8458392902832235,
+        "wheel_step_normal_peak_n": 10.035298463489191,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.012,
+        "edge_wheel_voltage_saturation_duration_s": 0.012,
+        "hip_torque_saturation_duration_s": 0.023,
+        "edge_hip_torque_saturation_duration_s": 0.023,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 9.228966766997474e-05,
+        "tail_speed_peak_m_s": 1.4507762714255499e-08,
+        "tail_pitch_error_rms_rad": 0.12312067214698107,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": false,
+        "both_wheels_remain_on_actual_platform": false,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": false
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": false,
+        "edge_slip_rms_below_3cm_s": true,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": false,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.4624999999999897,
+          "axle_x_m": 0.1500668360614612,
+          "speed_m_s": 0.17538323479219148,
+          "pitch_deg": 0.594774067980871,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.6720000000000597,
+          "axle_x_m": 0.18638622625383083,
+          "speed_m_s": 0.14783510857045778,
+          "pitch_deg": 0.4732109031105586,
+          "wheel_step_force_n": [
+            6.81896517439928,
+            9.594038096935408
+          ]
+        },
+        "axle_at_edge": null,
+        "on_platform": null
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.14
+      },
+      "name": "h06_hip30_v14",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.986590898000031
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.5125000000000064,
+        "first_tire_contact_axle_x_m": 0.1863304980493234,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": 2.838000000000115,
+        "sustained_platform_support_s": 5.084499999998145,
+        "final_axle_xyz_m": [
+          0.5385942184217198,
+          0.002677491128797893,
+          0.02459979165268451
+        ],
+        "max_axle_x_m": 0.5911511001162189,
+        "settling_time_after_command_stop_s": 2.0144999999993862,
+        "pre_contact_mean_speed_m_s": 0.22551046379389134,
+        "edge_min_speed_m_s": 0.05858517247615773,
+        "edge_speed_retention_fraction": 0.2597891534190738,
+        "edge_speed_drop_fraction": 0.7402108465809262,
+        "pitch_peak_rad": 0.07517111555659353,
+        "roll_peak_rad": 0.0015775077303132393,
+        "edge_pitch_error_peak_rad": 0.062796241588127,
+        "edge_speed_tracking_rmse_m_s": 0.06393682833034965,
+        "position_reference_error_peak_m": 0.04999313242505418,
+        "edge_position_reference_error_peak_m": 0.04999313242505418,
+        "edge_loaded_contact_slip_rms_m_s": 0.018678151895406683,
+        "edge_loaded_contact_slip_peak_m_s": 0.2817380023034339,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 0.9960262824394343,
+        "wheel_step_normal_peak_n": 12.849547472555964,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.0045000000000000005,
+        "edge_wheel_voltage_saturation_duration_s": 0.0045000000000000005,
+        "hip_torque_saturation_duration_s": 0.016,
+        "edge_hip_torque_saturation_duration_s": 0.016,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 8.623836243781989e-05,
+        "tail_speed_peak_m_s": 0.002660881508701295,
+        "tail_pitch_error_rms_rad": 0.0008299276086338502,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": true,
+        "both_wheels_remain_on_actual_platform": true,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": true
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": true,
+        "edge_slip_rms_below_3cm_s": true,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": true
+      },
+      "safe_crossing_and_settling": true,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.3514999999999526,
+          "axle_x_m": 0.15005058765374238,
+          "speed_m_s": 0.2245492994448031,
+          "pitch_deg": 0.9194174725697376,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.5130000000000066,
+          "axle_x_m": 0.18641428667498067,
+          "speed_m_s": 0.16759664477327343,
+          "pitch_deg": 0.66551512385756,
+          "wheel_step_force_n": [
+            7.337124911127036,
+            8.203083764583223
+          ]
+        },
+        "axle_at_edge": {
+          "time_s": 2.6775000000000615,
+          "axle_x_m": 0.20001308675406332,
+          "speed_m_s": 0.07560279010696686,
+          "pitch_deg": 4.274272563841667,
+          "wheel_step_force_n": [
+            1.9601569285373823,
+            1.6343460481773502
+          ]
+        },
+        "on_platform": {
+          "time_s": 3.1145000000002074,
+          "axle_x_m": 0.2700856692167363,
+          "speed_m_s": 0.21127362737976818,
+          "pitch_deg": 1.9404919077353862,
+          "wheel_step_force_n": [
+            1.5501495404011987,
+            1.5657637309580301
+          ]
+        }
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      },
+      "name": "h06_hip30_v18",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.7655006570003025
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.4409999999999825,
+        "first_tire_contact_axle_x_m": 0.18642197599238253,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1863618183030141,
+        "first_both_wheels_supported_on_top_s": 2.661500000000056,
+        "sustained_platform_support_s": 3.5229999999980475,
+        "final_axle_xyz_m": [
+          0.6582217475008166,
+          0.009930365740857053,
+          0.024599791649671115
+        ],
+        "max_axle_x_m": 0.7209695779244907,
+        "settling_time_after_command_stop_s": 2.233499999999265,
+        "pre_contact_mean_speed_m_s": 0.26898444002149235,
+        "edge_min_speed_m_s": 0.03977585058199593,
+        "edge_speed_retention_fraction": 0.1478741691482889,
+        "edge_speed_drop_fraction": 0.8521258308517111,
+        "pitch_peak_rad": 0.11106212024781327,
+        "roll_peak_rad": 0.05878586840199673,
+        "edge_pitch_error_peak_rad": 0.09905987085507226,
+        "edge_speed_tracking_rmse_m_s": 0.05343592064838248,
+        "position_reference_error_peak_m": 0.06057839843117716,
+        "edge_position_reference_error_peak_m": 0.04682962389771712,
+        "edge_loaded_contact_slip_rms_m_s": 0.3309105215447388,
+        "edge_loaded_contact_slip_peak_m_s": 1.2915184876498855,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 14.512370451941685,
+        "wheel_step_normal_peak_n": 40.2457621941558,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.081,
+        "edge_wheel_voltage_saturation_duration_s": 0.081,
+        "hip_torque_saturation_duration_s": 0.0475,
+        "edge_hip_torque_saturation_duration_s": 0.0475,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 0.00012298363658888614,
+        "tail_speed_peak_m_s": 0.004783500851171231,
+        "tail_pitch_error_rms_rad": 0.0012706779420553662,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": true,
+        "both_wheels_remain_on_actual_platform": true,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": true
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": true,
+        "edge_slip_rms_below_3cm_s": false,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": true,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.3059999999999374,
+          "axle_x_m": 0.150108524750459,
+          "speed_m_s": 0.2647614496487571,
+          "pitch_deg": 1.4571751010136593,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.4409999999999825,
+          "axle_x_m": 0.18642197599238253,
+          "speed_m_s": 0.27202713605538087,
+          "pitch_deg": 1.009767836029537,
+          "wheel_step_force_n": [
+            11.591883609170875,
+            16.075651194474734
+          ]
+        },
+        "axle_at_edge": {
+          "time_s": 2.5395000000000154,
+          "axle_x_m": 0.20000411791337463,
+          "speed_m_s": 0.24992481977262998,
+          "pitch_deg": 5.725423262404857,
+          "wheel_step_force_n": [
+            5.29370402999355,
+            0.0
+          ]
+        },
+        "on_platform": {
+          "time_s": 2.8625000000001233,
+          "axle_x_m": 0.2700617230555902,
+          "speed_m_s": 0.24836702110045572,
+          "pitch_deg": 2.011221580860949,
+          "wheel_step_force_n": [
+            1.550275571480675,
+            1.5772004118997338
+          ]
+        }
+      },
+      "case": {
+        "height_m": 0.006,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.22
+      },
+      "name": "h06_hip30_v22",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.006,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "177556aef6ac052bc291e66139bceec755d1aadb047b0d171f4d594cd59edc92",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.886249450999458
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.5225000000000097,
+        "first_tire_contact_axle_x_m": 0.18858212557564685,
+        "ideal_rigid_corner_contact_axle_x_m": 0.1885108747069239,
+        "first_both_wheels_supported_on_top_s": 2.726500000000078,
+        "sustained_platform_support_s": 5.207499999998186,
+        "final_axle_xyz_m": [
+          0.5386656054926335,
+          0.0007578828453876987,
+          0.022599791656247835
+        ],
+        "max_axle_x_m": 0.5914390735701629,
+        "settling_time_after_command_stop_s": 2.002499999999393,
+        "pre_contact_mean_speed_m_s": 0.2255185694146977,
+        "edge_min_speed_m_s": 0.12594537691338575,
+        "edge_speed_retention_fraction": 0.5584700951245815,
+        "edge_speed_drop_fraction": 0.44152990487541854,
+        "pitch_peak_rad": 0.0584024295147365,
+        "roll_peak_rad": 0.0008280718838969422,
+        "edge_pitch_error_peak_rad": 0.029753606190917554,
+        "edge_speed_tracking_rmse_m_s": 0.031002166952381414,
+        "position_reference_error_peak_m": 0.05014631161844775,
+        "edge_position_reference_error_peak_m": 0.029029121269586126,
+        "edge_loaded_contact_slip_rms_m_s": 0.013621119768893988,
+        "edge_loaded_contact_slip_peak_m_s": 0.16060220180837945,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 3.234399908043852,
+        "wheel_step_normal_peak_n": 11.837979011678781,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.004,
+        "edge_wheel_voltage_saturation_duration_s": 0.004,
+        "hip_torque_saturation_duration_s": 0.0125,
+        "edge_hip_torque_saturation_duration_s": 0.0125,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 9.360955869843955e-05,
+        "tail_speed_peak_m_s": 0.002471212588046622,
+        "tail_pitch_error_rms_rad": 0.0007981038889451709,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": true,
+        "both_wheels_remain_on_actual_platform": true,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": true
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": true,
+        "no_edge_reversal_over_2cm_s": true,
+        "edge_slip_rms_below_3cm_s": true,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": true
+      },
+      "safe_crossing_and_settling": true,
+      "motion_quality_screen_passed": true,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.3514999999999526,
+          "axle_x_m": 0.15005058765374238,
+          "speed_m_s": 0.2245492994448031,
+          "pitch_deg": 0.9194174725697376,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.5225000000000097,
+          "axle_x_m": 0.18858212557564685,
+          "speed_m_s": 0.22509988427614694,
+          "pitch_deg": 0.6145879670549925,
+          "wheel_step_force_n": [
+            11.335913323663974,
+            11.837979011678781
+          ]
+        },
+        "axle_at_edge": {
+          "time_s": 2.6050000000000373,
+          "axle_x_m": 0.20006056523332197,
+          "speed_m_s": 0.13630282211823225,
+          "pitch_deg": 2.255228179216807,
+          "wheel_step_force_n": [
+            1.3955947923185352,
+            1.4525884129679434
+          ]
+        },
+        "on_platform": {
+          "time_s": 2.999500000000169,
+          "axle_x_m": 0.27007695804020426,
+          "speed_m_s": 0.20301664822921375,
+          "pitch_deg": 1.3904714515469299,
+          "wheel_step_force_n": [
+            1.553475788416598,
+            1.5623836973267897
+          ]
+        }
+      },
+      "case": {
+        "height_m": 0.004,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      },
+      "name": "h04_hip30_v18",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.004,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "d60d176e1d89a5270343c55e0ecc14062a5d3c383f9b911170ce3835695ef25e",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.680576861999725
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.6625000000000565,
+        "first_tire_contact_axle_x_m": 0.18477296649135166,
+        "ideal_rigid_corner_contact_axle_x_m": 0.18476845378827214,
+        "first_both_wheels_supported_on_top_s": null,
+        "sustained_platform_support_s": 0.0,
+        "final_axle_xyz_m": [
+          0.1847159187612814,
+          -0.000486673154746986,
+          0.018599838933220536
+        ],
+        "max_axle_x_m": 0.1861168140676155,
+        "settling_time_after_command_stop_s": null,
+        "pre_contact_mean_speed_m_s": 0.17295708081304353,
+        "edge_min_speed_m_s": -0.0699664167104344,
+        "edge_speed_retention_fraction": -0.40453051347498165,
+        "edge_speed_drop_fraction": 1.4045305134749817,
+        "pitch_peak_rad": 0.1782514489501496,
+        "roll_peak_rad": 0.003968491736085342,
+        "edge_pitch_error_peak_rad": 0.16314871582518506,
+        "edge_speed_tracking_rmse_m_s": 0.13471039511395963,
+        "position_reference_error_peak_m": 0.23658418436052447,
+        "edge_position_reference_error_peak_m": 0.19741911795936454,
+        "edge_loaded_contact_slip_rms_m_s": 0.07045075598287642,
+        "edge_loaded_contact_slip_peak_m_s": 0.6286524331962007,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 3.330522076103367,
+        "wheel_step_normal_peak_n": 11.798360974564279,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.021,
+        "edge_wheel_voltage_saturation_duration_s": 0.021,
+        "hip_torque_saturation_duration_s": 0.0195,
+        "edge_hip_torque_saturation_duration_s": 0.0195,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 8.844981511331129e-05,
+        "tail_speed_peak_m_s": 2.320010099054933e-12,
+        "tail_pitch_error_rms_rad": 0.12374424925982672,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": false,
+        "both_wheels_remain_on_actual_platform": false,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": false
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": false,
+        "edge_slip_rms_below_3cm_s": false,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": false,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.4624999999999897,
+          "axle_x_m": 0.1500668360614612,
+          "speed_m_s": 0.17538323479219148,
+          "pitch_deg": 0.594774067980871,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.6625000000000565,
+          "axle_x_m": 0.18477296649135166,
+          "speed_m_s": 0.171173747205112,
+          "pitch_deg": 0.46164283385766425,
+          "wheel_step_force_n": [
+            10.795153178575713,
+            11.798360974564279
+          ]
+        },
+        "axle_at_edge": null,
+        "on_platform": null
+      },
+      "case": {
+        "height_m": 0.008,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.14
+      },
+      "name": "h08_hip30_v14",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.008,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "e11cdc93df14101834402653b3cc7a97628519bb30536961f6fecbf87b0eb4b7",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.856514938000146
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.505500000000004,
+        "first_tire_contact_axle_x_m": 0.18475363072272694,
+        "ideal_rigid_corner_contact_axle_x_m": 0.18476845378827214,
+        "first_both_wheels_supported_on_top_s": null,
+        "sustained_platform_support_s": 0.0,
+        "final_axle_xyz_m": [
+          0.18471615599659583,
+          -0.0007152902473990946,
+          0.01859987957894069
+        ],
+        "max_axle_x_m": 0.1889726630893428,
+        "settling_time_after_command_stop_s": null,
+        "pre_contact_mean_speed_m_s": 0.2254925108634584,
+        "edge_min_speed_m_s": -0.1252890031281159,
+        "edge_speed_retention_fraction": -0.5556237883393904,
+        "edge_speed_drop_fraction": 1.5556237883393904,
+        "pitch_peak_rad": 0.24721637264976903,
+        "roll_peak_rad": 0.019055693739363954,
+        "edge_pitch_error_peak_rad": 0.23003296814042887,
+        "edge_speed_tracking_rmse_m_s": 0.17605589146498857,
+        "position_reference_error_peak_m": 0.35658418668741343,
+        "edge_position_reference_error_peak_m": 0.2918292030675665,
+        "edge_loaded_contact_slip_rms_m_s": 0.101452954757806,
+        "edge_loaded_contact_slip_peak_m_s": 0.8180324615625048,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 2.1109899184441003,
+        "wheel_step_normal_peak_n": 14.70295322066733,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.0485,
+        "edge_wheel_voltage_saturation_duration_s": 0.0485,
+        "hip_torque_saturation_duration_s": 0.0395,
+        "edge_hip_torque_saturation_duration_s": 0.0395,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 9.312770837751453e-05,
+        "tail_speed_peak_m_s": 8.09921263451971e-06,
+        "tail_pitch_error_rms_rad": 0.18699866886931235,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": false,
+        "both_wheels_remain_on_actual_platform": false,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": false
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": false,
+        "edge_slip_rms_below_3cm_s": false,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": false,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.3514999999999526,
+          "axle_x_m": 0.15005058765374238,
+          "speed_m_s": 0.2245492994448031,
+          "pitch_deg": 0.9194174725697376,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.5060000000000042,
+          "axle_x_m": 0.18482866592443603,
+          "speed_m_s": 0.1500947484600043,
+          "pitch_deg": 0.6820648289407155,
+          "wheel_step_force_n": [
+            7.924396615556841,
+            9.171902450452444
+          ]
+        },
+        "axle_at_edge": null,
+        "on_platform": null
+      },
+      "case": {
+        "height_m": 0.008,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      },
+      "name": "h08_hip30_v18",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.008,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "e11cdc93df14101834402653b3cc7a97628519bb30536961f6fecbf87b0eb4b7",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.929918933999943
+    },
+    {
+      "metrics": {
+        "elapsed_s": 7.999999999998286,
+        "first_tire_step_contact_s": 2.500000000000002,
+        "first_tire_contact_axle_x_m": 0.18351429046593426,
+        "ideal_rigid_corner_contact_axle_x_m": 0.18356832327484496,
+        "first_both_wheels_supported_on_top_s": null,
+        "sustained_platform_support_s": 0.0,
+        "final_axle_xyz_m": [
+          0.18350766954439346,
+          -0.0005326453179795368,
+          0.018599860003813435
+        ],
+        "max_axle_x_m": 0.18391943427438262,
+        "settling_time_after_command_stop_s": null,
+        "pre_contact_mean_speed_m_s": 0.2254712495581024,
+        "edge_min_speed_m_s": -0.06937948070758017,
+        "edge_speed_retention_fraction": -0.3077087692712749,
+        "edge_speed_drop_fraction": 1.307708769271275,
+        "pitch_peak_rad": 0.2478542713419028,
+        "roll_peak_rad": 0.00985666245767535,
+        "edge_pitch_error_peak_rad": 0.23075617635852394,
+        "edge_speed_tracking_rmse_m_s": 0.17531959130994942,
+        "position_reference_error_peak_m": 0.3577923395020526,
+        "edge_position_reference_error_peak_m": 0.29303729965396424,
+        "edge_loaded_contact_slip_rms_m_s": 0.1613056904745716,
+        "edge_loaded_contact_slip_peak_m_s": 1.254067564691185,
+        "edge_sliding_friction_usage_peak": 1.0,
+        "step_wall_normal_peak_n": 15.32975457706664,
+        "wheel_step_normal_peak_n": 15.32975457706664,
+        "nonwheel_world_contact_peak_n": 0.0,
+        "nonwheel_contacts": {},
+        "wheel_voltage_saturation_duration_s": 0.1055,
+        "edge_wheel_voltage_saturation_duration_s": 0.1055,
+        "hip_torque_saturation_duration_s": 0.0455,
+        "edge_hip_torque_saturation_duration_s": 0.0455,
+        "wheel_voltage_peak_v": 3.7,
+        "hip_torque_peak_nm": 0.14709975,
+        "closure_peak_m": 0.0001014375619394263,
+        "tail_speed_peak_m_s": 1.2594445044643765e-12,
+        "tail_pitch_error_rms_rad": 0.1877421346046718,
+        "warning_counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "safety_checks": {
+        "finite_state": true,
+        "time_monotonic": true,
+        "completed_8s": true,
+        "no_solver_warnings": true,
+        "pitch_bounded": true,
+        "roll_bounded": true,
+        "closed_chain_bounded": true,
+        "no_nonwheel_support": true,
+        "control_limits": true,
+        "actuator_force_limits": true
+      },
+      "task_checks": {
+        "both_wheels_supported_on_actual_platform": false,
+        "both_wheels_remain_on_actual_platform": false,
+        "tail_speed_stopped": true,
+        "tail_pitch_recovered": false
+      },
+      "quality_checks": {
+        "edge_speed_retains_at_least_half": false,
+        "no_edge_reversal_over_2cm_s": false,
+        "edge_slip_rms_below_3cm_s": false,
+        "edge_hip_saturation_below_50ms": true,
+        "edge_pitch_error_below_008rad": false
+      },
+      "safe_crossing_and_settling": false,
+      "motion_quality_screen_passed": false,
+      "landmarks": {
+        "approach": {
+          "time_s": 2.3514999999999526,
+          "axle_x_m": 0.15005058765374238,
+          "speed_m_s": 0.2245492994448031,
+          "pitch_deg": 0.9194174725697376,
+          "wheel_step_force_n": [
+            0.0,
+            0.0
+          ]
+        },
+        "ideal_corner": {
+          "time_s": 2.5005000000000024,
+          "axle_x_m": 0.18358404438426812,
+          "speed_m_s": 0.13953079691364467,
+          "pitch_deg": 0.6921299559911492,
+          "wheel_step_force_n": [
+            7.953436909413012,
+            9.474756003894296
+          ]
+        },
+        "axle_at_edge": null,
+        "on_platform": null
+      },
+      "case": {
+        "height_m": 0.01,
+        "hip_rad": -0.3,
+        "speed_m_s": 0.18
+      },
+      "name": "h10_hip30_v18",
+      "geometry": {
+        "start_x_m": 0.19999999999999996,
+        "end_x_m": 1.2,
+        "center_y_m": 0.0,
+        "width_m": 0.4,
+        "top_z_m": 0.01,
+        "bottom_z_m": 0.0,
+        "floor_z_m": 0.0,
+        "wheel_radii_m": [
+          0.0185,
+          0.0185
+        ]
+      },
+      "runtime_xml_sha256": "1272057c3141929cdc307965e9e7424fbaf53996695c5a73c413ad18699d30bc",
+      "total_mass_kg": 0.3176493810131978,
+      "wall_time_s": 7.912372861000222
+    }
+  ],
+  "artifact_location": "outputs/step-review/matrix-v1",
+  "scope": "12 deterministic sensitivity cases plus one exact stock-baseline parity rollout; no controller/model-core changes and no training"
+}
