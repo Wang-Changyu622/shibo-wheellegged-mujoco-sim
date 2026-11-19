@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "checks": {
+    "finite_state_and_telemetry": true,
+    "no_solver_warnings": true,
+    "time_monotonic": true,
+    "completed_requested_duration": true,
+    "full_task_duration": true,
+    "pitch_bounded": true,
+    "roll_bounded": true,
+    "closed_chain_bounded": true,
+    "control_limits": true,
+    "actuator_force_limits": true,
+    "no_nonwheel_ground_support": true,
+    "tail_pitch_recovered": true,
+    "tail_speed_stopped": true,
+    "sustained_physical_takeoff": true,
+    "landed_and_supported": true,
+    "returned_to_balance_phase": true
+  },
+  "failed_checks": [],
+  "metrics": {
+    "elapsed_s": 4.9999999999999485,
+    "pitch_peak_rad": 0.04193678653823579,
+    "roll_peak_rad": 0.00011900280488127889,
+    "closure_peak_m": 0.0001608008811131153,
+    "tail_pitch_error_rms_rad": 9.001587890206607e-05,
+    "tail_speed_peak_m_s": 0.00020603382204650188,
+    "final_axle_xyz_m": [
+      -0.0005597436821216349,
+      8.740200172541873e-06,
+      0.018599795291575565
+    ],
+    "position_drift_m": 0.002307356905148322,
+    "lateral_drift_peak_m": 1.0103403666042454e-05,
+    "nonwheel_ground_force_peak_n": 0.0,
+    "actuator_force_peak": [
+      0.15,
+      0.07371880394671093,
+      0.15,
+      0.07370932137525459
+    ],
+    "control_peak": [
+      0.3,
+      7.4,
+      0.3,
+      7.4
+    ],
+    "warning_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "airborne_duration_s": 0.052000000000017366,
+    "both_wheel_clearance_peak_m": 0.005629767543416056,
+    "chassis_height_peak_m": 0.07441465156077694,
+    "wall_time_s": 3.351305325999988,
+    "simulation_to_wall_time_ratio": 1.4919559734558088
+  },
+  "metadata": {
+    "schema_version": 1,
+    "scenario": "jump",
+    "terrain": "flat",
+    "terrain_geometry_m": {
+      "height": 0.0
+    },
+    "track_width_m": 0.0873,
+    "wheel_radius_m": 0.0185,
+    "timestep_s": 0.0005,
+    "control_period_s": 0.0005,
+    "requested_duration_s": 5.0,
+    "seed": 0,
+    "randomization": "none (deterministic baseline)",
+    "initial_pitch_offset_rad": 0.0,
+    "equilibrium_pitch_rad": 0.009476516723051262,
+    "mujoco_version": "3.17.0",
+    "numpy_version": "2.5.5",
+    "python_version": "3.14.10",
+    "git_commit": null,
+    "source_xml_sha256": "4affce3311987ad9d9ffc2ea0336aead48d0c9c3a7f8ee6ce730da5f6b519448",
+    "runtime_xml_sha256": "ab3fff65058e7521e8114285d087a8c0b459bcd8144da633c4851442d519ba8d",
+    "source_sha256": {
+      "__init__.py": "261be76482b6557b8ab3c23883e8b2af633c3de66b395e8568f282f59e7e56c7",
+      "cli.py": "532b82e517760a65ebe0333299f749d973e99d19dbbf1c3686e8d59e0e1e475e",
+      "control.py": "e641750d48e7ccd0d889cd963655b303cca3e4b4919f1805c09148265ac5eed0",
+      "evaluate.py": "206e881423563b3108146d77813c4b8b9de758467a5e24acff912537e952e503",
+      "jump.py": "179ffc28a560846c625f399896d00b456cf8c56f92543daac35edb0a4f0f1514",
+      "lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+      "model.py": "0071bd3f3c79e4dc3ec42e05d3637468d9e341eb7557373c5d9d1a7b37e2ef1c",
+      "render.py": "c8b826ddc59e31fa8a9e6297a567c1f95541683523fbb78c32d434c0846db597",
+      "state.py": "6281797e011762025d16dd75916774a9ddbff960447768f942f7a0ade7d5a2cc"
+    },
+    "command_schedule": {
+      "hip_angle_rad": -0.2,
+      "velocity_segments": [],
+      "velocity_otherwise_m_s": 0.0,
+      "yaw_rate_rad_s": 0.0,
+      "jump_pulse_time_s": 1.5,
+      "step_preparation": null
+    },
+    "thresholds": {
+      "pitch_peak_rad": 0.45,
+      "roll_peak_rad": 0.25,
+      "closure_peak_m": 0.001,
+      "tail_window_s": 1.0,
+      "tail_pitch_error_rms_rad": 0.03,
+      "tail_speed_peak_m_s": 0.03,
+      "balance_position_drift_m": 0.03,
+      "move_velocity_rmse_m_s": 0.04,
+      "move_min_directional_displacement_m": 0.15,
+      "terrain_height_tolerance_m": 0.001,
+      "support_force_n": 0.1,
+      "bridge_support_duration_s": 0.1,
+      "bridge_exit_margin_m": 0.05,
+      "airborne_force_n": 0.02,
+      "airborne_clearance_m": 0.001,
+      "airborne_duration_s": 0.02,
+      "nonwheel_ground_force_n": 0.05,
+      "limit_tolerance": 1e-08
+    },
+    "actuator_names": [
+      "L_servo",
+      "L_wheel_voltage",
+      "R_servo",
+      "R_wheel_voltage"
+    ],
+    "actuator_control_ranges": [
+      [
+        -0.3,
+        0.0
+      ],
+      [
+        -7.4,
+        7.4
+      ],
+      [
+        -0.3,
+        0.0
+      ],
+      [
+        -7.4,
+        7.4
+      ]
+    ],
+    "actuator_force_ranges": [
+      [
+        -0.15,
+        0.15
+      ],
+      [
+        -0.08,
+        0.08
+      ],
+      [
+        -0.15,
+        0.15
+      ],
+      [
+        -0.08,
+        0.08
+      ]
+    ],
+    "state_source": "MuJoCo ground truth; no noisy estimator or terrain perception claimed",
+    "jump_events": [
+      {
+        "time": 1.4999999999998903,
+        "event": "phase_changed",
+        "phase": "crouch",
+        "reason": "request_accepted"
+      },
+      {
+        "time": 2.2999999999999354,
+        "event": "phase_changed",
+        "phase": "push",
+        "reason": "crouch_complete"
+      },
+      {
+        "time": 2.379999999999962,
+        "event": "phase_changed",
+        "phase": "tuck",
+        "reason": "push_minimum_complete"
+      },
+      {
+        "time": 2.388499999999965,
+        "event": "takeoff_confirmed",
+        "phase": "tuck",
+        "reason": "both_wheels_unloaded_8ms"
+      },
+      {
+        "time": 2.388499999999965,
+        "event": "phase_changed",
+        "phase": "flight",
+        "reason": "takeoff_confirmed"
+      },
+      {
+        "time": 2.4559999999999875,
+        "event": "phase_changed",
+        "phase": "land",
+        "reason": "both_wheels_supported_10ms"
+      },
+      {
+        "time": 2.9560000000001545,
+        "event": "phase_changed",
+        "phase": "balance",
+        "reason": "supported_recovery_complete"
+      }
+    ],
+    "jump_outcome": "landed"
+  }
+}

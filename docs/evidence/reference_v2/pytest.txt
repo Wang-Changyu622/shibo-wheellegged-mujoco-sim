@@ -1,0 +1,10 @@
+..........................................................               [100%]
+=============================== warnings summary ===============================
+../../../Documents/Robotics/ros2_ws/.pixi/envs/default/lib/python3.14/site-packages/lark/utils.py:163
+  Warning: module 'sre_parse' is deprecated
+
+../../../Documents/Robotics/ros2_ws/.pixi/envs/default/lib/python3.14/site-packages/lark/utils.py:164
+  Warning: module 'sre_constants' is deprecated
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+58 passed, 2 warnings in 43.06s

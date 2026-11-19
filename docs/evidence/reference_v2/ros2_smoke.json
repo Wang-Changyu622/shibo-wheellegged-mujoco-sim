@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "scope": "real DDS adapter integration; not a control-performance test",
+  "simulated_seconds": 2.8000000000001024,
+  "received_messages": {
+    "clock": 279,
+    "joints": 279,
+    "imu": 279,
+    "odom": 279,
+    "tf": 279,
+    "tf_static": 1
+  },
+  "forward_command_received": true,
+  "reverse_command_received": true,
+  "command_timeout_stopped_reference": true,
+  "jump_events_forwarded": 1,
+  "quaternion_and_frames_valid": true,
+  "monotonic_clock": true,
+  "stamped_mujoco_fields_match": true,
+  "static_imu_transform_matches_model": true,
+  "physics_dt_seconds": 0.0005,
+  "mujoco_version": "3.17.0",
+  "joint_count": 8,
+  "joint_readings_dynamic": true,
+  "invalid_command_checks": [
+    {
+      "command_unchanged": true,
+      "watchdog_not_refreshed": true
+    },
+    {
+      "command_unchanged": true,
+      "watchdog_not_refreshed": true
+    }
+  ],
+  "ros_domain_id": "73",
+  "source_sha256": {
+    "src/wheellegged/model.py": "0071bd3f3c79e4dc3ec42e05d3637468d9e341eb7557373c5d9d1a7b37e2ef1c",
+    "src/wheellegged/control.py": "e641750d48e7ccd0d889cd963655b303cca3e4b4919f1805c09148265ac5eed0",
+    "src/wheellegged/lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+    "src/wheellegged/state.py": "6281797e011762025d16dd75916774a9ddbff960447768f942f7a0ade7d5a2cc",
+    "src/wheellegged/jump.py": "179ffc28a560846c625f399896d00b456cf8c56f92543daac35edb0a4f0f1514",
+    "ros2/wheellegged_ros/wheellegged_ros/sim_node.py": "ed8e153425feb233090646b1782515296552b5b19888dd2e36341123491ee1b0",
+    "scripts/ros2_smoke.py": "e43e0e812e0855bbf73a1daffd938079d165387b5b5f7231b02a23aa053eb281"
+  }
+}

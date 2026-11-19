@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "scope": "colcon build plus real ros2 launch and cross-process DDS /clock",
+  "process_return_code": 0,
+  "physics_dt_seconds": 0.0005,
+  "colcon_build": "passed",
+  "startup": true,
+  "sigint_clean_shutdown": true,
+  "received_clock_messages": 26,
+  "last_simulation_clock_seconds": 0.25,
+  "clock_strictly_increasing": true,
+  "ros_domain_id": "74",
+  "python_version": "3.14.10",
+  "tool_versions": {
+    "colcon-core": "0.21.3",
+    "setuptools": "79.0.1",
+    "mujoco": "3.17.0"
+  },
+  "source_sha256": {
+    "src/wheellegged/model.py": "0071bd3f3c79e4dc3ec42e05d3637468d9e341eb7557373c5d9d1a7b37e2ef1c",
+    "src/wheellegged/control.py": "e641750d48e7ccd0d889cd963655b303cca3e4b4919f1805c09148265ac5eed0",
+    "src/wheellegged/lqr.py": "dabad83e34d9f19405d64c0f62c7c0d94745bf22515fc647a36b984428786d08",
+    "src/wheellegged/state.py": "6281797e011762025d16dd75916774a9ddbff960447768f942f7a0ade7d5a2cc",
+    "src/wheellegged/jump.py": "179ffc28a560846c625f399896d00b456cf8c56f92543daac35edb0a4f0f1514",
+    "scripts/ros2_launch_smoke.py": "6a23f0c374105378f48cec421088aff2415616e481745653f03d9b20b758e8aa",
+    "ros2/wheellegged_ros/wheellegged_ros/sim_node.py": "ed8e153425feb233090646b1782515296552b5b19888dd2e36341123491ee1b0",
+    "ros2/wheellegged_ros/setup.py": "33ed0d6ccd806974d43334e7d3a5164625e235b0b7241f77811f329b6b180a0c",
+    "ros2/wheellegged_ros/package.xml": "47ded4f8888f93e7ad12559d3499d7ae72b4e76ec579fcb0fecc0083d1276e12",
+    "ros2/wheellegged_ros/launch/simulation.launch.py": "d190f9055638527c84e99e032f1bc89ae1b6d2c272447a994c7daae480e280f3"
+  }
+}
