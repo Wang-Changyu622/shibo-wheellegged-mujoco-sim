@@ -15,9 +15,12 @@ bash scripts/ros2_run.sh --ros-args -p use_sim_time:=true -p terrain:=flat -p pr
 ```bash
 ros2 topic pub --rate 10 /cmd_vel geometry_msgs/msg/Twist '{linear: {x: 0.05}, angular: {z: 0.0}}'
 ros2 topic pub --once /jump std_msgs/msg/Empty '{}'
+ros2 topic pub --once /leg_command sensor_msgs/msg/JointState '{name: [L_hip, R_hip], position: [-0.24, -0.20]}'
 ```
 
 `linear.x` 单位为 m/s，`angular.z` 为 rad/s。负速度后退。命令超过 0.5 秒仿真时间没有更新后，速度和偏航率目标归零；控制器仍保持平衡。NaN/Inf 速度或偏航率命令被拒绝，也不会续期命令超时计时器。一次 `/jump` 消息触发一次请求，是否执行由核心跳跃状态机决定。
+
+`/leg_command` 按名称指定左右髋角，必须恰好包含 `L_hip`、`R_hip` 两个有限位置；顺序可以互换。单位 rad，控制目标限制在 `[-0.30, 0]`，角度越负，腿越长。上例伸长左腿、保持右腿。两侧都设为 `-0.20` 恢复默认高度。高度目标持续保持，不受速度命令或速度超时清零影响；它也不会延长速度看门狗。平地不等高腿长会形成相应机身横滚目标，控制器仍保持俯仰平衡并修正横滚误差。跳跃时控制器接管双腿对称动作，回稳后恢复请求的左右高度；应先停止速度和转向命令再请求站立跳跃。
 
 ## 标准 colcon 构建
 
@@ -32,7 +35,7 @@ ros2 launch wheellegged_ros simulation.launch.py terrain:=flat profile:=hardware
 
 若采用 RoboStack，需先激活其环境以便构建器、Python 与共享库一致；不要混用系统 Python 和另一发行版的 `rclpy`。本次普通构建已在项目环境的 colcon-core 0.21.3、setuptools 79.0.1 下实测通过。`scripts/ros2_run.sh` 无需 colcon，可直接验证适配层。脚本可通过 `WHEELLEGGED_PYTHON` 指定兼容的 Python。
 
-`profile` 默认 `hardware_2s`，采用当前硬件电压/力矩约束及组件质量映射；`reference` 只供历史模型复现，未知名称会在启动时拒绝。`viewer` 默认 `false`，便于服务器和自动测试；设为 `true` 时打开原生 MuJoCo 窗口，约 60 Hz 同步同一个 ROS 仿真状态，显示参数 profile、仿真时间与目标速度。控制仍从 `/cmd_vel`、`/jump` 输入。相机支持原生鼠标旋转和缩放；带键盘控制、场景切换和更多诊断的独立入口见主项目可视化说明。
+`profile` 默认 `hardware_2s`，采用当前硬件电压/力矩约束及组件质量映射；`reference` 只供历史模型复现，未知名称会在启动时拒绝。`viewer` 默认 `false`，便于服务器和自动测试；设为 `true` 时打开原生 MuJoCo 窗口，约 60 Hz 同步同一个 ROS 仿真状态，显示参数 profile、仿真时间、目标速度与左右髋角。控制仍从 `/cmd_vel`、`/leg_command`、`/jump` 输入。相机支持原生鼠标旋转和缩放；带键盘控制、场景切换和更多诊断的独立入口见主项目可视化说明。
 
 关闭窗口只停止显示，ROS 仿真继续运行；Ctrl-C 停止节点并关闭窗口。节点等待此次创建的后台窗口线程结束再退出，避免 GLFW 清理与 daemon 渲染线程竞争。无图形会话时使用默认 `viewer:=false`。
 
@@ -42,6 +45,7 @@ ros2 launch wheellegged_ros simulation.launch.py terrain:=flat profile:=hardware
 | --- | --- | --- |
 | `/cmd_vel` | `geometry_msgs/msg/Twist` | 订阅前进速度与偏航率 |
 | `/jump` | `std_msgs/msg/Empty` | 订阅单次跳跃请求 |
+| `/leg_command` | `sensor_msgs/msg/JointState` | 订阅命名的 `L_hip`、`R_hip` 位置目标，rad |
 | `/joint_states` | `sensor_msgs/msg/JointState` | 发布所有铰链/滑动关节 SI 状态，SensorData QoS |
 | `/imu` | `sensor_msgs/msg/Imu` | 发布 `imu_link` 的理想 MuJoCo IMU，SensorData QoS |
 | `/odom` | `nav_msgs/msg/Odometry` | 发布 `odom` 位姿与 `base_link` 速度 |
@@ -76,6 +80,7 @@ DISPLAY=:0 .venv/bin/python scripts/ros2_launch_smoke.py --viewer
 - 动态运行结束后，单独构造倾斜基座和六维非零速度的运动学夹具，通过 DDS 核验 `base_link` twist；夹具区分普通 body 轴与惯性主轴，随后恢复原仿真状态，不将其计作机器人运动任务。
 - 用 transient-local QoS 读取先于订阅者发布的静态 TF，验证 `base_link → imu_link` 与 MJCF IMU site 的位置和姿态完全一致。
 - 单次 `/jump` 消息恰好向核心转发一次请求；传感器和 TF 持续发布。
+- 左右髋目标通过真实 DDS 接收并按关节名称映射；后续速度命令和速度超时均不清除腿目标。NaN、重复名称、未知名称和位置长度不匹配的消息被拒绝。腿回调不改位姿、速度或仿真时间，也不续期速度看门狗。
 
 `ros2_launch_smoke.py` 在独立 `ROS_DOMAIN_ID=74` 上执行普通 colcon 构建，通过真正的 `ros2 launch` 启动已安装节点，再由另一个进程订阅 `/clock`，最后发送 SIGINT，同时确认 launch 返回 0 且仿真子进程日志记录 clean exit。还检查已安装节点拒绝未知 profile。`--viewer` 使用 domain 75，打开真实窗口，通过外部 `/cmd_vel` 驱动并检查 odom 位置变化，再完整关闭。默认从当前 Python 的基础环境或已激活的 ROS 路径定位依赖；也可用 `--ros-prefix` 指定 ROS 安装前缀。构建目录和日志写入 `artifacts/ros2`，不会作为源码交付。
 
